@@ -15,7 +15,6 @@ class List extends React.Component<PropsType> {
   render() {
     const {name, placesPast, placesPresent, locale} = this.props;
 
-    console.log(locale);
     return (
       <div className={style.foo}>
         <div>{name}</div>
@@ -29,4 +28,4 @@ class List extends React.Component<PropsType> {
   }
 }
 
-export default List;
+export default withLocale()(List);

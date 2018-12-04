@@ -15,7 +15,7 @@ type StateType = {
   data: Array<Object>
 };
 
-class TestContainer extends React.Component<PropsType, StateType> {
+class AppContainer extends React.Component<PropsType, StateType> {
   constructor() {
     super();
     this.state = {
@@ -54,8 +54,6 @@ class TestContainer extends React.Component<PropsType, StateType> {
             </div>
             {data.map(item => (
               <List
-                locale={this.props.locale}
-                setLocale={this.props.setLocale}
                 key={item.id}
                 name={item.name}
                 placesPast={item.places.past}
@@ -68,4 +66,4 @@ class TestContainer extends React.Component<PropsType, StateType> {
     );
   }
 }
-export default withLocale()(TestContainer);
+export default withLocale()(AppContainer);

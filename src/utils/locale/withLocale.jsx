@@ -1,12 +1,12 @@
 // @flow
 import * as React from 'react';
-import LocaleController from './LocaleController';
+import {LocaleContextConsumer} from './LocaleContext';
 
 export const withLocale = () => <Props: {}>(
   Wrapped: React.ComponentType<Props>
 ): React.ComponentType<Props> => {
   const WrappedComponent = (wrappedComponentProps: Props) => (
-    <LocaleController>
+    <LocaleContextConsumer>
       {({locale, setLocale}) => (
         <Wrapped
           {...wrappedComponentProps}
@@ -14,7 +14,7 @@ export const withLocale = () => <Props: {}>(
           locale={locale}
         />
       )}
-    </LocaleController>
+    </LocaleContextConsumer>
   );
 
   WrappedComponent.displayName = `withLocale(${Wrapped.displayName ||
