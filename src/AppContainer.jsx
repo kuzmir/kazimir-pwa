@@ -15,7 +15,7 @@ type StateType = {
   data: Array<Object>
 };
 
-class TestContainer extends React.Component<PropsType, StateType> {
+class AppContainer extends React.Component<PropsType, StateType> {
   constructor() {
     super();
     this.state = {
@@ -35,26 +35,6 @@ class TestContainer extends React.Component<PropsType, StateType> {
 
   render() {
     const {data} = this.state;
-
-    console.log(this.props);
-
-
-    if (!this.props.locale) {
-      return (
-        <div>
-          <div>current locale {this.props.locale}</div>
-            <div>
-              <button
-                onClick={() =>
-                  this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
-                }
-              >
-                change to {this.props.locale === 'pl' ? 'en' : 'pl'}
-              </button>
-            </div>
-        </div>
-      );
-    }
 
     return (
       <div>
@@ -86,4 +66,4 @@ class TestContainer extends React.Component<PropsType, StateType> {
     );
   }
 }
-export default withLocale()(TestContainer);
+export default withLocale()(AppContainer);
