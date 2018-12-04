@@ -4,7 +4,7 @@ import AppContainer from './AppContainer';
 
 ReactDOM.render(
   <div>
-    <AppContainer />
+    <AppContainer michal="asd" />
   </div>,
   document.querySelector('.js-root')
 );
