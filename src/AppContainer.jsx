@@ -36,6 +36,26 @@ class TestContainer extends React.Component<PropsType, StateType> {
   render() {
     const {data} = this.state;
 
+    console.log(this.props);
+
+
+    if (!this.props.locale) {
+      return (
+        <div>
+          <div>current locale {this.props.locale}</div>
+            <div>
+              <button
+                onClick={() =>
+                  this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
+                }
+              >
+                change to {this.props.locale === 'pl' ? 'en' : 'pl'}
+              </button>
+            </div>
+        </div>
+      );
+    }
+
     return (
       <div>
         {!data.length ? (
@@ -54,8 +74,6 @@ class TestContainer extends React.Component<PropsType, StateType> {
             </div>
             {data.map(item => (
               <List
-                locale={this.props.locale}
-                setLocale={this.props.setLocale}
                 key={item.id}
                 name={item.name}
                 placesPast={item.places.past}
