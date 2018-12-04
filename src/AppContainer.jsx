@@ -18,10 +18,13 @@ type StateType = {
 class AppContainer extends React.Component<PropsType, StateType> {
   constructor() {
     super();
-    this.state = {
-      data: []
-    };
+
+    this.initServiceWorker();
   }
+
+  state = {
+    data: []
+  };
 
   componentDidMount() {
     fetch(DATA_URL)
@@ -31,6 +34,18 @@ class AppContainer extends React.Component<PropsType, StateType> {
           data: transformedData
         }));
       });
+  }
+
+  initServiceWorker = () => {
+    if (navigator.serviceWorker.controller) {
+      console.log('[PWA Builder] active service worker found, no need to register')
+    } else {
+      navigator.serviceWorker.register('serviceWorker.js', {
+        scope: './'
+      }).then(reg => {
+        console.log('Service worker has been registered for scope:'+ reg.scope);
+      });
+    }
   }
 
   render() {
