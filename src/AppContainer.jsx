@@ -33,6 +33,10 @@ class AppContainer extends React.Component<PropsType, StateType> {
       });
   }
 
+  handleOpenDetails = () => {
+    console.log('here I need to open details');
+  };
+
   render() {
     const {data} = this.state;
 
@@ -58,6 +62,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 name={item.name}
                 placesPast={item.places.past}
                 placesPresent={item.places.present}
+                openDetails={this.handleOpenDetails}
               />
             ))}
           </React.Fragment>
