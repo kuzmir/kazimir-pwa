@@ -83,7 +83,7 @@ module.exports = env => {
       }),
       new CopyWebpackPlugin([
         {
-          from: path.join(SRC_PATH, 'manifest.template.json'),
+          from: path.join(SRC_PATH, 'manifest.json'),
           to: path.join(DIST_PATH, 'manifest.json')
         },
         {
