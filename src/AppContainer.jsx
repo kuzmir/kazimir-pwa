@@ -16,10 +16,10 @@ type StateType = {
 };
 
 class AppContainer extends React.Component<PropsType, StateType> {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.initServiceWorker();
+    props.initServiceWorker();
   }
 
   state = {
@@ -34,18 +34,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
           data: transformedData
         }));
       });
-  }
-
-  initServiceWorker = () => {
-    if (navigator.serviceWorker.controller) {
-      console.log('[PWA Builder] active service worker found, no need to register')
-    } else {
-      navigator.serviceWorker.register('serviceWorker.js', {
-        scope: './'
-      }).then(reg => {
-        console.log('Service worker has been registered for scope:'+ reg.scope);
-      });
-    }
   }
 
   render() {

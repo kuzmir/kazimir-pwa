@@ -1,54 +1,42 @@
+const DEFAULT_CACHE = 'cache-kazimir-v1';
+const baseCacheList = [
+  '.',
+  'index.html'
+];
 
-const CACHE_KEY = 'kazimir-offline';
+self.addEventListener('install', event => {
+  console.log('installed', event)
+  // add assets to cache
 
-const preload = () => {
-  console.log('Install Event processing');
-
-  return caches.open(CACHE_KEY).then(cache => {
-    console.log('Cached index and offline page during Install');
-    return cache.addAll(['/offline.html', '/index.html']);
-  });
-}
-
-self.addEventListener('fetch', event => {
-  console.log('The service worker is serving the asset.');
-
-  event.respondWith(checkResponse(event.request).catch(() => returnFromCache(event.request)));
-  event.waitUntil(addToCache(event.request));
+  event.waitUntil(
+    caches.open(DEFAULT_CACHE)
+      .then(cache => cache.addAll(baseCacheList))
+  );
 });
 
-const checkResponse = request => {
-  return new Promise((resolve, reject) => {
-    fetch(request).then((response) => {
-      if(response.status !== 404) {
-        resolve(response);
-      } else {
-        reject();
+self.addEventListener('activate', event => {
+  console.log('activated', event)
+  // invalidate cache
+});
+
+const fetchAndCache = resourceURL =>
+  fetch(resourceURL)
+    .then(response => {
+      if (!response.ok) {
+        throw Error(response.statusText)
       }
-    }, reject);
-  });
-};
 
-const addToCache = request => {
-  return caches.open(CACHE_KEY).then(cache => {
-    return fetch(request).then(response => {
-      console.log('add page to offline'+response.url)
-      return cache.put(request, response);
-    });
-  });
-};
+      return caches
+        .open(DEFAULT_CACHE)
+        .then(cache => cache.put(resourceURL, response.clone()) && response)
+    })
+    .catch(console.error);
 
-const returnFromCache = request => {
-  return caches.open(CACHE_KEY).then(cache => {
-    return cache.match(request).then(matching => {
-     if(!matching || matching.status == 404) {
-       return cache.match('offline.html')
-     } else {
-       return matching
-     }
-    });
-  });
-};
-
-
-self.addEventListener('install', event => event.waitUntil(preload()));
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches
+      .match(event.request)
+      .then(response => response || fetchAndCache(event.request))
+      .catch(console.error)
+  );
+});

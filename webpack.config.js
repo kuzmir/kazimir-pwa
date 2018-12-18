@@ -81,11 +81,6 @@ module.exports = env => {
         template: path.join(SRC_PATH, 'index.html'),
         chunks: ['index', 'subjectIcons']
       }),
-      new HtmlWebpackPlugin({
-        filename: path.join(DIST_PATH, 'offline.html'),
-        template: path.join(SRC_PATH, 'offline.html'),
-        chunks: []
-      }),
       new CopyWebpackPlugin([
         {
           from: path.join(SRC_PATH, 'manifest.template.json'),
