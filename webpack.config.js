@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -80,6 +81,16 @@ module.exports = env => {
         template: path.join(SRC_PATH, 'index.html'),
         chunks: ['index', 'subjectIcons']
       }),
+      new CopyWebpackPlugin([
+        {
+          from: path.join(SRC_PATH, 'manifest.json'),
+          to: path.join(DIST_PATH, 'manifest.json')
+        },
+        {
+          from: path.join(SRC_PATH, 'serviceWorker.js'),
+          to: path.join(DIST_PATH, 'serviceWorker.js')
+        }
+      ]),
       new MiniCssExtractPlugin({
         filename: '[name].[hash].css',
         chunkFilename: '[id].[hash].css'

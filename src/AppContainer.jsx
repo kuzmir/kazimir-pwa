@@ -16,12 +16,15 @@ type StateType = {
 };
 
 class AppContainer extends React.Component<PropsType, StateType> {
-  constructor() {
-    super();
-    this.state = {
-      data: []
-    };
+  constructor(props) {
+    super(props);
+
+    props.initServiceWorker();
   }
+
+  state = {
+    data: []
+  };
 
   componentDidMount() {
     fetch(DATA_URL)
