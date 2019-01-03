@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react';
-import {withLocale} from './withLocale';
 import {getDefaultBrowserLocale} from './localeUtils';
 
 const {Provider, Consumer} = React.createContext();
