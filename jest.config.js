@@ -2,7 +2,7 @@ module.exports = {
   displayName: 'test',
   cacheDirectory: '/tmp/jest_cache',
   setupFiles: ['<rootDir>/scripts/testsSetup.js'],
-  roots: ['<rootDir>/src/'],
+  roots: ['<rootDir>/src/', '<rootDir>/scripts/'],
   transform: {
     '.*': 'babel-jest'
   },

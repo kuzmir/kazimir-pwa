@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import List from './components/list/List';
+import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 
 import type {LocalePropsType} from './utils/locale/LocaleController';
@@ -45,6 +46,8 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
     return (
       <div>
+        <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
+
         {!data.length ? (
           <div>loading here</div>
         ) : (
@@ -74,4 +77,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
     );
   }
 }
-export default withLocale()(AppContainer);
+export default withNetworkStatus()(
+  withLocale()(AppContainer)
+);
