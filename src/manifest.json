@@ -2,15 +2,16 @@
   "name": "KazimirApp",
   "short_name": "KazimirApp",
   "lang": "en-GB",
-  "start_url": "/",
+  "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "orientation": "any",
   "theme_color": "#ffffff",
   "icons": [
     {
       "src": "https://kazimirapp.pl/apple-touch-icon.png",
-      "sizes": "144x144 64x64 32x32 24x24 16x16",
+      "sizes": "512x512 192x192 144x144 64x64 32x32 24x24 16x16",
       "type": "image/png"
     }
-  ]
+  ],
+  "prefer_related_applications": false
 }
