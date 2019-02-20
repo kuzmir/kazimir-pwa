@@ -87,6 +87,10 @@ module.exports = env => {
           to: path.join(DIST_PATH, 'manifest.json')
         },
         {
+          from: path.join(SRC_PATH, 'streets_data.json'),
+          to: path.join(DIST_PATH, 'streets_data.json')
+        },
+        {
           from: path.join(SRC_PATH, 'serviceWorker.js'),
           to: path.join(DIST_PATH, 'serviceWorker.js')
         }
