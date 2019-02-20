@@ -7,7 +7,7 @@ import {withLocale} from './utils/locale/withLocale';
 
 import type {LocalePropsType} from './utils/locale/LocaleController';
 
-const DATA_URL = 'https://kazimirapp.pl/streets.json';
+const DATA_URL = './streets_data.json';
 
 type PropsType = {} & LocalePropsType;
 
@@ -77,6 +77,4 @@ class AppContainer extends React.Component<PropsType, StateType> {
     );
   }
 }
-export default withNetworkStatus()(
-  withLocale()(AppContainer)
-);
+export default withNetworkStatus()(withLocale()(AppContainer));
