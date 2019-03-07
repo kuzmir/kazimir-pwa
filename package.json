@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Kazimir PWA POC",
   "main": "index.js",
-  "author": "patrycjaradaczynska <patrycja.radaczynska@brainly.com>",
+  "author": "burakukula <trycjapa@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "yarn webpack",
