@@ -6,7 +6,6 @@
   "author": "patrycjaradaczynska <patrycja.radaczynska@brainly.com>",
   "license": "MIT",
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "yarn webpack",
     "watch": "yarn webpack --watch & yarn webpack-dev-server"
   },
@@ -48,6 +47,8 @@
     "prettier-eslint": "^8.8.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",

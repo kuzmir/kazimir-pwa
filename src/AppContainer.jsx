@@ -1,7 +1,9 @@
 // @flow
 
 import * as React from 'react';
-import List from './components/list/List';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import StreetList from './components/list/StreetList';
+import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 
@@ -37,12 +39,9 @@ class AppContainer extends React.Component<PropsType, StateType> {
       });
   }
 
-  handleOpenDetails = () => {
-    console.log('here I need to open details');
-  };
-
   render() {
     const {data} = this.state;
+    const streetList = () => <StreetList data={data} />;
 
     return (
       <div>
@@ -62,19 +61,20 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 change to {this.props.locale === 'pl' ? 'en' : 'pl'}
               </button>
             </div>
-            {data.map(item => (
-              <List
-                key={item.id}
-                name={item.name}
-                placesPast={item.places.past}
-                placesPresent={item.places.present}
-                openDetails={this.handleOpenDetails}
-              />
-            ))}
+            <Router>
+              <Switch>
+                <Route exact path="/" component={streetList} />
+                <Route
+                  path="/street/:id/:timespan"
+                  component={() => <StreetDetail data={data} />}
+                />
+              </Switch>
+            </Router>
           </React.Fragment>
         )}
       </div>
     );
   }
 }
+
 export default withNetworkStatus()(withLocale()(AppContainer));
