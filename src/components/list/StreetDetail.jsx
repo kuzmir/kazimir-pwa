@@ -21,7 +21,6 @@ const StreetDetail = ({id, ...props}: PropsType) => ({
   render() {
     const {items, streetName, locale} = props;
 
-    console.log('item', items, props, typeof locale);
     return (
       <React.Fragment>
         <h3>{streetName}</h3>

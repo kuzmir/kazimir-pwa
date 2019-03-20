@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn webpack",
-    "watch": "yarn webpack --watch & yarn webpack-dev-server"
+    "watch": "yarn webpack --watch & yarn run-server",
+    "run-server": "superstatic --port=3000 --compression --gzip --config=superstatic.json --live"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
@@ -52,10 +53,10 @@
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
+    "superstatic": "^6.0.4",
     "svg-sprite-loader": "^4.1.3",
     "url-loader": "^1.1.2",
-    "webpack": "^4.20.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack": "^4.20.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",

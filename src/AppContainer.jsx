@@ -6,10 +6,10 @@ import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
-
+import Layout from './components/layout/Layout';
 import type {LocalePropsType} from './utils/locale/LocaleController';
 
-const DATA_URL = './streets_data.json';
+const DATA_URL = 'https://kazimir.app/streets.json';
 
 type PropsType = {} & LocalePropsType;
 
@@ -39,9 +39,23 @@ class AppContainer extends React.Component<PropsType, StateType> {
       });
   }
 
+  renderStreetListWithMap = props => (
+    <Layout>
+      <div>we display map here</div>
+      <StreetList data={this.state.data} {...props} />
+    </Layout>
+  );
+
+  renderStreetList = props => (
+    <Layout>
+      <StreetList data={this.state.data} {...props} />
+    </Layout>
+  );
+
+  renderDetail = () => <StreetDetail data={this.state.data} />;
+
   render() {
     const {data} = this.state;
-    const streetList = () => <StreetList data={data} />;
 
     return (
       <div>
@@ -61,12 +75,19 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 change to {this.props.locale === 'pl' ? 'en' : 'pl'}
               </button>
             </div>
+
             <Router>
               <Switch>
-                <Route exact path="/" component={streetList} />
+                <Route exact path="/" component={this.renderStreetList} />
                 <Route
+                  exact
+                  path="/map"
+                  component={this.renderStreetListWithMap}
+                />
+                <Route
+                  exact
                   path="/street/:id/:timespan"
-                  component={() => <StreetDetail data={data} />}
+                  component={this.renderDetail}
                 />
               </Switch>
             </Router>

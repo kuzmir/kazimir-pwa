@@ -68,10 +68,6 @@ module.exports = env => {
         }
       ]
     },
-    devServer: {
-      contentBase: DIST_PATH,
-      port: 3000
-    },
     optimization: {
       minimize: isProduction
     },
