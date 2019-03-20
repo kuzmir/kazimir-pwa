@@ -1,13 +1,15 @@
 // @flow
 
 import * as React from 'react';
-import List from './components/list/List';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import StreetList from './components/list/StreetList';
+import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
-
+import Layout from './components/layout/Layout';
 import type {LocalePropsType} from './utils/locale/LocaleController';
 
-const DATA_URL = 'https://kazimirapp.pl/streets.json';
+const DATA_URL = 'https://kazimir.app/streets.json';
 
 type PropsType = {} & LocalePropsType;
 
@@ -37,9 +39,20 @@ class AppContainer extends React.Component<PropsType, StateType> {
       });
   }
 
-  handleOpenDetails = () => {
-    console.log('here I need to open details');
-  };
+  renderStreetListWithMap = props => (
+    <Layout>
+      <div>we display map here</div>
+      <StreetList data={this.state.data} {...props} />
+    </Layout>
+  );
+
+  renderStreetList = props => (
+    <Layout>
+      <StreetList data={this.state.data} {...props} />
+    </Layout>
+  );
+
+  renderDetail = () => <StreetDetail data={this.state.data} />;
 
   render() {
     const {data} = this.state;
@@ -62,21 +75,27 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 change to {this.props.locale === 'pl' ? 'en' : 'pl'}
               </button>
             </div>
-            {data.map(item => (
-              <List
-                key={item.id}
-                name={item.name}
-                placesPast={item.places.past}
-                placesPresent={item.places.present}
-                openDetails={this.handleOpenDetails}
-              />
-            ))}
+
+            <Router>
+              <Switch>
+                <Route exact path="/" component={this.renderStreetList} />
+                <Route
+                  exact
+                  path="/map"
+                  component={this.renderStreetListWithMap}
+                />
+                <Route
+                  exact
+                  path="/street/:id/:timespan"
+                  component={this.renderDetail}
+                />
+              </Switch>
+            </Router>
           </React.Fragment>
         )}
       </div>
     );
   }
 }
-export default withNetworkStatus()(
-  withLocale()(AppContainer)
-);
+
+export default withNetworkStatus()(withLocale()(AppContainer));
