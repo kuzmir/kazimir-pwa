@@ -4,13 +4,15 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
 
-const isMapActive = pathname => pathname.includes('/map');
-const isDetailViewActive = pathname => pathname.includes('/street');
+const isViewActive = (pathname, value) => pathname.includes(value);
 
 class Navigation extends React.Component<*, *> {
   render() {
-    const isMapVisible = isMapActive(this.props.location.pathname);
-    const detailViewVisible = isDetailViewActive(this.props.location.pathname);
+    const isMapVisible = isViewActive(this.props.location.pathname, '/map');
+    const detailViewVisible = isViewActive(
+      this.props.location.pathname,
+      '/street'
+    );
 
     return (
       <nav>
