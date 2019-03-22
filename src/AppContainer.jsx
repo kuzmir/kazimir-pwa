@@ -22,7 +22,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
   constructor(props) {
     super(props);
 
-    props.initServiceWorker();
+    // props.initServiceWorker();
   }
 
   state = {
@@ -52,7 +52,11 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </Layout>
   );
 
-  renderDetail = () => <StreetDetail data={this.state.data} />;
+  renderDetail = () => (
+    <Layout>
+      <StreetDetail data={this.state.data} />
+    </Layout>
+  );
 
   render() {
     const {data} = this.state;
