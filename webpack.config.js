@@ -21,7 +21,7 @@ module.exports = env => {
     },
     resolve: {
       modules: [SRC_PATH, NODE_MODULES_PATH],
-      extensions: ['.js', '.jsx', '.scss']
+      extensions: ['.js', '.jsx', '.css']
     },
     mode: isProduction ? 'production' : 'development',
     module: {
@@ -55,13 +55,6 @@ module.exports = env => {
                 localIdentName: '[local]',
                 camelCase: 'only',
                 minimize: isProduction
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                minimize: isProduction,
-                includePaths: [SRC_PATH]
               }
             }
           ]

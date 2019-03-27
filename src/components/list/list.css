@@ -1,5 +1,4 @@
-.foo {
-  font-weight: 700;
+.list {
   padding: 20px 0;
   display: flex;
   flex-direction: row;
