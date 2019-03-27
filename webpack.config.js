@@ -17,7 +17,8 @@ module.exports = env => {
     },
     output: {
       path: DIST_PATH,
-      filename: '[name]_[hash].js'
+      filename: '[name]_[hash].js',
+      publicPath: '/'
     },
     resolve: {
       modules: [SRC_PATH, NODE_MODULES_PATH],
@@ -68,7 +69,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         filename: path.join(DIST_PATH, 'index.html'),
         template: path.join(SRC_PATH, 'index.html'),
-        chunks: ['index', 'subjectIcons']
+        chunks: ['index']
       }),
       new CopyWebpackPlugin([
         {
