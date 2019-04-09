@@ -5,12 +5,12 @@ export const initServiceWorker = () => {
     };
 
     navigator.serviceWorker
-      .register('serviceWorker.js', options)
+      .register('/serviceWorker.js', options)
       .then(registration => {
-        console.info('service worker regitstration success', registration)
+        console.info('Service worker regitstration success', registration)
       })
       .catch(error => {
-        console.error('service worker regitstration error', error)
+        console.error('Service worker regitstration error', error)
       });
   }
 };

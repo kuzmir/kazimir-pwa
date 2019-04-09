@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const DIST_PATH = path.resolve(__dirname, 'dist');
 const SRC_PATH = path.resolve(__dirname, 'src');
@@ -73,24 +74,28 @@ module.exports = env => {
       }),
       new CopyWebpackPlugin([
         {
+          from: path.join(SRC_PATH, 'img'),
+          to: path.join(DIST_PATH, 'img')
+        },
+        {
           from: path.join(SRC_PATH, 'manifest.json'),
           to: path.join(DIST_PATH, 'manifest.json')
         },
         {
-          from: path.join(SRC_PATH, 'streets_data.json'),
-          to: path.join(DIST_PATH, 'streets_data.json')
-        },
-        {
-          from: path.join(SRC_PATH, 'serviceWorker.js'),
-          to: path.join(DIST_PATH, 'serviceWorker.js')
+          from: path.join(SRC_PATH, 'streets.json'),
+          to: path.join(DIST_PATH, 'streets.json')
         }
       ]),
       new MiniCssExtractPlugin({
-        filename: '[name].[hash].css',
-        chunkFilename: '[id].[hash].css'
+        filename: '[name]_[hash].css',
+        chunkFilename: '[id]_[hash].css'
       }),
-      new CleanWebpackPlugin(path.resolve(DIST_PATH, '*'), {
-        watch: true
+      new CleanWebpackPlugin(path.resolve(DIST_PATH, '*')),
+      new WorkboxPlugin.GenerateSW({
+        swDest: 'serviceWorker.js',
+        clientsClaim: true,
+        skipWaiting: true,
+        offlineGoogleAnalytics: true
       })
     ]
   };
