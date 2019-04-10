@@ -9,6 +9,15 @@
     top: 0;
 }
 
+.backOnLeft {
+    position: absolute;
+    background: white;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 8px;
+}
+
 .iconList {
     position: absolute;
     background: white;

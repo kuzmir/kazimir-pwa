@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-const ArrowLeftIcon = () => (
+const ArrowLeft = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <title>icon-arrow-left</title>
     <path d="M24,24H0V0H24Z" fill="none" />
@@ -10,4 +10,4 @@ const ArrowLeftIcon = () => (
   </svg>
 );
 
-export default ArrowLeftIcon;
+export default ArrowLeft;

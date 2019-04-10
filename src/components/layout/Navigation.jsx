@@ -6,6 +6,8 @@ import {withRouter} from 'react-router';
 import style from './nav.css';
 import ListIcon from '../navigation/ListIcon';
 import MapIcon from '../navigation/MapIcon';
+import ArrowRight from '../navigation/ArrowRight';
+import ArrowLeft from '../navigation/ArrowLeft';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
 
@@ -19,19 +21,29 @@ class Navigation extends React.Component<*, *> {
 
     return (
       <nav className={style.navContainer}>
-        <div className={style.navLogo}>logo</div>
         {detailViewVisible ? (
-          <Link to="/" className={style.iconList}>
-            <button>back</button>
-          </Link>
-        ) : isMapVisible ? (
-          <Link to="/" className={style.iconList}>
-            <ListIcon />
-          </Link>
+          this.props.match.params.timespan === 'present' ? (
+            <Link to="/" className={style.backOnLeft}>
+              <ArrowLeft />
+            </Link>
+          ) : (
+            <Link to="/" className={style.iconList}>
+              <ArrowRight />
+            </Link>
+          )
         ) : (
-          <Link to="/map" className={style.iconList}>
-            <MapIcon />
-          </Link>
+          <React.Fragment>
+            <div className={style.navLogo}>logo</div>
+            {isMapVisible ? (
+              <Link to="/" className={style.iconList}>
+                <ListIcon />
+              </Link>
+            ) : (
+              <Link to="/map" className={style.iconList}>
+                <MapIcon />
+              </Link>
+            )}
+          </React.Fragment>
         )}
       </nav>
     );

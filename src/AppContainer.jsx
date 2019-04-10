@@ -24,7 +24,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
   constructor(props) {
     super(props);
 
-    // props.initServiceWorker();
+    props.initServiceWorker();
   }
 
   state = {
