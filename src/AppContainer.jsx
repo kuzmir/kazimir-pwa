@@ -9,7 +9,7 @@ import {withLocale} from './utils/locale/withLocale';
 import Layout from './components/layout/Layout';
 import type {LocalePropsType} from './utils/locale/LocaleController';
 
-const DATA_URL = 'https://kazimir.app/streets.json';
+const DATA_URL = '/streets.json';
 
 type PropsType = {} & LocalePropsType;
 

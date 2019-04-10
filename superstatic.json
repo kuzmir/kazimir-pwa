@@ -4,6 +4,14 @@
     {
       "source": "/**",
       "destination": "/index.html"
+    },
+    {
+      "source": "/streets.json",
+      "destination": "/streets.json"
+    },
+    {
+      "source": "/manifest.json",
+      "destination": "/manifest.json"
     }
   ]
 }
