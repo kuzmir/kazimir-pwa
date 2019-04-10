@@ -1,12 +1,23 @@
 .navContainer {
     position: relative;
     height: 40px;
+    padding-bottom: 8px;
 }
 
 .navLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     left: 8px;
     top: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.navLogo img {
+    height: 100%;
+    width: auto;
 }
 
 .backOnLeft {

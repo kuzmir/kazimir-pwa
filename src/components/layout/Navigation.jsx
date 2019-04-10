@@ -33,7 +33,9 @@ class Navigation extends React.Component<*, *> {
           )
         ) : (
           <React.Fragment>
-            <div className={style.navLogo}>logo</div>
+            <div className={style.navLogo}>
+              <img src="../../img/kazimir-icon.png" />
+            </div>
             {isMapVisible ? (
               <Link to="/" className={style.iconList}>
                 <ListIcon />
