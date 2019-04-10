@@ -7,6 +7,8 @@ import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 import Layout from './components/layout/Layout';
+import MapContainer from './components/map/MapContainer';
+
 import type {LocalePropsType} from './utils/locale/LocaleController';
 
 const DATA_URL = '/streets.json';
@@ -22,7 +24,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
   constructor(props) {
     super(props);
 
-    props.initServiceWorker();
+    // props.initServiceWorker();
   }
 
   state = {
@@ -41,7 +43,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   renderStreetListWithMap = props => (
     <Layout>
-      <div>we display map here</div>
+      <MapContainer />
       <StreetList data={this.state.data} {...props} />
     </Layout>
   );
@@ -63,23 +65,10 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
     return (
       <div>
-        <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
-
         {!data.length ? (
           <div>loading here</div>
         ) : (
           <React.Fragment>
-            <div>current locale {this.props.locale}</div>
-            <div>
-              <button
-                onClick={() =>
-                  this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
-                }
-              >
-                change to {this.props.locale === 'pl' ? 'en' : 'pl'}
-              </button>
-            </div>
-
             <Router>
               <Switch>
                 <Route exact path="/" component={this.renderStreetList} />
@@ -95,6 +84,17 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 />
               </Switch>
             </Router>
+            <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
+            <div>current locale {this.props.locale}</div>
+            <div>
+              <button
+                onClick={() =>
+                  this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
+                }
+              >
+                change to {this.props.locale === 'pl' ? 'en' : 'pl'}
+              </button>
+            </div>
           </React.Fragment>
         )}
       </div>

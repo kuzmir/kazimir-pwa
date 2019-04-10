@@ -1,0 +1,19 @@
+.navContainer {
+    position: relative;
+    height: 40px;
+}
+
+.navLogo {
+    position: absolute;
+    left: 8px;
+    top: 0;
+}
+
+.iconList {
+    position: absolute;
+    background: white;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 8px;
+}

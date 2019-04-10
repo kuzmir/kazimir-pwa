@@ -3,6 +3,9 @@
 import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
+import style from './nav.css';
+import ListIcon from '../navigation/ListIcon';
+import MapIcon from '../navigation/MapIcon';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
 
@@ -15,18 +18,19 @@ class Navigation extends React.Component<*, *> {
     );
 
     return (
-      <nav>
+      <nav className={style.navContainer}>
+        <div className={style.navLogo}>logo</div>
         {detailViewVisible ? (
-          <Link to="/">
+          <Link to="/" className={style.iconList}>
             <button>back</button>
           </Link>
         ) : isMapVisible ? (
-          <Link to="/">
-            <button>switch to list</button>
+          <Link to="/" className={style.iconList}>
+            <ListIcon />
           </Link>
         ) : (
-          <Link to="/map">
-            <button>switch to map</button>
+          <Link to="/map" className={style.iconList}>
+            <MapIcon />
           </Link>
         )}
       </nav>
