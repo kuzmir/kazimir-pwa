@@ -17,14 +17,24 @@ class Street extends React.Component<PropsType> {
   render() {
     const {name, id} = this.props;
 
+    const itemBackgroundStyles = {
+      backgroundImage: `url(${
+        this.props.places.present[0].photos[0].images.small
+      })`,
+      backgroundSize: '100%',
+      backgroundPosition: 'center center',
+      minHeight: '100px'
+    };
+
     return (
-      <div className={style.list}>
+      <div className={style.list} style={itemBackgroundStyles}>
+        <div className={style.listItemCover} />
         <Link to={`/street/${id}/past`} className={style.streetNavIcon}>
-          <ArrowLeftIcon />
+          <ArrowLeftIcon color="white" />
         </Link>
-        <h3>{name}</h3>
+        <h3 className={style.itemHeadline}>{name}</h3>
         <Link to={`/street/${id}/present`} className={style.streetNavIcon}>
-          <ArrowRightIcon />
+          <ArrowRightIcon color="white" />
         </Link>
       </div>
     );
