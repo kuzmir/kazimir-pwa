@@ -6,6 +6,8 @@ import {withLocale} from '../../utils/locale/withLocale';
 import {withRouter} from 'react-router';
 // TODO set albsolute paths webpack :)
 import type {LocalePropsType} from '../../utils/locale/LocaleContext';
+import ArrowLeftIcon from '../navigation/ArrowLeft';
+import ArrowRightIcon from '../navigation/ArrowRight';
 
 import style from './list.css';
 
@@ -15,11 +17,25 @@ class Street extends React.Component<PropsType> {
   render() {
     const {name, id} = this.props;
 
+    const itemBackgroundStyles = {
+      backgroundImage: `url(${
+        this.props.places.present[0].photos[0].images.small
+      })`,
+      backgroundSize: '100%',
+      backgroundPosition: 'center center',
+      minHeight: '100px'
+    };
+
     return (
-      <div className={style.list}>
-        <Link to={`/street/${id}/past`}>Past</Link>
-        <h1>{name}</h1>
-        <Link to={`/street/${id}/present`}>Present</Link>
+      <div className={style.list} style={itemBackgroundStyles}>
+        <div className={style.listItemCover} />
+        <Link to={`/street/${id}/past`} className={style.streetNavIcon}>
+          <ArrowLeftIcon color="white" />
+        </Link>
+        <h3 className={style.itemHeadline}>{name}</h3>
+        <Link to={`/street/${id}/present`} className={style.streetNavIcon}>
+          <ArrowRightIcon color="white" />
+        </Link>
       </div>
     );
   }

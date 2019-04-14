@@ -1,8 +1,16 @@
 // @flow
 
 import * as React from 'react';
+import classnames from 'classnames';
+import {isTimespan, PRESENT} from '../../utils/timespan';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
+import style from './navigation.css';
+import ListIcon from '../navigation/ListIcon';
+import MapIcon from '../navigation/MapIcon';
+import ArrowRight from '../navigation/ArrowRight';
+import ArrowLeft from '../navigation/ArrowLeft';
+import Logo from '../navigation/Logo';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
 
@@ -15,19 +23,38 @@ class Navigation extends React.Component<*, *> {
     );
 
     return (
-      <nav>
+      <nav className={style.navContainer}>
         {detailViewVisible ? (
-          <Link to="/">
-            <button>back</button>
-          </Link>
-        ) : isMapVisible ? (
-          <Link to="/">
-            <button>switch to list</button>
-          </Link>
+          isTimespan(this.props.match.params.timespan) === PRESENT ? (
+            <Link to="/" className={style.backOnLeft}>
+              <ArrowLeft />
+            </Link>
+          ) : (
+            <Link
+              to="/"
+              className={classnames(
+                style.navigationIcon,
+                style.navigationIconRight
+              )}
+            >
+              <ArrowRight />
+            </Link>
+          )
         ) : (
-          <Link to="/map">
-            <button>switch to map</button>
-          </Link>
+          <React.Fragment>
+            <div className={style.navLogo}>
+              <Logo />
+            </div>
+            {isMapVisible ? (
+              <Link to="/" className={style.navigationIcon}>
+                <ListIcon />
+              </Link>
+            ) : (
+              <Link to="/map" className={style.navigationIcon}>
+                <MapIcon />
+              </Link>
+            )}
+          </React.Fragment>
         )}
       </nav>
     );

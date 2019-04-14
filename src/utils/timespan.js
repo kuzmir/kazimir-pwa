@@ -3,3 +3,5 @@ export const PRESENT = 'present';
 
 export const getOpositeTimespan = timespan =>
   timespan === PAST ? PRESENT : PAST;
+
+export const isTimespan = timespan => timespan;

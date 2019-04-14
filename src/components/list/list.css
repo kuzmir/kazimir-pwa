@@ -1,7 +1,30 @@
 .list {
+  position: relative;
   padding: 20px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.listItemCover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.streetNavIcon {
+  position: inherit;
+  width: 40px;
+  height: 40px;
+}
+
+.itemHeadline {
+  color: white;
+  position: inherit;
 }
