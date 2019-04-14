@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import StreetMap from './components/StreetMap';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
@@ -43,7 +44,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   renderStreetListWithMap = props => (
     <Layout>
-      <MapContainer />
+      <MapContainer data={this.state.data} {...props} />
       <StreetList data={this.state.data} {...props} />
     </Layout>
   );
