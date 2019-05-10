@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import StreetMap from './components/StreetMap';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
