@@ -30,22 +30,45 @@ module.exports = env => {
       rules: [
         {
           test: /\.(woff|woff2)$/,
-          loader: 'file-loader',
-          options: {
-            name: 'fonts/[name]_[hash].[ext]'
-          }
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'fonts/[name]_[hash].[ext]'
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(png|jpg|jpeg|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'images/[name].[ext]'
+              }
+            }
+          ]
         },
         {
           test: /\.svg$/,
-          loader: 'svg-sprite-loader'
+          use: [{loader: 'svg-sprite-loader'}]
         },
         {
           test: /\.js|.jsx$/,
-          loader: 'babel-loader',
-          include: [SRC_PATH, /node_modules\/style-guide/]
+          include: [SRC_PATH, /node_modules\/style-guide/],
+          use: [{loader: 'babel-loader'}]
+        },
+        {
+          test: /\leaflet.css$/,
+          use: [
+            {loader: 'style-loader'},
+            {loader: 'css-loader'}
+          ]
         },
         {
           test: /\.scss|.css$/,
+          exclude: /\leaflet.css$/,
           use: [
             {
               loader: 'style-loader'
@@ -74,8 +97,12 @@ module.exports = env => {
       }),
       new CopyWebpackPlugin([
         {
-          from: path.join(SRC_PATH, 'img'),
-          to: path.join(DIST_PATH, 'img')
+          from: path.join(SRC_PATH, 'images'),
+          to: path.join(DIST_PATH, 'images')
+        },
+        {
+          from: path.join(NODE_MODULES_PATH, 'leaflet', 'dist', 'images'),
+          to: path.join(DIST_PATH, 'images')
         },
         {
           from: path.join(SRC_PATH, 'manifest.json'),

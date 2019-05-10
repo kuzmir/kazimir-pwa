@@ -43,7 +43,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   renderStreetListWithMap = props => (
     <Layout>
-      <MapContainer />
+      <MapContainer data={this.state.data} {...props} />
       <StreetList data={this.state.data} {...props} />
     </Layout>
   );
@@ -74,7 +74,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 <Route exact path="/" component={this.renderStreetList} />
                 <Route
                   exact
-                  path="/map"
+                  path="/map/:id"
                   component={this.renderStreetListWithMap}
                 />
                 <Route
