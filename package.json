@@ -19,7 +19,6 @@
     "@storybook/addon-knobs": "^4.0.9",
     "@storybook/addon-options": "^4.0.8",
     "@storybook/react": "^4.0.9",
-    "add": "^2.0.6",
     "autoprefixer": "^9.3.1",
     "babel-core": "^7.0.0-bridge",
     "babel-eslint": "^10.0.1",
