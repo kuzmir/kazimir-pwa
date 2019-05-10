@@ -75,7 +75,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 <Route exact path="/" component={this.renderStreetList} />
                 <Route
                   exact
-                  path="/map"
+                  path="/map/:id"
                   component={this.renderStreetListWithMap}
                 />
                 <Route

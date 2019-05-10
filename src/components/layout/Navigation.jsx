@@ -50,7 +50,7 @@ class Navigation extends React.Component<*, *> {
                 <ListIcon />
               </Link>
             ) : (
-              <Link to="/map" className={style.navigationIcon}>
+              <Link to="/map/1" className={style.navigationIcon}>
                 <MapIcon />
               </Link>
             )}
