@@ -3,16 +3,17 @@
 import * as React from 'react';
 
 import Navigation from './Navigation';
+import style from './layout.css';
 
 type PropsType = {
   children: React.Node
 };
 
 const Layout = (props: PropsType) => (
-  <React.Fragment>
+  <div className={style.layoutContainer}>
     <Navigation {...props} />
     {props.children}
-  </React.Fragment>
+  </div>
 );
 
 export default Layout;

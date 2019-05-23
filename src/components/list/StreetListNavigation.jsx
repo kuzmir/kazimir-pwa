@@ -12,18 +12,21 @@ type PropsType = {
   children?: React.Node
 } & LocalePropsType;
 
-const StreetList = ({data, match}: PropsType) => ({
+const StreetListNavigation = ({data, match, showNavigation}: PropsType) => ({
   render() {
-    const navigationVariant = match.url === '/map' ? 'mapNavigation' : null;
-
     return (
-      <div className={navigationVariant}>
+      <div className="mapNavigation">
         {data.map((item, index) => (
-          <Street key={index} {...item} mapView={match.url === '/map'} />
+          <Street
+            key={index}
+            mapView={match.url === '/map'}
+            onClick={showNavigation}
+            {...item}
+          />
         ))}
       </div>
     );
   }
 });
 
-export default withRouter(withLocale()(StreetList));
+export default withRouter(withLocale()(StreetListNavigation));

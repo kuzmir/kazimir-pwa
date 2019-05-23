@@ -1,9 +1,4 @@
-body {
-  margin: 0;
-}
-
 .navContainer {
-  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 8px 16px;

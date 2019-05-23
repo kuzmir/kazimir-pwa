@@ -15,8 +15,9 @@ import style from './map.css';
 const MapContainer = ({street, streets}) => {
   const position = {
     lat: street.path.coordinates[1][0],
-    lng: street.path.coordinates[1][1],
+    lng: street.path.coordinates[1][1]
   };
+
   return (
     <div className={style.mapContainer}>
       <Map
@@ -26,9 +27,7 @@ const MapContainer = ({street, streets}) => {
         }}
         className={style.mapWrapper}
       >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <MapStreetLines streets={streets} activeId={street.id} />
       </Map>
     </div>
