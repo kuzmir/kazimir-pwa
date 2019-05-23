@@ -8,7 +8,6 @@ import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 import Layout from './components/layout/Layout';
 import MapContainer from './components/map/MapContainer';
-import StreetListNavigation from './components/list/StreetListNavigation';
 
 import type {LocalePropsType} from './utils/locale/LocaleController';
 
@@ -42,18 +41,11 @@ class AppContainer extends React.Component<PropsType, StateType> {
       });
   }
 
-  handleShowNavigation = () => {
-    console.log('item on map was clicked');
-  };
-
   renderStreetListWithMap = props => (
     <Layout>
       <MapContainer data={this.state.data} {...props} />
-      <StreetListNavigation
-        data={this.state.data}
-        showNavigation={this.handleShowNavigation}
-        {...props}
-      />
+      {/* <div>map here</div> */}
+      <StreetList mapView data={this.state.data} {...props} />
     </Layout>
   );
 
