@@ -44,6 +44,12 @@ const mapPropsToNewProps = ({match, data, locale}) => ({
   )}`
 });
 
+type TestPropsType = {
+  items: string,
+  streetName: string,
+  switchPath: string
+};
+
 export default withLocale()(
-  withRouter(withProps(mapPropsToNewProps, StreetDetail))
+  withRouter(withProps<TestPropsType>(mapPropsToNewProps, StreetDetail))
 );

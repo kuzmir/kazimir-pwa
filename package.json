@@ -8,7 +8,9 @@
   "scripts": {
     "build": "yarn webpack",
     "watch": "yarn webpack --watch & yarn run-server",
-    "run-server": "superstatic --port=3000 --compression --gzip --config=superstatic.json --live"
+    "run-server": "superstatic --port=3000 --compression --gzip --config=superstatic.json --live",
+    "js-test": "yarn jest",
+    "js-typecheck": "yarn flow"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
@@ -36,8 +38,7 @@
     "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-prettier": "^2.7.0",
     "file-loader": "^2.0.0",
-    "flow": "^0.2.3",
-    "frontend-tools-configs": "git+https://github.com/brainly/frontend-tools-configs.git#v16.2.7",
+    "flow-typed": "2.4.0",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
@@ -69,7 +70,7 @@
     "eslint-plugin-flowtype": "^2.42.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.10.0",
-    "flow-bin": "^0.82.0",
+    "flow-bin": "^0.98.1",
     "webpack-cli": "^3.1.1"
   }
 }

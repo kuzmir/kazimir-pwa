@@ -9,7 +9,7 @@ import {withLocale} from './utils/locale/withLocale';
 import Layout from './components/layout/Layout';
 import MapContainer from './components/map/MapContainer';
 
-import type {LocalePropsType} from './utils/locale/LocaleController';
+import type {LocalePropsType} from './utils/locale/LocaleContext';
 
 const DATA_URL = '/streets.json';
 

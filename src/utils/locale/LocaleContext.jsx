@@ -5,12 +5,12 @@ import {getDefaultBrowserLocale} from './localeUtils';
 
 const {Provider, Consumer} = React.createContext();
 
-export type LocalePropsType = {};
+// export type LocalePropsType = {};
 
 // locale: string,
 // setLocale: string => void
 
-type LocaleContextPropsType = {
+export type LocalePropsType = {
   children: React.Node
 };
 
@@ -24,19 +24,20 @@ export class LocaleContextProvider extends React.Component<
   LocalePropsType,
   LocaleStateType
 > {
-  state = {
+  state: LocaleStateType = {
     locale: getDefaultBrowserLocale()
   };
 
   handleSetLocale = (locale: string) => this.setState(() => ({locale}));
 
   render() {
-
     return (
-      <Provider value={{
-        locale: this.state.locale,
-        setLocale: this.handleSetLocale
-      }}>
+      <Provider
+        value={{
+          locale: this.state.locale,
+          setLocale: this.handleSetLocale
+        }}
+      >
         {this.props.children}
       </Provider>
     );
