@@ -20,7 +20,7 @@ const StreetList = ({mapView, data}: PropsType) => ({
     return (
       <div className={navigationVariant}>
         {data.map((item, index) => (
-          <Street key={index} {...item} />
+          <Street key={index} {...item} mapView={mapView ? mapView : null} />
         ))}
       </div>
     );

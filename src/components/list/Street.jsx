@@ -17,7 +17,7 @@ class Street extends React.Component<PropsType> {
   render() {
     const {name, id, mapView, match, history} = this.props;
 
-    console.log('asda', this.props);
+    console.log('asda', this.props, mapView);
 
     const itemBackgroundStylesList = {
       backgroundImage: `url(${
@@ -28,15 +28,11 @@ class Street extends React.Component<PropsType> {
       minHeight: '100px'
     };
 
-    const itemBackgroundStylesMap = {
-      maxHeight: '40px'
-    };
-
     return (
       <div
         className={style.list}
-        style={mapView ? itemBackgroundStylesMap : itemBackgroundStylesList}
-        onClick={() => history.push(`/map/${id}`)}
+        style={!mapView ? itemBackgroundStylesList : null}
+        onClick={mapView ? () => history.push(`/map/${id}`) : null}
       >
         <div className={style.listItemCover} />
         <Link to={`/street/${id}/past`} className={style.streetNavIcon}>
