@@ -16,18 +16,22 @@
   right: 0;
   background-color: #222;
   opacity: 0.7;
-  pointer-events: none;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .streetNavIcon {
   position: inherit;
   width: 40px;
   height: 40px;
+  z-index: 1;
 }
 
 .itemHeadline {
   color: white;
   position: inherit;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .mapNavigation {

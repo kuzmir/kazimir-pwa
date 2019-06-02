@@ -32,9 +32,11 @@ class Street extends React.Component<PropsType> {
       <div
         className={style.list}
         style={!mapView ? itemBackgroundStylesList : null}
-        onClick={mapView ? () => history.push(`/map/${id}`) : null}
       >
-        <div className={style.listItemCover} />
+        <div
+          className={style.listItemCover}
+          onClick={mapView ? () => history.push(`/map/${id}`) : null}
+        />
         <Link to={`/street/${id}/past`} className={style.streetNavIcon}>
           <ArrowLeftIcon color="white" />
         </Link>
