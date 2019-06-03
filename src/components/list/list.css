@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #eee;
 }
 
 .listItemCover {
@@ -13,18 +14,35 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: black;
-  opacity: 0.3;
-  pointer-events: none;
+  background-color: #222;
+  opacity: 0.7;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .streetNavIcon {
   position: inherit;
   width: 40px;
   height: 40px;
+  z-index: 1;
 }
 
 .itemHeadline {
   color: white;
   position: inherit;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mapNavigation {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-height: 30vh;
+  min-height: 30vh;
+  overflow-y: scroll;
+}
+
+.mapNavigation .list {
+  cursor: pointer;
 }

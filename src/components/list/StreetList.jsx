@@ -7,19 +7,22 @@ import Street from './Street';
 import {withRouter} from 'react-router';
 // TODO set albsolute paths webpack :)
 import type {LocalePropsType} from '../../utils/locale/LocaleController';
+import style from './list';
 
 type PropsType = {
   children?: React.Node
 } & LocalePropsType;
 
-const StreetList = ({data, match}: PropsType) => ({
+const StreetList = ({mapView, data}: PropsType) => ({
   render() {
+    const navigationVariant = mapView ? 'mapNavigation' : null;
+
     return (
-      <React.Fragment>
+      <div className={navigationVariant}>
         {data.map((item, index) => (
-          <Street key={index} {...item} />
+          <Street key={index} {...item} mapView={mapView ? mapView : null} />
         ))}
-      </React.Fragment>
+      </div>
     );
   }
 });

@@ -44,7 +44,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
   renderStreetListWithMap = props => (
     <Layout>
       <MapContainer data={this.state.data} {...props} />
-      <StreetList data={this.state.data} {...props} />
+      <StreetList mapView data={this.state.data} {...props} />
     </Layout>
   );
 

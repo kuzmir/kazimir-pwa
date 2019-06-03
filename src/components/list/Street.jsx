@@ -15,9 +15,11 @@ type PropsType = {} & LocalePropsType;
 
 class Street extends React.Component<PropsType> {
   render() {
-    const {name, id} = this.props;
+    const {name, id, mapView, match, history} = this.props;
 
-    const itemBackgroundStyles = {
+    console.log('asda', this.props, mapView);
+
+    const itemBackgroundStylesList = {
       backgroundImage: `url(${
         this.props.places.present[0].photos[0].images.small
       })`,
@@ -27,8 +29,14 @@ class Street extends React.Component<PropsType> {
     };
 
     return (
-      <div className={style.list} style={itemBackgroundStyles}>
-        <div className={style.listItemCover} />
+      <div
+        className={style.list}
+        style={!mapView ? itemBackgroundStylesList : null}
+      >
+        <div
+          className={style.listItemCover}
+          onClick={mapView ? () => history.push(`/map/${id}`) : null}
+        />
         <Link to={`/street/${id}/past`} className={style.streetNavIcon}>
           <ArrowLeftIcon color="white" />
         </Link>
