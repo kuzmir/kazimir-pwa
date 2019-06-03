@@ -22,39 +22,37 @@ class Navigation extends React.Component<*, *> {
       '/street'
     );
 
-    return (
-      <nav className={style.navContainer}>
-        {detailViewVisible ? (
-          isTimespan(this.props.match.params.timespan) === PRESENT ? (
-            <Link to="/" className={style.backOnLeft}>
-              <ArrowLeft />
-            </Link>
-          ) : (
-            <Link
-              to="/"
-              className={classnames(
-                style.navigationIcon,
-                style.navigationIconRight
-              )}
-            >
-              <ArrowRight />
-            </Link>
-          )
+    return detailViewVisible ? (
+      <React.Fragment>
+        {isTimespan(this.props.match.params.timespan) === PRESENT ? (
+          <Link
+            to="/"
+            className={classnames(style.navigationIcon, style.backOnLeft)}
+          >
+            <ArrowLeft color="#fff" />
+          </Link>
         ) : (
-          <React.Fragment>
-            <div className={style.navLogo}>
-              <Logo />
-            </div>
-            {isMapVisible ? (
-              <Link to="/" className={style.navigationIcon}>
-                <ListIcon />
-              </Link>
-            ) : (
-              <Link to="/map/1" className={style.navigationIcon}>
-                <MapIcon />
-              </Link>
-            )}
-          </React.Fragment>
+          <Link
+            to="/"
+            className={classnames(style.navigationIcon, style.backOnRight)}
+          >
+            <ArrowRight color="#fff" />
+          </Link>
+        )}
+      </React.Fragment>
+    ) : (
+      <nav className={style.navContainer}>
+        <div className={style.navLogo}>
+          <Logo />
+        </div>
+        {isMapVisible ? (
+          <Link to="/" className={style.navigationIcon}>
+            <ListIcon color="#000" />
+          </Link>
+        ) : (
+          <Link to="/map/1" className={style.navigationIcon}>
+            <MapIcon color="#000" />
+          </Link>
         )}
       </nav>
     );
