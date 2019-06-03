@@ -2,8 +2,7 @@
 
 import * as React from 'react';
 
-import {withRouter} from 'react-router';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import withProps from '../../utils/withProps';
 import {withLocale} from '../../utils/locale/withLocale';
 import MapStreetLines from './MapStreetLines';

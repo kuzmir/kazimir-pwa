@@ -1,9 +1,8 @@
 // @flow
 
 import * as React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
-import {withRouter} from 'react-router';
 // TODO set albsolute paths webpack :)
 import type {LocalePropsType} from '../../utils/locale/LocaleContext';
 import ArrowLeftIcon from '../navigation/ArrowLeft';
