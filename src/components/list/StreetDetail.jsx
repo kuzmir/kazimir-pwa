@@ -1,10 +1,9 @@
 // @flow
 
 import * as React from 'react';
-import classnames from 'classnames';
-import {withRouter} from 'react-router';
-import {Link} from 'react-router-dom';
 import withProps from '../../utils/withProps';
+import classnames from 'classnames';
+import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
 import {getOpositeTimespan} from '../../utils/timespan';
 import Flip from '../navigation/Flip';
