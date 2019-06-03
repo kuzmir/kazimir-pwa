@@ -1,0 +1,58 @@
+.topbarHeadline {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.topbarHeadlinePresent {
+    background: #40a9bc;
+}
+
+.topbarHeadlinePast {
+    background: #d8c542;
+}
+
+.flipIconContainer {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    left: calc(50% - 40px);
+    padding: 4px;
+}
+
+.flipIconContainerToPast {
+    background-color: #d8c542;
+}
+
+.flipIconContainerToPresent {
+    background: #40a9bc;
+}
+
+.streetItemHeadline {
+    font-size: 24px;
+    line-height: 30px;
+    margin-left: 16px;
+}
+
+.itemDescriptionContainer {
+    margin: 0 16px;
+}
+
+.streetItemDescription {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.imagesContainer {
+    max-height: 220px;
+    overflow: hidden;
+}
+
+.imagesContainer img {
+    width: 100%;
+    height: auto;
+}

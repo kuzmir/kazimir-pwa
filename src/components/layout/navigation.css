@@ -4,6 +4,10 @@
   padding: 8px 16px;
 }
 
+.navContainerDeatils {
+  position: absolute;
+}
+
 .navLogo {
   display: flex;
   justify-content: center;
@@ -26,4 +30,16 @@
 .navigationIcon svg {
   width: 40px;
   height: 40px;
+}
+
+.backOnLeft {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.backOnRight {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
