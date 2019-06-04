@@ -7,7 +7,7 @@ module.exports = {
     '.*': 'babel-jest'
   },
   moduleNameMapper: {
-    '\\.(scss)$': 'identity-obj-proxy'
+    '\\.(css)$': 'identity-obj-proxy'
   },
   moduleDirectories: ['<rootDir>/src/', 'node_modules'],
   modulePathIgnorePatterns: ['dist'],

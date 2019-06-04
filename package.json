@@ -8,7 +8,8 @@
   "scripts": {
     "build": "yarn webpack",
     "watch": "yarn webpack --watch & yarn run-server",
-    "run-server": "superstatic --port=3000 --compression --gzip --config=superstatic.json --live"
+    "run-server": "superstatic --port=3000 --compression --gzip --config=superstatic.json --live",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
