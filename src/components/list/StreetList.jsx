@@ -7,7 +7,6 @@ import Street from './Street';
 import {withRouter} from 'react-router-dom';
 // TODO set albsolute paths webpack :)
 import type {LocalePropsType} from '../../utils/locale/LocaleController';
-import style from './list';
 
 type PropsType = {
   children?: React.Node
