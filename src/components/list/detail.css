@@ -1,12 +1,12 @@
-@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeS from '../navigation/config.css';
+@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeS, sizeL from '../navigation/config.css';
 @value imageMaxHegiht: 220px;
 
 .flipIconContainer {
-  width: 40px;
-  height: 40px;
+  width: sizeL;
+  height: sizeL;
   border-radius: 50%;
   position: fixed;
-  bottom: 40px;
+  bottom: sizeL;
   left: calc(50% - 40px);
   padding: 4px;
 
@@ -22,7 +22,7 @@
 .streetItemHeadline {
     font-size: textFontSizeL;
     line-height: textLineHeightL;
-    margin-left: size_s;
+    margin-left: sizeS;
 }
 
 .itemDescriptionContainer {
