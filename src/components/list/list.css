@@ -1,37 +1,38 @@
-.list {
+@value sizeM, coloLightGray, coloDarkGray, colorWhite, sizeL from '../navigation/config.css';
+
+.listItem {
   position: relative;
-  padding: 20px 0;
+  padding: sizeM 0;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
-}
+  border-bottom: 1px solid coloLightGray;
 
-.listItemCover {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #222;
-  opacity: 0.7;
-  z-index: 1;
-  cursor: pointer;
-}
+  &--cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: coloDarkGray;
+    opacity: 0.7;
+    z-index: 1;
+  }
 
-.streetNavIcon {
-  position: inherit;
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-}
+  &--navIcon {
+    position: inherit;
+    width: sizeL;
+    height: sizeL;
+    z-index: 1;
+  }
 
-.itemHeadline {
-  color: white;
-  position: inherit;
-  z-index: 1;
-  pointer-events: none;
+  &--name {
+    color: colorWhite;
+    position: inherit;
+    z-index: 1;
+    pointer-events: none;
+  }
 }
 
 .mapNavigation {
@@ -41,8 +42,8 @@
   max-height: 30vh;
   min-height: 30vh;
   overflow-y: scroll;
-}
 
-.mapNavigation .list {
-  cursor: pointer;
+  .listItem {
+    cursor: pointer;
+  }
 }

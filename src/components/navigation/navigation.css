@@ -1,0 +1,63 @@
+@value colorMustard, colorBlue, colorWhite, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL from '../navigation/config.css';
+@value mainLogoMaxWidth: 180px;
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: sizeXs sizeS;
+
+  &--detail {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: colorWhite;
+
+    &--present {
+      background: colorBlue;
+    }
+
+    &--past {
+      background: colorMustard;
+    }
+  }
+}
+
+.navLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: mainLogoMaxWidth;
+  height: sizeL;
+}
+
+.navLogo img {
+  height: 100%;
+  width: auto;
+}
+
+.navigationIcon {    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigationIcon {
+  position: absolute;
+  top: sizeXs;
+
+  svg {
+    max-width: sizeL;
+    max-height: sizeL;
+    width: sizeL;
+    height: sizeL;
+  }
+
+  &--onRight {
+    right: sizeXs;
+  }
+
+  &--onLeft {
+    left: sizeXs;
+  }
+}

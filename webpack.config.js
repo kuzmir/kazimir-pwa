@@ -4,6 +4,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const postcss = require('postcss');
+const postcssPluginsPost = require('./config/postcssPluginsPost');
 
 const DIST_PATH = path.resolve(__dirname, 'dist');
 const SRC_PATH = path.resolve(__dirname, 'src');
@@ -14,16 +17,16 @@ module.exports = env => {
 
   return {
     entry: {
-      index: path.join(SRC_PATH, 'index.jsx')
+      index: path.join(SRC_PATH, 'index.jsx'),
     },
     output: {
       path: DIST_PATH,
       filename: '[name]_[hash].js',
-      publicPath: '/'
+      publicPath: '/',
     },
     resolve: {
       modules: [SRC_PATH, NODE_MODULES_PATH],
-      extensions: ['.js', '.jsx', '.css']
+      extensions: ['.js', '.jsx', '.css'],
     },
     mode: isProduction ? 'production' : 'development',
     module: {
@@ -34,10 +37,10 @@ module.exports = env => {
             {
               loader: 'file-loader',
               options: {
-                name: 'fonts/[name]_[hash].[ext]'
-              }
-            }
-          ]
+                name: 'fonts/[name]_[hash].[ext]',
+              },
+            },
+          ],
         },
         {
           test: /\.(png|jpg|jpeg|gif)$/i,
@@ -45,85 +48,86 @@ module.exports = env => {
             {
               loader: 'file-loader',
               options: {
-                name: 'images/[name].[ext]'
-              }
-            }
-          ]
+                name: 'images/[name].[ext]',
+              },
+            },
+          ],
         },
         {
           test: /\.svg$/,
-          use: [{loader: 'svg-sprite-loader'}]
+          use: [{loader: 'svg-sprite-loader'}],
         },
         {
           test: /\.js|.jsx$/,
           include: [SRC_PATH, /node_modules\/style-guide/],
-          use: [{loader: 'babel-loader'}]
+          use: [{loader: 'babel-loader'}],
         },
         {
           test: /\leaflet.css$/,
-          use: [
-            {loader: 'style-loader'},
-            {loader: 'css-loader'}
-          ]
+          use: [{loader: 'style-loader'}, {loader: 'css-loader'}],
         },
         {
-          test: /\.scss|.css$/,
+          test: /\.css$/,
           exclude: /\leaflet.css$/,
           use: [
-            {
-              loader: 'style-loader'
-            },
+            MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
                 modules: true,
                 localIdentName: '[local]',
                 camelCase: 'only',
-                minimize: isProduction
-              }
-            }
-          ]
-        }
-      ]
+                minimize: isProduction,
+              },
+            },
+            'postcss-loader',
+          ],
+        },
+      ],
     },
     optimization: {
-      minimize: isProduction
+      minimize: isProduction,
     },
     plugins: [
       new HtmlWebpackPlugin({
         filename: path.join(DIST_PATH, 'index.html'),
         template: path.join(SRC_PATH, 'index.html'),
-        chunks: ['index']
+        chunks: ['index'],
       }),
       new CopyWebpackPlugin([
         {
           from: path.join(SRC_PATH, 'images'),
-          to: path.join(DIST_PATH, 'images')
+          to: path.join(DIST_PATH, 'images'),
         },
         {
           from: path.join(NODE_MODULES_PATH, 'leaflet', 'dist', 'images'),
-          to: path.join(DIST_PATH, 'images')
+          to: path.join(DIST_PATH, 'images'),
         },
         {
           from: path.join(SRC_PATH, 'manifest.json'),
-          to: path.join(DIST_PATH, 'manifest.json')
+          to: path.join(DIST_PATH, 'manifest.json'),
         },
         {
           from: path.join(SRC_PATH, 'streets.json'),
-          to: path.join(DIST_PATH, 'streets.json')
-        }
+          to: path.join(DIST_PATH, 'streets.json'),
+        },
       ]),
       new MiniCssExtractPlugin({
         filename: '[name]_[hash].css',
-        chunkFilename: '[id]_[hash].css'
+        chunkFilename: '[id]_[hash].css',
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.css$/g,
+        cssProcessor: postcss(postcssPluginsPost({mode: isProduction})),
+        canPrint: true,
       }),
       new CleanWebpackPlugin(path.resolve(DIST_PATH, '*')),
       new WorkboxPlugin.GenerateSW({
         swDest: 'serviceWorker.js',
         clientsClaim: true,
         skipWaiting: true,
-        offlineGoogleAnalytics: true
-      })
-    ]
+        offlineGoogleAnalytics: true,
+      }),
+    ],
   };
 };

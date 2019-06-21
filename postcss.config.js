@@ -1,3 +1,5 @@
+const postcssPluginsPre = require('./config/postcssPluginsPre');
+
 module.exports = {
-  plugins: [require('autoprefixer')]
+  plugins: postcssPluginsPre(),
 };

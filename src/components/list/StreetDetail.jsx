@@ -6,22 +6,22 @@ import classnames from 'classnames';
 import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
 import {getOpositeTimespan} from '../../utils/timespan';
-import Navigation from '../layout/Navigation';
-import Flip from '../navigation/Flip';
+import Navigation from '../navigation/Navigation';
+import Flip from '../navigationIcons/Flip';
 import style from './detail.css';
 
 type StreetType = {
   details?: Array<any>,
   id?: number,
   photos?: Array<any>,
-  updated_at?: string
+  updated_at?: string,
 };
 
 type PropsType = {
   items: Array<StreetType>,
   streetName: string,
   switchPath: string,
-  navigationState: string
+  navigationState: string,
 };
 
 const StreetDetail = ({
@@ -29,7 +29,7 @@ const StreetDetail = ({
   streetName,
   locale,
   navigationState,
-  switchPath
+  switchPath,
 }: PropsType) => (
   <>
     <Navigation streetName={streetName} />
@@ -75,7 +75,7 @@ const mapPropsToNewProps = ({match, data, locale}) => ({
   navigationState: match.params.timespan,
   switchPath: `/street/${match.params.id}/${getOpositeTimespan(
     match.params.timespan
-  )}`
+  )}`,
 });
 
 export default withLocale()(
