@@ -1,7 +1,7 @@
 export const initServiceWorker = () => {
   if (navigator.serviceWorker) {
     const options = {
-      scope: '/',
+      scope: '/'
     };
 
     navigator.serviceWorker
