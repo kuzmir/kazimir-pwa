@@ -3,5 +3,10 @@ module.exports = {
     jest: true
   },
   parser: 'babel-eslint',
-  extends: 'brainly-react'
+  extends: 'brainly-react',
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 };

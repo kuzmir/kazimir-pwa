@@ -3,19 +3,25 @@
 import {
   isOnline,
   onNetworkStatusChange,
-  offNetworkStatusChange
+  offNetworkStatusChange,
 } from './networkStatusUtils';
 
 describe('networkStatusUtils', () => {
   describe('isOnline', () => {
     it('returns false when window.navigator.onLine is false', () => {
-      Object.defineProperty(window.navigator, 'onLine', {value: false, configurable: true});
+      Object.defineProperty(window.navigator, 'onLine', {
+        value: false,
+        configurable: true,
+      });
 
       expect(isOnline()).toEqual(false);
     });
 
     it('returns true when window.navigator.onLine is true', () => {
-      Object.defineProperty(window.navigator, 'onLine', {value: true, configurable: true});
+      Object.defineProperty(window.navigator, 'onLine', {
+        value: true,
+        configurable: true,
+      });
 
       expect(isOnline()).toEqual(true);
     });
