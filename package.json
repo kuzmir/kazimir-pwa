@@ -12,7 +12,7 @@
     "js-lint": "yarn eslint src",
     "js-typecheck": "yarn flow",
     "js-unit": "yarn jest",
-    "test": "yarn js-lint && yarn js-typecheck && yarn js-unit"
+    "test": "yarn js-lint && yarn js-unit"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
