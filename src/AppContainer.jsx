@@ -6,10 +6,11 @@ import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
-import Layout from './components/layout/Layout';
 import MapContainer from './components/map/MapContainer';
+import Navigation from './components/layout/Navigation';
+import './components/layout/layout.css';
 
-import type {LocalePropsType} from './utils/locale/LocaleController';
+import type {LocalePropsType} from './utils/locale/LocaleContext';
 
 const DATA_URL = '/streets.json';
 
@@ -42,33 +43,31 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 
   renderStreetListWithMap = props => (
-    <Layout>
+    <div>
+      <Navigation />
       <MapContainer data={this.state.data} {...props} />
       <StreetList mapView data={this.state.data} {...props} />
-    </Layout>
+    </div>
   );
 
   renderStreetList = props => (
-    <Layout>
+    <div>
+      <Navigation />
       <StreetList data={this.state.data} {...props} />
-    </Layout>
+    </div>
   );
 
-  renderDetail = () => (
-    <Layout>
-      <StreetDetail data={this.state.data} />
-    </Layout>
-  );
+  renderDetail = () => <StreetDetail data={this.state.data} />;
 
   render() {
     const {data} = this.state;
 
     return (
-      <div>
+      <>
         {!data.length ? (
           <div>loading here</div>
         ) : (
-          <React.Fragment>
+          <>
             <Router>
               <Switch>
                 <Route exact path="/" component={this.renderStreetList} />
@@ -95,9 +94,9 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 change to {this.props.locale === 'pl' ? 'en' : 'pl'}
               </button>
             </div>
-          </React.Fragment>
+          </>
         )}
-      </div>
+      </>
     );
   }
 }

@@ -4,8 +4,20 @@
   padding: 8px 16px;
 }
 
-.navContainerDeatils {
-  position: absolute;
+.navContainerDetail {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.navContainerDetailPresent {
+  background: #40a9bc;
+}
+
+.navContainerDetailPast {
+  background: #d8c542;
 }
 
 .navLogo {
@@ -28,6 +40,8 @@
 }
 
 .navigationIcon svg {
+  max-width: 40px;
+  max-height: 40px;
   width: 40px;
   height: 40px;
 }

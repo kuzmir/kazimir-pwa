@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
 import {getOpositeTimespan} from '../../utils/timespan';
+import Navigation from '../layout/Navigation';
 import Flip from '../navigation/Flip';
 import style from './detail.css';
 
@@ -30,17 +31,8 @@ const StreetDetail = ({
   navigationState,
   switchPath
 }: PropsType) => (
-  <React.Fragment>
-    <div
-      className={classnames(
-        style.topbarHeadline,
-        navigationState === 'present'
-          ? style.topbarHeadlinePresent
-          : style.topbarHeadlinePast
-      )}
-    >
-      <h3>{streetName}</h3>
-    </div>
+  <>
+    <Navigation streetName={streetName} />
     {items.map((item, index) => (
       <div key={index} className={style.streetDetailContainer}>
         <h4 className={style.streetItemHeadline}>
@@ -71,7 +63,7 @@ const StreetDetail = ({
         <Flip color="#fff" />
       </Link>
     </div>
-  </React.Fragment>
+  </>
 );
 
 const mapPropsToNewProps = ({match, data, locale}) => ({
