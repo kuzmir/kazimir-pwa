@@ -43,18 +43,18 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 
   renderStreetListWithMap = props => (
-    <div>
+    <>
       <Navigation />
       <MapContainer data={this.state.data} {...props} />
       <StreetList mapView data={this.state.data} {...props} />
-    </div>
+    </>
   );
 
   renderStreetList = props => (
-    <div>
+    <>
       <Navigation />
       <StreetList data={this.state.data} {...props} />
-    </div>
+    </>
   );
 
   renderDetail = () => <StreetDetail data={this.state.data} />;

@@ -16,8 +16,6 @@ class Street extends React.Component<PropsType> {
   render() {
     const {name, id, mapView, match, history} = this.props;
 
-    console.log('asda', this.props, mapView);
-
     const itemBackgroundStylesList = {
       backgroundImage: `url(${
         this.props.places.present[0].photos[0].images.small
