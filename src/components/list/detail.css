@@ -1,27 +1,11 @@
-.topbarHeadline {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
-.topbarHeadlinePresent {
-    background: #40a9bc;
-}
-
-.topbarHeadlinePast {
-    background: #d8c542;
-}
-
 .flipIconContainer {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 40px;
-    left: calc(50% - 40px);
-    padding: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 40px;
+  left: calc(50% - 40px);
+  padding: 4px;
 }
 
 .flipIconContainerToPast {

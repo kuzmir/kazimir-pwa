@@ -24,19 +24,35 @@ class Navigation extends React.Component<*, *> {
     return detailViewVisible ? (
       <React.Fragment>
         {isTimespan(this.props.match.params.timespan) === PRESENT ? (
-          <Link
-            to="/"
-            className={classnames(style.navigationIcon, style.backOnLeft)}
+          <nav
+            className={classnames(
+              style.navContainerDetail,
+              style.navContainerDetailPresent
+            )}
           >
-            <ArrowLeft color="#fff" />
-          </Link>
+            <Link
+              to="/"
+              className={classnames(style.navigationIcon, style.backOnLeft)}
+            >
+              <ArrowLeft color="#fff" />
+            </Link>
+            <h3>{this.props.streetName}</h3>
+          </nav>
         ) : (
-          <Link
-            to="/"
-            className={classnames(style.navigationIcon, style.backOnRight)}
+          <nav
+            className={classnames(
+              style.navContainerDetail,
+              style.navContainerDetailPast
+            )}
           >
-            <ArrowRight color="#fff" />
-          </Link>
+            <h3>{this.props.streetName}</h3>
+            <Link
+              to="/"
+              className={classnames(style.navigationIcon, style.backOnRight)}
+            >
+              <ArrowRight color="#fff" />
+            </Link>
+          </nav>
         )}
       </React.Fragment>
     ) : (
