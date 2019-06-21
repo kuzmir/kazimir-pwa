@@ -1,3 +1,6 @@
+@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeS from '../navigation/config.css';
+@value imageMaxHegiht: 220px;
+
 .flipIconContainer {
   width: 40px;
   height: 40px;
@@ -6,33 +9,33 @@
   bottom: 40px;
   left: calc(50% - 40px);
   padding: 4px;
-}
 
-.flipIconContainerToPast {
-    background-color: #d8c542;
-}
+  &--ToPast {
+    background-color: colorMustard;
+  }
 
-.flipIconContainerToPresent {
-    background: #40a9bc;
+  &--ToPresent {
+    background-color: colorBlue;
+  }
 }
 
 .streetItemHeadline {
-    font-size: 24px;
-    line-height: 30px;
-    margin-left: 16px;
+    font-size: textFontSizeL;
+    line-height: textLineHeightL;
+    margin-left: size_s;
 }
 
 .itemDescriptionContainer {
-    margin: 0 16px;
+    margin: 0 sizeS;
 }
 
 .streetItemDescription {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: textFontSizeM;
+    line-height: textLineHeightM;
 }
 
 .imagesContainer {
-    max-height: 220px;
+    max-height: imageMaxHegiht;
     overflow: hidden;
 }
 

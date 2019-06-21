@@ -1,0 +1,23 @@
+@value colorMustard: #d8c542;
+@value colorBlue: #40a9bc;
+@value colorWhite: #ffffff;
+@value coloLightGray: #eeeeee;
+@value coloDarkGray: #222222;
+
+@value sizeXs: 8px;
+@value sizeS: 16px;
+@value sizeM: 24px;
+@value sizeL: 40px;
+@value sizeXl: 64px;
+
+@value textFontSizeXs: 12px;
+@value textFontSizeS: 15px;
+@value textFontSizeM: 18px;
+@value textFontSizeL: 24px;
+@value textFontSizeXl: 33px;
+
+@value textLineHeightXs: 16px;
+@value textLineHeightS: 20px;
+@value textLineHeightM: 24px;
+@value textLineHeightL: 32px;
+@value textLineHeightXl: 44px;

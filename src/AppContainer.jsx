@@ -7,8 +7,8 @@ import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 import MapContainer from './components/map/MapContainer';
-import Navigation from './components/layout/Navigation';
-import './components/layout/layout.css';
+import Navigation from './components/navigation/Navigation';
+import './components/navigation/main.css';
 
 import type {LocalePropsType} from './utils/locale/LocaleContext';
 
@@ -18,7 +18,7 @@ type PropsType = {} & LocalePropsType;
 
 // TODO update flow types
 type StateType = {
-  data: Array<Object>
+  data: Array<Object>,
 };
 
 class AppContainer extends React.Component<PropsType, StateType> {
@@ -29,7 +29,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 
   state = {
-    data: []
+    data: [],
   };
 
   componentDidMount() {
@@ -37,7 +37,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
       .then(response => response.json())
       .then(transformedData => {
         this.setState(() => ({
-          data: transformedData
+          data: transformedData,
         }));
       });
   }
