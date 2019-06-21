@@ -10,11 +10,11 @@
   left: calc(50% - 40px);
   padding: 4px;
 
-  &--ToPast {
+  &--toPast {
     background-color: colorMustard;
   }
 
-  &--ToPresent {
+  &--toPresent {
     background-color: colorBlue;
   }
 }
