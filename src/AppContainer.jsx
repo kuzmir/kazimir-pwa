@@ -83,7 +83,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
                 />
               </Switch>
             </Router>
-            <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
+            {/* <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
             <div>current locale {this.props.locale}</div>
             <div>
               <button
@@ -93,7 +93,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
               >
                 change to {this.props.locale === 'pl' ? 'en' : 'pl'}
               </button>
-            </div>
+            </div> */}
           </>
         )}
       </>

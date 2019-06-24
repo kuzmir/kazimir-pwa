@@ -33,24 +33,38 @@ const StreetDetail = ({
 }: PropsType) => (
   <>
     <Navigation streetName={streetName} />
-    {items.map((item, index) => (
-      <div key={index} className={style.streetDetailContainer}>
-        <h4 className={style.streetItemHeadline}>
-          {item.details[locale].name}
-        </h4>
-        <div className={style.imagesContainer}>
-          <img
-            src={item.photos[0].images.small}
-            alt={item.details[locale].name}
-          />
-        </div>
-        <div className={style.itemDescriptionContainer}>
-          <p className={style.streetItemDescription}>
-            {item.details[locale].description}
-          </p>
-        </div>
+    <div
+      className={classnames(
+        style.fcBox,
+        navigationState === 'present' ? style.fcBoxFlipped : null
+      )}
+    >
+      <div
+        className={classnames(
+          style.fcBoxCard,
+          navigationState === 'present' ? style.fcBoxCardFlipped : null
+        )}
+      >
+        {items.map((item, index) => (
+          <div key={index} className={style.streetDetailContainer}>
+            <h4 className={style.streetItemHeadline}>
+              {item.details[locale].name}
+            </h4>
+            <div className={style.imagesContainer}>
+              <img
+                src={item.photos[0].images.tiny}
+                alt={item.details[locale].name}
+              />
+            </div>
+            <div className={style.itemDescriptionContainer}>
+              <p className={style.streetItemDescription}>
+                {item.details[locale].description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-    ))}
+    </div>
     <div
       className={classnames(
         style.flipIconContainer,

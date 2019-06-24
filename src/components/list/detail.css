@@ -43,3 +43,28 @@
     width: 100%;
     height: auto;
 }
+
+.fcBox {
+  position: relative;
+  perspective: 1000px;
+  
+
+  &__card {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform-style: preserve-3d;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.24, 0.97);
+    transition-duration: 0.8s;
+    transition-property: transform;
+  }
+}
+
+.fcBoxFlipped {
+  .fcBox__card {
+    transform: rotateY(360deg);
+  }
+}
