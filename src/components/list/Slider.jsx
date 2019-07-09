@@ -29,7 +29,7 @@ const Slider = ({items}: SliderPropsType) => {
 
       {currentIndex !== 0 && (
         <button
-          onClick={goToPrevSlide}
+          onClick={goToPrevSlide} //eslint-disable-line
           className={classnames(
             style.sliderItemNavIcon,
             style.sliderItemNavIconLeft
@@ -40,7 +40,7 @@ const Slider = ({items}: SliderPropsType) => {
       )}
       {currentIndex < items.length - 1 && (
         <button
-          onClick={goToNextSlide}
+          onClick={goToNextSlide} //eslint-disable-line
           className={classnames(
             style.sliderItemNavIcon,
             style.sliderItemNavIconRight
