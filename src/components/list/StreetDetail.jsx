@@ -8,6 +8,7 @@ import {withLocale} from '../../utils/locale/withLocale';
 import {getOpositeTimespan} from '../../utils/timespan';
 import Navigation from '../navigation/Navigation';
 import Flip from '../navigationIcons/Flip';
+import Slider from './Slider';
 import style from './detail.css';
 
 type StreetType = {
@@ -39,10 +40,14 @@ const StreetDetail = ({
           {item.details[locale].name}
         </h4>
         <div className={style.imagesContainer}>
-          <img
-            src={item.photos[0].images.small}
-            alt={item.details[locale].name}
-          />
+          {item.photos.length > 1 ? (
+            <Slider items={item.photos} />
+          ) : (
+            <img
+              src={item.photos[0].images.small}
+              alt={item.details[locale].name}
+            />
+          )}
         </div>
         <div className={style.itemDescriptionContainer}>
           <p className={style.streetItemDescription}>

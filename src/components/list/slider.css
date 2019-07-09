@@ -1,0 +1,38 @@
+@value sizeM, sizeL from '../navigation/config.css';
+
+.slider {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.sliderWrapper {
+    display: inline-flex;
+    flex-direction: row;
+    height: 400px;
+    left: 0;
+    position: relative;
+    transition: left 0.2s linear;
+    will-change: left;
+}
+
+.slide {
+    width: 100vw;
+}
+
+.sliderItemNavIcon {
+    width: sizeL;
+    height: sizeL;
+    position: absolute;
+    top: 50%;
+}
+
+.sliderItemNavIconRight {
+    right: sizeM;
+}
+
+.sliderItemNavIconLeft {
+    left: sizeM;
+}
+    
