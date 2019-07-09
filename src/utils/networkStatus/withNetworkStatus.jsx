@@ -16,6 +16,7 @@ export const withNetworkStatus = () => <Props: {}>(
     </NetworkStatusContextConsumer>
   );
 
+  // $FlowFixMe
   WrappedComponent.displayName = `withNetworkStatus(${Wrapped.displayName ||
     Wrapped.name}`;
 

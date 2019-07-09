@@ -3350,14 +3350,14 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-brainly-react@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-brainly-react/-/eslint-config-brainly-react-2.2.0.tgz#78582644264283965d2780032f3f4dc0bd172fd8"
-  integrity sha512-MesLXNYYrgoIW0DHiB0PLudVllmzSNdPBbDxUOdSlHIl08BQrhA2w5pJU7GqoNN5MDC/WML0IjCDdEibGRXxRw==
+eslint-config-brainly-react@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-brainly-react/-/eslint-config-brainly-react-2.7.0.tgz#96b6bacf8bfd56c5c78ada97ac9cf46bbfd0cbc9"
+  integrity sha512-vCe5aBRuVTcNzU62uNUmskfdJ+CwG7GRyz8hhmhzMHbqFEEpMwGuk968CRSHCxOP/+U3nwCvfkNRRgMpxVByrg==
   dependencies:
-    eslint-config-brainly "^2.1.0"
+    eslint-config-brainly "^2.4.0"
 
-eslint-config-brainly@^2.1.0:
+eslint-config-brainly@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/eslint-config-brainly/-/eslint-config-brainly-2.4.0.tgz#a80803694a493b90ce5fe87af46e740faa809321"
   integrity sha512-/JkzELwqIbiKVmjfhLh4R+gv8MPSBg2UyTWggTVeuU6/+5FT7F0w1rIBm6YVc2dR186DtllwSGLic8gcg43N0g==
@@ -3429,6 +3429,11 @@ eslint-plugin-prettier@^3.0.1:
   integrity sha512-XWX2yVuwVNLOUhQijAkXz+rMPPoCr7WFiAl8ig6I7Xn+pPVhDhzg4DxHpmbeb0iqjO9UronEA3Tb09ChnFVHHA==
   dependencies:
     prettier-linter-helpers "^1.0.0"
+
+eslint-plugin-react-hooks@^1.6.0:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-1.6.1.tgz#3c66a5515ea3e0a221ffc5d4e75c971c217b1a4c"
+  integrity sha512-wHhmGJyVuijnYIJXZJHDUF2WM+rJYTjulUTqF9k61d3BTk8etydz+M4dXUVH7M76ZRS85rqBTCx0Es/lLsrjnA==
 
 eslint-plugin-react@^7.12.0:
   version "7.13.0"
