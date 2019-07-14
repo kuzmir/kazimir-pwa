@@ -8,7 +8,30 @@ import style from './slider.css';
 import ArrowLeftIcon from '../navigationIcons/ArrowLeft';
 import ArrowRightIcon from '../navigationIcons/ArrowRight';
 
-type SliderPropsType = {};
+type ItemType = {
+  details: {
+    en: {
+      description: string,
+      title: string,
+    },
+    pl: {
+      description: string,
+      title: string,
+    },
+  },
+  id: number,
+  images: {
+    large: string,
+    medium: string,
+    small: string,
+    thumb: string,
+    tiny: string,
+  },
+};
+
+type SliderPropsType = {
+  items: Array<ItemType>,
+};
 
 const Slider = ({items}: SliderPropsType) => {
   const [currentIndex, goToSlide] = useState(0);
