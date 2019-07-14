@@ -1,5 +1,4 @@
 @value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeS, sizeL from '../navigation/config.css';
-@value imageMaxHegiht: 220px;
 
 .flipIconContainer {
   width: sizeL;
@@ -7,7 +6,7 @@
   border-radius: 50%;
   position: fixed;
   bottom: sizeL;
-  left: calc(50% - 40px);
+  left: calc(50% - 20px);
   padding: 4px;
 
   &--toPast {
@@ -35,7 +34,6 @@
 }
 
 .imagesContainer {
-    max-height: imageMaxHegiht;
     overflow: hidden;
 }
 
