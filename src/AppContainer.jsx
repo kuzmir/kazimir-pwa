@@ -11,8 +11,12 @@ import Navigation from './components/navigation/Navigation';
 import './components/navigation/main.css';
 
 import type {LocalePropsType} from './utils/locale/LocaleContext';
+import {rafThrottler} from './utils/rafThrottler';
 
 const DATA_URL = '/streets.json';
+const BREAKPOINT = 1024;
+const SCREEN_MOBILE = 'SCREEN_MOBILE';
+const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
 
 type PropsType = {} & LocalePropsType;
 
@@ -20,6 +24,14 @@ type PropsType = {} & LocalePropsType;
 type StateType = {
   data: Array<Object>,
 };
+
+function widthToScreenType(width: number) {
+  if (width <= BREAKPOINT) {
+    return SCREEN_MOBILE;
+  }
+
+  return SCREEN_DESKTOP;
+}
 
 class AppContainer extends React.Component<PropsType, StateType> {
   constructor(props) {
@@ -30,6 +42,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   state = {
     data: [],
+    width: window.innerWidth
   };
 
   componentDidMount() {
@@ -40,6 +53,11 @@ class AppContainer extends React.Component<PropsType, StateType> {
           data: transformedData,
         }));
       });
+
+    
+    window.addEventListener('resize', rafThrottler(() =>
+      this.setState({width: window.innerWidth})
+    ));
   }
 
   renderStreetListWithMap = props => (
@@ -61,9 +79,12 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   render() {
     const {data} = this.state;
+    const screenType = widthToScreenType(this.state.width);
 
     return (
       <>
+        <div>screen type: {screenType}</div>
+
         {!data.length ? (
           <div>loading here</div>
         ) : (
