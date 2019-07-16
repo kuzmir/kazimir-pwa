@@ -10,7 +10,7 @@ import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
 import './components/navigation/main.css';
 
-import {rafThrottler} from './utils/rafThrottler';
+import rafThrottler from './utils/rafThrottler';
 
 const DATA_URL = '/streets.json';
 const BREAKPOINT = 1024;
@@ -24,16 +24,17 @@ type PropsType = {
   online: boolean,
 };
 
+export type ImagesType = {
+  thumb: string,
+  tiny: string,
+  small: string,
+  medium: string,
+  large: string,
+};
 export type PhotoType = {
   id: number,
   details: DetailsType,
-  images: {
-    thumb: string,
-    tiny: string,
-    small: string,
-    medium: string,
-    large: string,
-  },
+  images: ImagesType,
 };
 export type DetailsType = {
   [string]: {
@@ -61,6 +62,7 @@ export type StreetType = {
 };
 
 type StateType = {
+  width: number,
   data: Array<StreetType>,
 };
 

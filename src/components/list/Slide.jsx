@@ -3,9 +3,7 @@
 import * as React from 'react';
 import style from './slider.css';
 
-type ImagesType = {
-  small: 'string',
-};
+import type {ImagesType} from '../../AppContainer';
 
 type SlidePropsType = {
   item: {
