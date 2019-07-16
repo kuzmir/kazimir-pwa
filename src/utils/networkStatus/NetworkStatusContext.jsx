@@ -9,9 +9,11 @@ import {
 
 const {Provider, Consumer} = React.createContext();
 
-export type NetworkStatusPropsType = {
-  children: React.Node
-};
+// export type NetworkStatusPropsType = {
+//   children: React.Node
+// };
+
+export type NetworkStatusPropsType = {};
 
 type NetworkStatusStateType = {
   online: string
