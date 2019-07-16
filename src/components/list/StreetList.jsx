@@ -1,29 +1,25 @@
 // @flow
-
 import * as React from 'react';
-import {withLocale} from '../../utils/locale/withLocale';
 
 import Street from './Street';
-import {withRouter} from 'react-router-dom';
-// TODO set albsolute paths webpack :)
-import type {LocalePropsType} from '../../utils/locale/LocaleController';
+import type {LocaleContextType} from '../../utils/locale/LocaleContext';
+import type {StreetType} from '../../AppContainer';
 
-type PropsType = {
-  children?: React.Node
-} & LocalePropsType;
+type StreetListPropsType = {
+  data: Array<StreetType>,
+  mapView?: boolean
+};
 
-const StreetList = ({mapView, data}: PropsType) => ({
-  render() {
-    const navigationVariant = mapView ? 'mapNavigation' : null;
+const StreetList = ({mapView, data}: StreetListPropsType) => {
+  const navigationVariant = mapView ? 'mapNavigation' : null;
 
-    return (
-      <div className={navigationVariant}>
-        {data.map((item, index) => (
-          <Street key={index} {...item} mapView={mapView ? mapView : null} />
-        ))}
-      </div>
-    );
-  }
-});
+  return (
+    <div className={navigationVariant}>
+      {data.map((item, index) => (
+        <Street key={index} {...item} mapView={mapView ? mapView : null} />
+      ))}
+    </div>
+  );
+};
 
-export default withRouter(withLocale()(StreetList));
+export default StreetList;

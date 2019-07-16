@@ -8,19 +8,22 @@ import {withLocale} from '../../utils/locale/withLocale';
 import MapStreetLines from './MapStreetLines';
 import {Map, TileLayer} from 'react-leaflet';
 
+import type {StreetType} from '../../AppContainer';
+
 import 'leaflet/dist/leaflet.css';
 import style from './map.css';
 
-type MapContainerPropType = {
-  street: Object,
-  streets: Array<Object>
+export type MapContainerReceivedPropsType = {
+  data: Array<StreetType>
 };
 
-const MapContainer = ({street, streets}: MapContainerPropType) => {
-  const position = {
-    lat: street.path.coordinates[1][0],
-    lng: street.path.coordinates[1][1]
-  };
+type MapContainerPropsType = {
+  street: StreetType,
+  streets: Array<StreetType>
+};
+
+const MapContainer = ({street, streets}: MapContainerPropsType) => {
+  const position = street.path.coordinates[1];
 
   return (
     <div className={style.mapContainer}>
@@ -44,6 +47,6 @@ const mapPropsToNewProps = ({match, data, locale}) => ({
   locale
 });
 
-export default withLocale()(
+export default withLocale()<MapContainerReceivedPropsType>(
   withRouter(withProps(mapPropsToNewProps, MapContainer))
 );

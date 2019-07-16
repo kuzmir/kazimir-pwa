@@ -2,10 +2,10 @@
 import * as React from 'react';
 import {NetworkStatusContextConsumer} from './NetworkStatusContext';
 
-export const withNetworkStatus = () => <Props: {}>(
-  Wrapped: React.ComponentType<Props>
-): React.ComponentType<Props> => {
-  const WrappedComponent = (wrappedComponentProps: Props) => (
+export const withNetworkStatus = () => <ReceivedProps: {}>(
+  Wrapped: React.ComponentType<ReceivedProps>
+): React.ComponentType<ReceivedProps> => {
+  const WrappedComponent = (wrappedComponentProps: ReceivedProps) => (
     <NetworkStatusContextConsumer>
       {({online}) => (
         <Wrapped
@@ -15,10 +15,9 @@ export const withNetworkStatus = () => <Props: {}>(
       )}
     </NetworkStatusContextConsumer>
   );
+  const displayName = Wrapped.displayName || Wrapped.name || 'ReactComponent';
 
-  // $FlowFixMe
-  WrappedComponent.displayName = `withNetworkStatus(${Wrapped.displayName ||
-    Wrapped.name}`;
+  WrappedComponent.displayName = `withNetworkStatus(${displayName}`;
 
   return WrappedComponent;
 };

@@ -3,14 +3,13 @@
 import * as React from 'react';
 import {getDefaultBrowserLocale} from './localeUtils';
 
-const {Provider, Consumer} = React.createContext();
+const {Provider, Consumer} = React.createContext<LocaleContextType>({});
 
-export type LocalePropsType = {};
-
-// locale: string,
-// setLocale: string => void
-
-type LocaleContextPropsType = {
+export type LocaleContextType = {
+  locale: string,
+  setLocale: string => mixed
+};
+export type LocalePropsType = {
   children: React.Node
 };
 
