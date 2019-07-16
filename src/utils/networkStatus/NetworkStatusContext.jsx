@@ -41,7 +41,6 @@ export class NetworkStatusContextProvider extends React.Component<
   }))
 
   render() {
-
     return (
       <Provider value={{
         online: this.state.online

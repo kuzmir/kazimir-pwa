@@ -33,6 +33,7 @@
     "empty": "^0.10.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "file-loader": "^2.0.0",
     "flow": "^0.2.3",
     "html-webpack-plugin": "^3.2.0",
@@ -62,7 +63,7 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
     "eslint": "^5.12.1",
-    "eslint-config-brainly-react": "2.2.0",
+    "eslint-config-brainly-react": "^2.7.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-flowtype": "^3.2.1",
