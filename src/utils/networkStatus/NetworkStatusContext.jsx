@@ -9,7 +9,7 @@ import {
 
 const {Provider, Consumer} = React.createContext();
 
-// export type NetworkStatusPropsType = {
+// export type NetworkStatusContextPropsType = {
 //   children: React.Node
 // };
 
