@@ -8,8 +8,8 @@ const config = {
   port: 21,
   localRoot: path.join(__dirname, '../dist'),
   remoteRoot: '/',
-  include: ['**/*'],
-  deleteRemote: false
+  include: ['**/*', '.htaccess'],
+  deleteRemote: true
 };
 
 client.on('uploading', data => console.log('Starting upload: ', data.filename));

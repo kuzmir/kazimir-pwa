@@ -108,6 +108,10 @@ module.exports = env => {
           to: path.join(DIST_PATH, 'manifest.json'),
         },
         {
+          from: path.join(SRC_PATH, '.htaccess'),
+          to: path.join(DIST_PATH),
+        },
+        { // todo: remove when retrieving data from server
           from: path.join(SRC_PATH, 'streets.json'),
           to: path.join(DIST_PATH, 'streets.json'),
         },
