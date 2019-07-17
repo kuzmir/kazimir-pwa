@@ -2,10 +2,10 @@
 import * as React from 'react';
 import {LocaleContextConsumer} from './LocaleContext';
 
-export const withLocale = () => <Props: {}>(
-  Wrapped: React.ComponentType<Props>
-): React.ComponentType<Props> => {
-  const WrappedComponent = (wrappedComponentProps: Props) => (
+export const withLocale = () => <ReceivedProps: {}>(
+  Wrapped: React.ComponentType<ReceivedProps>
+): React.ComponentType<ReceivedProps> => {
+  const WrappedComponent = (wrappedComponentProps: ReceivedProps) => (
     <LocaleContextConsumer>
       {({locale, setLocale}) => (
         <Wrapped
@@ -17,8 +17,9 @@ export const withLocale = () => <Props: {}>(
     </LocaleContextConsumer>
   );
 
-  WrappedComponent.displayName = `withLocale(${Wrapped.displayName ||
-    Wrapped.name}`;
+  const displayName = Wrapped.displayName || Wrapped.name || 'ReactComponent';
+
+  WrappedComponent.displayName = `withLocale(${displayName}`;
 
   return WrappedComponent;
 };

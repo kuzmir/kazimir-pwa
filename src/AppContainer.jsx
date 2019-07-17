@@ -10,19 +10,60 @@ import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
 import './components/navigation/main.css';
 
-import type {LocalePropsType} from './utils/locale/LocaleContext';
-import {rafThrottler} from './utils/rafThrottler';
+import rafThrottler from './utils/rafThrottler';
 
 const DATA_URL = '/streets.json';
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
 const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
 
-type PropsType = {} & LocalePropsType;
+type PropsType = {
+  initServiceWorker: () => mixed,
+  locale: string,
+  setLocale: string => mixed,
+  online: boolean,
+};
 
-// TODO update flow types
+export type ImagesType = {
+  thumb: string,
+  tiny: string,
+  small: string,
+  medium: string,
+  large: string,
+};
+export type PhotoType = {
+  id: number,
+  details: DetailsType,
+  images: ImagesType,
+};
+export type DetailsType = {
+  [string]: {
+    name: string,
+    description: string,
+  }
+};
+export type PlaceType = {
+  id: number,
+  details: DetailsType,
+  photos: Array<PhotoType>
+};
+export type PlacesType = {
+  present: Array<PlaceType>,
+  past: Array<PlaceType>,
+};
+export type StreetType = {
+  id: number,
+  name: string,
+  path: {
+    coordinates: Array<[number, number]>,
+  },
+  updated_at: string,
+  places: PlacesType
+};
+
 type StateType = {
-  data: Array<Object>,
+  width: number,
+  data: Array<StreetType>,
 };
 
 function widthToScreenType(width: number) {
@@ -122,4 +163,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 }
 
-export default withNetworkStatus()(withLocale()(AppContainer));
+export default withNetworkStatus()<PropsType>(
+  withLocale()<PropsType>(AppContainer)
+);

@@ -11,18 +11,23 @@ import Flip from '../navigationIcons/Flip';
 import Slider from './Slider';
 import style from './detail.css';
 
-type StreetType = {
-  details?: Array<any>,
-  id?: number,
-  photos?: Array<any>,
-  updated_at?: string,
-};
+import type {Match} from 'react-router-dom';
 
-type PropsType = {
-  items: Array<StreetType>,
-  streetName: string,
+import type {LocaleContextType} from '../../utils/locale/LocaleContext';
+import type {StreetType} from '../../AppContainer';
+
+type StreetDetailPropsType = {
+  items: Array<Object>,
+  streetName?: string,
   switchPath: string,
   navigationState: string,
+  locale: string,
+};
+
+type StreetDetailReturnedPropsType = {
+  data: Array<StreetType>,
+  match: Match,
+  locale: string,
 };
 
 const StreetDetail = ({
@@ -31,7 +36,7 @@ const StreetDetail = ({
   locale,
   navigationState,
   switchPath,
-}: PropsType) => (
+}: StreetDetailPropsType) => (
   <>
     <Navigation streetName={streetName} />
     {items.map((item, index) => (
@@ -71,18 +76,26 @@ const StreetDetail = ({
   </>
 );
 
-const mapPropsToNewProps = ({match, data, locale}) => ({
-  items: data.find(item => item.id === ~~match.params.id).places[
-    match.params.timespan
-  ],
-  streetName: data.find(item => item.id === ~~match.params.id).name,
-  locale,
-  navigationState: match.params.timespan,
-  switchPath: `/street/${match.params.id}/${getOpositeTimespan(
-    match.params.timespan
-  )}`,
-});
+const mapPropsToNewProps = ({match, data, locale}: StreetDetailReturnedPropsType) => {
+  const paramId = parseInt(match.params.id, 10);
+  const selectedItem = data.find(item => item.id === paramId);
+  const timespan = match.params.timespan || 'present';
 
-export default withLocale()(
-  withRouter(withProps(mapPropsToNewProps, StreetDetail))
+  return {
+    items: selectedItem && selectedItem.places[timespan] || [],
+    streetName: selectedItem && selectedItem.name,
+    locale,
+    navigationState: timespan,
+    switchPath: `/street/${paramId}/${getOpositeTimespan(
+      timespan
+    )}`,
+  };
+};
+
+export default withLocale()<any>(
+  withRouter(
+    withProps<StreetDetailReturnedPropsType, StreetDetailPropsType>(
+      mapPropsToNewProps, StreetDetail
+    )
+  )
 );

@@ -7,13 +7,11 @@ import {
   offNetworkStatusChange
 } from './networkStatusUtils';
 
-const {Provider, Consumer} = React.createContext();
+const {Provider, Consumer} = React.createContext<NetworkStatusStateType>({});
 
-// export type NetworkStatusContextPropsType = {
-//   children: React.Node
-// };
-
-export type NetworkStatusPropsType = {};
+export type NetworkStatusPropsType = {
+  children: React.Node
+};
 
 type NetworkStatusStateType = {
   online: string

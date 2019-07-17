@@ -12,7 +12,7 @@
     "js-lint": "yarn eslint src",
     "js-typecheck": "yarn flow",
     "js-unit": "yarn jest",
-    "test": "yarn js-lint && yarn js-unit"
+    "test": "yarn js-lint && yarn js-unit && yarn js-typecheck"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
@@ -71,7 +71,8 @@
     "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.0",
-    "flow-bin": "^0.99.0",
+    "flow-bin": "^0.101.1",
+    "flow-typed": "^2.5.2",
     "postcss-loader": "^3.0.0",
     "postcss-modules-values": "^3.0.0",
     "webpack-cli": "^3.1.1"

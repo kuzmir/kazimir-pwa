@@ -3,21 +3,29 @@
 import * as React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
-// TODO set albsolute paths webpack :)
-import type {LocalePropsType} from '../../utils/locale/LocaleContext';
 import ArrowLeftIcon from '../navigationIcons/ArrowLeft';
 import ArrowRightIcon from '../navigationIcons/ArrowRight';
 
+import type {Match, RouterHistory} from 'react-router-dom';
+import type {PlacesType} from '../../AppContainer';
+
 import style from './list.css';
 
-type PropsType = {} & LocalePropsType;
+type PropsType = {
+  history: RouterHistory,
+  match: Match,
+  name: string,
+  id: number,
+  mapView: boolean,
+  places: PlacesType
+};
 
 class Street extends React.Component<PropsType> {
   render() {
-    const {name, id, mapView, match, history} = this.props;
+    const {name, id, mapView, places, match, history} = this.props;
 
     const itemBackgroundStylesList = {
-      backgroundImage: `url(${this.props.places.present[0].photos[0].images.small})`,
+      backgroundImage: `url(${places.present[0].photos[0].images.small})`,
       backgroundSize: '100%',
       backgroundPosition: 'center center',
       minHeight: '100px',
