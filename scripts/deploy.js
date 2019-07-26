@@ -2,8 +2,11 @@ const path = require('path');
 const Client = require('ftp-deploy');
 const client = new Client();
 
+const loginData = require('./deploy.json');
+
 const config = {
-  user: "arteverest_edbadge",
+  user: loginData.user,
+  password: loginData.password,
   host: "ftp.arteverest.nazwa.pl",
   port: 21,
   localRoot: path.join(__dirname, '../dist'),
