@@ -6,6 +6,7 @@
   "author": "burakukula <trycjapa@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "deploy": "yarn build --env.production && node scripts/deploy.js",
     "build": "yarn webpack",
     "watch": "yarn webpack --watch & yarn run-server",
     "run-server": "superstatic --port=3000 --compression --gzip --config=superstatic.json --live",
@@ -73,6 +74,7 @@
     "eslint-plugin-react": "^7.12.0",
     "flow-bin": "^0.101.1",
     "flow-typed": "^2.5.2",
+    "ftp-deploy": "^2.3.3",
     "postcss-loader": "^3.0.0",
     "postcss-modules-values": "^3.0.0",
     "webpack-cli": "^3.1.1"
