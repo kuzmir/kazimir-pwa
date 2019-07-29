@@ -1,25 +1,48 @@
 // @flow
+
+// @flow
 import * as React from 'react';
 
 import Street from './Street';
-import type {LocaleContextType} from '../../utils/locale/LocaleContext';
 import type {StreetType} from '../../AppContainer';
+import style from './list.css';
 
 type StreetListPropsType = {
   data: Array<StreetType>,
-  mapView?: boolean
+  desktopView?: boolean,
+  mapView?: boolean,
 };
 
-const StreetList = ({mapView, data}: StreetListPropsType) => {
-  const navigationVariant = mapView ? 'mapNavigation' : null;
+const StreetList = ({mapView, desktopView, data}: StreetListPropsType) => ({
+  render() {
+    const navigationVariant = mapView ? 'mapNavigation' : null;
 
-  return (
-    <div className={navigationVariant}>
-      {data.map((item, index) => (
-        <Street key={index} {...item} mapView={mapView ? mapView : null} />
-      ))}
-    </div>
-  );
-};
+    return (
+      <>
+        {desktopView ? (
+          <div className={style.listOnDesktop}>
+            {data.map((item, index) => (
+              <Street
+                key={index}
+                {...item}
+                mapView={mapView ? mapView : null}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className={navigationVariant}>
+            {data.map((item, index) => (
+              <Street
+                key={index}
+                {...item}
+                mapView={mapView ? mapView : null}
+              />
+            ))}
+          </div>
+        )}
+      </>
+    );
+  },
+});
 
 export default StreetList;

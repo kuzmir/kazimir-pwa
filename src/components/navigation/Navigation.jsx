@@ -20,6 +20,7 @@ class Navigation extends React.Component<*, *> {
       this.props.location.pathname,
       '/street'
     );
+    const {desktopView} = this.props;
 
     return detailViewVisible ? (
       <>
@@ -66,7 +67,19 @@ class Navigation extends React.Component<*, *> {
         <div className={style.navLogo}>
           <Logo />
         </div>
-        {isMapVisible ? (
+        {desktopView ? (
+          <div className={style.navDesktop}>
+            <Link to="/info" className={style.navigationLink}>
+              Info
+            </Link>
+            <Link to="/team" className={style.navigationLink}>
+              Team
+            </Link>
+            <Link to="/press" className={style.navigationLink}>
+              Press
+            </Link>
+          </div>
+        ) : isMapVisible ? (
           <Link
             to="/"
             className={classnames(

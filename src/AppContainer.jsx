@@ -9,6 +9,7 @@ import {withLocale} from './utils/locale/withLocale';
 import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
 import './components/navigation/main.css';
+import style from './components/list/list.css';
 
 import rafThrottler from './utils/rafThrottler';
 
@@ -40,12 +41,12 @@ export type DetailsType = {
   [string]: {
     name: string,
     description: string,
-  }
+  },
 };
 export type PlaceType = {
   id: number,
   details: DetailsType,
-  photos: Array<PhotoType>
+  photos: Array<PhotoType>,
 };
 export type PlacesType = {
   present: Array<PlaceType>,
@@ -58,7 +59,7 @@ export type StreetType = {
     coordinates: Array<[number, number]>,
   },
   updated_at: string,
-  places: PlacesType
+  places: PlacesType,
 };
 
 type StateType = {
@@ -83,7 +84,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   state = {
     data: [],
-    width: window.innerWidth
+    width: window.innerWidth,
   };
 
   componentDidMount() {
@@ -95,10 +96,10 @@ class AppContainer extends React.Component<PropsType, StateType> {
         }));
       });
 
-    
-    window.addEventListener('resize', rafThrottler(() =>
-      this.setState({width: window.innerWidth})
-    ));
+    window.addEventListener(
+      'resize',
+      rafThrottler(() => this.setState({width: window.innerWidth}))
+    );
   }
 
   renderStreetListWithMap = props => (
@@ -118,32 +119,46 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   renderDetail = () => <StreetDetail data={this.state.data} />;
 
+  renderDesktopView = props => (
+    <>
+      <Navigation desktopView />
+      <div className={style.desktopViewContainer}>
+        <StreetList desktopView data={this.state.data} {...props} />
+        <MapContainer data={this.state.data} {...props} />
+      </div>
+    </>
+  );
+
   render() {
     const {data} = this.state;
     const screenType = widthToScreenType(this.state.width);
 
     return (
       <>
-        <div>screen type: {screenType}</div>
-
         {!data.length ? (
           <div>loading here</div>
         ) : (
           <>
             <Router>
-              <Switch>
-                <Route exact path="/" component={this.renderStreetList} />
-                <Route
-                  exact
-                  path="/map/:id"
-                  component={this.renderStreetListWithMap}
-                />
-                <Route
-                  exact
-                  path="/street/:id/:timespan"
-                  component={this.renderDetail}
-                />
-              </Switch>
+              {screenType === SCREEN_DESKTOP ? (
+                <Switch>
+                  <Route exact path="/" component={this.renderDesktopView} />
+                </Switch>
+              ) : (
+                <Switch>
+                  <Route exact path="/" component={this.renderStreetList} />
+                  <Route
+                    exact
+                    path="/map/:id"
+                    component={this.renderStreetListWithMap}
+                  />
+                  <Route
+                    exact
+                    path="/street/:id/:timespan"
+                    component={this.renderDetail}
+                  />
+                </Switch>
+              )}
             </Router>
             <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
             <div>current locale {this.props.locale}</div>
