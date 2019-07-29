@@ -1,6 +1,5 @@
 // @flow
 
-// @flow
 import * as React from 'react';
 
 import Street from './Street';
