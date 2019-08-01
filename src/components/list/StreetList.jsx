@@ -12,36 +12,26 @@ type StreetListPropsType = {
   mapView?: boolean,
 };
 
-const StreetList = ({mapView, desktopView, data}: StreetListPropsType) => ({
-  render() {
-    const navigationVariant = mapView ? 'mapNavigation' : null;
+const StreetList = ({mapView, desktopView, data}: StreetListPropsType) => {
+  const navigationVariant = mapView ? 'mapNavigation' : null;
 
-    return (
-      <>
-        {desktopView ? (
-          <div className={style.listOnDesktop}>
-            {data.map((item, index) => (
-              <Street
-                key={index}
-                {...item}
-                mapView={mapView ? mapView : null}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className={navigationVariant}>
-            {data.map((item, index) => (
-              <Street
-                key={index}
-                {...item}
-                mapView={mapView ? mapView : null}
-              />
-            ))}
-          </div>
-        )}
-      </>
-    );
-  },
-});
+  return (
+    <div>
+      {desktopView ? (
+        <div className={style.listOnDesktop}>
+          {data.map((item, index) => (
+            <Street key={index} {...item} mapView={mapView ? mapView : null} />
+          ))}
+        </div>
+      ) : (
+        <div className={navigationVariant}>
+          {data.map((item, index) => (
+            <Street key={index} {...item} mapView={mapView ? mapView : null} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default StreetList;
