@@ -131,6 +131,8 @@ module.exports = env => {
         clientsClaim: true,
         skipWaiting: true,
         offlineGoogleAnalytics: true,
+        exclude: [/\.map$/, /^manifest.*\.js$/, /^.htaccess$/],
+        dontCacheBustURLsMatching: /system\/photos/,
       }),
     ],
   };
