@@ -47,3 +47,18 @@
     cursor: pointer;
   }
 }
+
+.listOnDesktop {
+  width: 50%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.desktopViewContainer {
+  display: flex;
+  overflow: hidden;
+  
+  .mapContainer {
+    width: 50%;
+  }
+}

@@ -3,6 +3,7 @@
 
 .navContainer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: sizeXs sizeS;
 
@@ -23,6 +24,14 @@
   }
 }
 
+.navDesktop {
+  .navigationLink {
+    color: #77787a;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
 .navLogo {
   display: flex;
   justify-content: center;
