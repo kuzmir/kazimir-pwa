@@ -144,7 +144,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
     const {data} = this.state;
     const screenType = widthToScreenType(this.state.width);
 
-    console.log(screenType);
     return (
       <>
         {!data.length ? (
