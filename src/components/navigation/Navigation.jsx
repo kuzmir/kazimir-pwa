@@ -20,7 +20,6 @@ class Navigation extends React.Component<*, *> {
       this.props.location.pathname,
       '/street'
     );
-    const {desktopView} = this.props;
 
     return detailViewVisible ? (
       <>
@@ -35,6 +34,7 @@ class Navigation extends React.Component<*, *> {
               to="/"
               className={classnames(
                 style.navigationIcon,
+                style.navigationIconSvg,
                 style.navigationIconOnLeft
               )}
             >
@@ -46,6 +46,7 @@ class Navigation extends React.Component<*, *> {
           <nav
             className={classnames(
               style.navContainerDetail,
+              style.navigationIconSvg,
               style.navContainerDetailPast
             )}
           >
@@ -54,6 +55,7 @@ class Navigation extends React.Component<*, *> {
               to="/"
               className={classnames(
                 style.navigationIcon,
+                style.navigationIconSvg,
                 style.navigationIconOnRight
               )}
             >
@@ -67,23 +69,12 @@ class Navigation extends React.Component<*, *> {
         <div className={style.navLogo}>
           <Logo />
         </div>
-        {desktopView ? (
-          <div className={style.navDesktop}>
-            <Link to="/info" className={style.navigationLink}>
-              Info
-            </Link>
-            <Link to="/team" className={style.navigationLink}>
-              Team
-            </Link>
-            <Link to="/press" className={style.navigationLink}>
-              Press
-            </Link>
-          </div>
-        ) : isMapVisible ? (
+        {isMapVisible ? (
           <Link
             to="/"
             className={classnames(
-              style.navigationIcon,
+              style.navigationMainMobileSwitchIcon,
+              style.navigationIconSvg,
               style.navigationIconOnRight
             )}
           >
@@ -93,7 +84,8 @@ class Navigation extends React.Component<*, *> {
           <Link
             to="/map/1"
             className={classnames(
-              style.navigationIcon,
+              style.navigationMainMobileSwitchIcon,
+              style.navigationIconSvg,
               style.navigationIconOnRight
             )}
           >

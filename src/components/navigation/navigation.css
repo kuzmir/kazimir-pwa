@@ -1,4 +1,4 @@
-@value colorMustard, colorBlue, colorWhite, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL from '../navigation/config.css';
+@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL from '../navigation/config.css';
 @value mainLogoMaxWidth: 180px;
 
 .navContainer {
@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   padding: sizeXs sizeS;
+  min-height: 55px;
 
   &--detail {
     display: flex;
@@ -24,31 +25,57 @@
   }
 }
 
-.navDesktop {
-  .navigationLink {
-    color: #77787a;
-    padding: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+.navDesktopInfoLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.navigationLink {
+  color: colorNavigationGray;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navigationLinkDetail {
+  color: colorWhite;
+}
+
 .navLogo {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: mainLogoMaxWidth;
   height: sizeL;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
 
-.navLogo img {
-  height: 100%;
-  width: auto;
-}
-
-.navigationIcon {    
+.navigationIconDesktop {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: sizeL;
+}
+
+.navigationMainMobileSwitchIcon {    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: sizeL;
+}
+
+.navigationIconSvg {
+  svg {
+    max-width: sizeL;
+    max-height: sizeL;
+    width: sizeL;
+    height: sizeL;
+  }
 }
 
 .navigationIcon {

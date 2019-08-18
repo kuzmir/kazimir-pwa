@@ -3,7 +3,7 @@
 import * as React from 'react';
 
 type IconPropsType = {
-  color?: string
+  color?: string,
 };
 
 const ArrowLeft = ({color}: IconPropsType) => (
