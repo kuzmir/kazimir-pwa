@@ -77,6 +77,7 @@ class Navigation extends React.Component<*, *> {
               style.navigationIconSvg,
               style.navigationIconOnRight
             )}
+            aria-label="Switch to list view"
           >
             <ListIcon color="#000" />
           </Link>
@@ -88,6 +89,7 @@ class Navigation extends React.Component<*, *> {
               style.navigationIconSvg,
               style.navigationIconOnRight
             )}
+            aria-label="Switch to map view"
           >
             <MapIcon color="#000" />
           </Link>
