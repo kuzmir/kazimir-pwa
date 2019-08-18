@@ -156,6 +156,11 @@ class AppContainer extends React.Component<PropsType, StateType> {
                   <Route exact path="/" component={this.renderDesktopView} />
                   <Route
                     exact
+                    path="/map/:id"
+                    component={this.renderDesktopView}
+                  />
+                  <Route
+                    exact
                     path="/street/:id/:timespan"
                     component={this.renderDetailDesktop}
                   />
