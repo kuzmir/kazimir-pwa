@@ -9,6 +9,10 @@
   left: calc(50% - 20px);
   padding: 4px;
 
+  &--Desktop {
+    left: calc(25% - 20px);
+  }
+
   &--toPast {
     background-color: colorMustard;
   }
@@ -40,4 +44,10 @@
 .imagesContainer img {
     width: 100%;
     height: auto;
+}
+
+.desktopDetial {
+  width: 50%;
+  height: 100vh;
+  overflow: scroll;
 }

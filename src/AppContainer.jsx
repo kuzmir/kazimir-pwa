@@ -8,6 +8,7 @@ import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
+import NavigationDesktop from './components/navigation/NavigationDesktop';
 import './components/navigation/main.css';
 import style from './components/list/list.css';
 
@@ -121,9 +122,19 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   renderDesktopView = props => (
     <>
-      <Navigation desktopView />
+      <NavigationDesktop />
       <div className={style.desktopViewContainer}>
         <StreetList desktopView data={this.state.data} {...props} />
+        <MapContainer data={this.state.data} {...props} />
+      </div>
+    </>
+  );
+
+  renderDetailDesktop = props => (
+    <>
+      <NavigationDesktop />
+      <div className={style.desktopViewContainer}>
+        <StreetDetail desktopView data={this.state.data} />
         <MapContainer data={this.state.data} {...props} />
       </div>
     </>
@@ -143,6 +154,16 @@ class AppContainer extends React.Component<PropsType, StateType> {
               {screenType === SCREEN_DESKTOP ? (
                 <Switch>
                   <Route exact path="/" component={this.renderDesktopView} />
+                  <Route
+                    exact
+                    path="/map/:id"
+                    component={this.renderDesktopView}
+                  />
+                  <Route
+                    exact
+                    path="/street/:id/:timespan"
+                    component={this.renderDetailDesktop}
+                  />
                 </Switch>
               ) : (
                 <Switch>
