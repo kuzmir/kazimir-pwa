@@ -14,7 +14,6 @@ import style from './components/list/list.css';
 import data from './streets.json';
 import rafThrottler from './utils/rafThrottler';
 
-// const DATA_URL = '/streets.json';
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
 const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
@@ -77,14 +76,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
   };
 
   componentDidMount() {
-    // fetch(DATA_URL)
-    //   .then(response => response.json())
-    //   .then(transformedData => {
-    //     this.setState(() => ({
-    //       data: transformedData,
-    //     }));
-    //   });
-
     window.addEventListener(
       'resize',
       rafThrottler(() => this.setState({width: window.innerWidth}))
