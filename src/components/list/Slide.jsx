@@ -3,12 +3,10 @@
 import * as React from 'react';
 import style from './slider.css';
 
-import type {ImagesType} from '../../AppContainer';
+import type {PhotoType} from '../../AppContainer';
 
 type SlidePropsType = {
-  item: {
-    images: ImagesType,
-  },
+  item: PhotoType,
 };
 
 const Slide = ({item}: SlidePropsType) => {
