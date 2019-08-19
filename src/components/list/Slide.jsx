@@ -13,7 +13,7 @@ type SlidePropsType = {
 
 const Slide = ({item}: SlidePropsType) => {
   const styles = {
-    backgroundImage: `url(${item.images.small})`,
+    backgroundImage: `url(${item.small})`,
   };
 
   return <div className={style.slide} style={styles}></div>;

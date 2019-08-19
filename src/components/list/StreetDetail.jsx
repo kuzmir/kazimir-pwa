@@ -41,21 +41,16 @@ const StreetDetail = ({
 }: StreetDetailPropsType) => {
   const content = items.map((item, index) => (
     <div key={index} className={style.streetDetailContainer}>
-      <h4 className={style.streetItemHeadline}>{item.details[locale].name}</h4>
+      <h4 className={style.streetItemHeadline}>{item.name}</h4>
       <div className={style.imagesContainer}>
         {item.photos.length > 1 ? (
           <Slider items={item.photos} />
         ) : (
-          <img
-            src={item.photos[0].images.small}
-            alt={item.details[locale].name}
-          />
+          <img src={item.photos[0].small} alt={item.name} />
         )}
       </div>
       <div className={style.itemDescriptionContainer}>
-        <p className={style.streetItemDescription}>
-          {item.details[locale].description}
-        </p>
+        <p className={style.streetItemDescription}>{item.description}</p>
       </div>
     </div>
   ));
