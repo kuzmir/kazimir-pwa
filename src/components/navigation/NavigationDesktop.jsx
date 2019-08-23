@@ -38,9 +38,9 @@ class Navigation extends React.Component<*, *> {
             <ArrowLeft color="#fff" />
           </Link>
         ) : (
-          <div className={style.navLogo}>
+          <Link to="/" className={style.navLogo}>
             <Logo />
-          </div>
+          </Link>
         )}
 
         <div className={style.navDesktopInfoLinks}>

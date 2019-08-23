@@ -1,0 +1,17 @@
+.content {
+  width: 50%;
+  height: 100vh;
+  box-sizing: content-box;
+  padding: 24px;
+}
+
+.image {
+  margin: 20% auto;
+  display: block;
+  max-width: 90%;
+}
+
+.headline {
+  font-size: 2em;
+  margin-bottom: 12px;
+}
