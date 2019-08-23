@@ -103,7 +103,7 @@ const mapPropsToNewProps = ({
   locale,
   desktopView,
 }: StreetDetailReturnedPropsType) => {
-  const paramName = match.params.name;
+  const paramName = match.params.name || '';
   const selectedItem = data.find(item => slugifyStreetName(item.name) === paramName);
   const timespan = match.params.timespan || 'present';
 
