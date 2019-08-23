@@ -133,7 +133,6 @@ module.exports = env => {
         skipWaiting: true,
         offlineGoogleAnalytics: true,
         exclude: [/\.map$/, /^manifest.*\.js$/, /^.htaccess$/],
-        dontCacheBustURLsMatching: /system\/photos/,
       }),
     ],
   };

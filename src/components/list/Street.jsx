@@ -5,6 +5,7 @@ import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
 import ArrowLeftIcon from '../navigationIcons/ArrowLeft';
 import ArrowRightIcon from '../navigationIcons/ArrowRight';
+import {slugifyStreetName} from '../../utils/url';
 
 import type {Match, RouterHistory} from 'react-router-dom';
 import type {PlacesType} from '../../AppContainer';
@@ -23,6 +24,7 @@ type PropsType = {
 class Street extends React.Component<PropsType> {
   render() {
     const {name, id, mapView, places, match, history} = this.props;
+    const slugName = slugifyStreetName(name);
 
     const itemBackgroundStylesList = {
       backgroundImage: `url(${places.present[0].photos[0].small})`,
@@ -38,13 +40,13 @@ class Street extends React.Component<PropsType> {
       >
         <div
           className={style.listItemCover}
-          onClick={mapView ? () => history.push(`/map/${id}`) : null}
+          onClick={mapView ? () => history.push(`/map/${slugName}`) : null}
         />
-        <Link to={`/street/${id}/past`} className={style.listItemNavIcon}>
+        <Link to={`/street/${slugName}/past`} className={style.listItemNavIcon}>
           <ArrowLeftIcon color="white" />
         </Link>
         <h3 className={style.listItemName}>{name}</h3>
-        <Link to={`/street/${id}/present`} className={style.listItemNavIcon}>
+        <Link to={`/street/${slugName}/present`} className={style.listItemNavIcon}>
           <ArrowRightIcon color="white" />
         </Link>
       </div>

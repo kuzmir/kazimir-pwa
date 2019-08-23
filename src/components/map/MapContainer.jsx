@@ -7,6 +7,7 @@ import withProps from '../../utils/withProps';
 import {withLocale} from '../../utils/locale/withLocale';
 import MapStreetLines from './MapStreetLines';
 import {Map, TileLayer} from 'react-leaflet';
+import {slugifyStreetName} from '../../utils/url';
 
 import type {StreetType} from '../../AppContainer';
 
@@ -33,10 +34,15 @@ const MapContainer = ({street, streets}: MapContainerPropsType) => {
         viewport={{
           center: position,
           zoom: 16,
+          maxZoom: 20
         }}
         className={style.mapWrapper}
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png"
+          attribution='Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+
         {street && <MapStreetLines streets={streets} activeId={street.id} />}
       </Map>
     </div>
@@ -44,7 +50,7 @@ const MapContainer = ({street, streets}: MapContainerPropsType) => {
 };
 
 const mapPropsToNewProps = ({match, data, locale}) => ({
-  street: data.find(item => item.id === ~~match.params.id),
+  street: data.find(item => slugifyStreetName(item.name) === match.params.name),
   streets: data,
   locale,
 });
