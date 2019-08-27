@@ -11,10 +11,9 @@ import Navigation from './components/navigation/Navigation';
 import NavigationDesktop from './components/navigation/NavigationDesktop';
 import './components/navigation/main.css';
 import style from './components/list/list.css';
-
+import data from './streets.json';
 import rafThrottler from './utils/rafThrottler';
 
-const DATA_URL = '/streets.json';
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
 const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
@@ -26,40 +25,28 @@ type PropsType = {
   online: boolean,
 };
 
-export type ImagesType = {
-  thumb: string,
-  tiny: string,
+export type PhotoType = {
+  title: string,
   small: string,
-  medium: string,
   large: string,
 };
-export type PhotoType = {
-  id: number,
-  details: DetailsType,
-  images: ImagesType,
-};
-export type DetailsType = {
-  [string]: {
-    name: string,
-    description: string,
-  },
-};
+
 export type PlaceType = {
   id: number,
-  details: DetailsType,
+  name: string,
+  description: string,
   photos: Array<PhotoType>,
 };
+
 export type PlacesType = {
   present: Array<PlaceType>,
   past: Array<PlaceType>,
 };
+
 export type StreetType = {
   id: number,
   name: string,
-  path: {
-    coordinates: Array<[number, number]>,
-  },
-  updated_at: string,
+  coordinates: Array<[number, number]>,
   places: PlacesType,
 };
 
@@ -84,19 +71,11 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 
   state = {
-    data: [],
+    data,
     width: window.innerWidth,
   };
 
   componentDidMount() {
-    fetch(DATA_URL)
-      .then(response => response.json())
-      .then(transformedData => {
-        this.setState(() => ({
-          data: transformedData,
-        }));
-      });
-
     window.addEventListener(
       'resize',
       rafThrottler(() => this.setState({width: window.innerWidth}))

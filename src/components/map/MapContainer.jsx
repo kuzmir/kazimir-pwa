@@ -25,9 +25,7 @@ type MapContainerPropsType = {
 const KAZIMIERZ_CENTER_POSITION = [50.053632572808255, 19.948285818099976];
 
 const MapContainer = ({street, streets}: MapContainerPropsType) => {
-  const position = street
-    ? street.path.coordinates[1]
-    : KAZIMIERZ_CENTER_POSITION;
+  const position = street ? street.coordinates[1] : KAZIMIERZ_CENTER_POSITION;
 
   return (
     <div className={style.mapContainer}>

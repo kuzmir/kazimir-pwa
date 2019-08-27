@@ -17,7 +17,7 @@ type PropsType = {
   name: string,
   id: number,
   mapView: boolean,
-  places: PlacesType
+  places: PlacesType,
 };
 
 class Street extends React.Component<PropsType> {
@@ -25,7 +25,7 @@ class Street extends React.Component<PropsType> {
     const {name, id, mapView, places, match, history} = this.props;
 
     const itemBackgroundStylesList = {
-      backgroundImage: `url(${places.present[0].photos[0].images.small})`,
+      backgroundImage: `url(${places.present[0].photos[0].small})`,
       backgroundSize: '100%',
       backgroundPosition: 'center center',
       minHeight: '100px',

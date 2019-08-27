@@ -7,30 +7,10 @@ import Slide from './Slide';
 import style from './slider.css';
 import ArrowLeftIcon from '../navigationIcons/ArrowLeft';
 import ArrowRightIcon from '../navigationIcons/ArrowRight';
-
-type ItemType = {
-  details: {
-    en: {
-      description: string,
-      title: string,
-    },
-    pl: {
-      description: string,
-      title: string,
-    },
-  },
-  id: number,
-  images: {
-    large: string,
-    medium: string,
-    small: string,
-    thumb: string,
-    tiny: string,
-  },
-};
+import type {PhotoType} from '../../AppContainer';
 
 type SliderPropsType = {
-  items: Array<ItemType>,
+  items: Array<PhotoType>,
 };
 
 const Slider = ({items}: SliderPropsType) => {
