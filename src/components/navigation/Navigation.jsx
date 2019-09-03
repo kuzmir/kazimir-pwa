@@ -66,9 +66,9 @@ class Navigation extends React.Component<*, *> {
       </>
     ) : (
       <nav className={style.navContainer}>
-        <div className={style.navLogo}>
+        <Link to="/" className={style.navLogo}>
           <Logo />
-        </div>
+        </Link>
         {isMapVisible ? (
           <Link
             to="/"

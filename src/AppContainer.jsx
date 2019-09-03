@@ -9,6 +9,10 @@ import {withLocale} from './utils/locale/withLocale';
 import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
 import NavigationDesktop from './components/navigation/NavigationDesktop';
+import Team from './components/pages/Team';
+import Info from './components/pages/Info';
+import Press from './components/pages/Press';
+import NotFound from './components/pages/NotFound';
 import './components/navigation/main.css';
 import style from './components/list/list.css';
 import data from './streets.json';
@@ -119,60 +123,91 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </>
   );
 
+  renderInfo = props => (
+    <>
+      <NavigationDesktop />
+      <div className={style.desktopViewContainer}>
+        <Info />
+      </div>
+    </>
+  );
+
+  renderTeam = props => (
+    <>
+      <NavigationDesktop />
+      <div className={style.desktopViewContainer}>
+        <Team />
+      </div>
+    </>
+  );
+
+  renderPress = props => (
+    <>
+      <NavigationDesktop />
+      <div className={style.desktopViewContainer}>
+        <Press />
+      </div>
+    </>
+  );
+
+  renderNotFound = props => (
+    <>
+      <NavigationDesktop />
+      <div className={style.desktopViewContainer}>
+        <NotFound />
+      </div>
+    </>
+  );
+
   render() {
     const {data} = this.state;
     const screenType = widthToScreenType(this.state.width);
+    const isWideLayout = screenType === SCREEN_DESKTOP;
 
     return (
       <>
-        {!data.length ? (
-          <div>loading here</div>
-        ) : (
-          <>
-            <Router>
-              {screenType === SCREEN_DESKTOP ? (
-                <Switch>
-                  <Route exact path="/" component={this.renderDesktopView} />
-                  <Route
-                    exact
-                    path="/map/:id"
-                    component={this.renderDesktopView}
-                  />
-                  <Route
-                    exact
-                    path="/street/:id/:timespan"
-                    component={this.renderDetailDesktop}
-                  />
-                </Switch>
-              ) : (
-                <Switch>
-                  <Route exact path="/" component={this.renderStreetList} />
-                  <Route
-                    exact
-                    path="/map/:id"
-                    component={this.renderStreetListWithMap}
-                  />
-                  <Route
-                    exact
-                    path="/street/:id/:timespan"
-                    component={this.renderDetail}
-                  />
-                </Switch>
-              )}
-            </Router>
-            <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
-            <div>current locale {this.props.locale}</div>
-            <div>
-              <button
-                onClick={() =>
-                  this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
-                }
-              >
-                change to {this.props.locale === 'pl' ? 'en' : 'pl'}
-              </button>
-            </div>
-          </>
-        )}
+        <Router>
+          <Switch>
+            <Route exact path="/" component={isWideLayout ? this.renderDesktopView : this.renderStreetList} />
+            <Route
+              exact
+              path="/map/:id"
+              component={isWideLayout ? this.renderDesktopView : this.renderStreetListWithMap}
+            />
+            <Route
+              exact
+              path="/street/:id/:timespan"
+              component={isWideLayout ? this.renderDetailDesktop : this.renderDetail}
+            />
+            <Route
+              exact
+              path="/team"
+              component={this.renderTeam}
+            />
+            <Route
+              exact
+              path="/info"
+              component={this.renderInfo}
+            />
+            <Route
+              exact
+              path="/press"
+              component={this.renderPress}
+            />
+            <Route component={this.renderNotFound} />
+          </Switch>
+        </Router>
+        <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
+        <div>current locale {this.props.locale}</div>
+        <div>
+          <button
+            onClick={() =>
+              this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
+            }
+          >
+            change to {this.props.locale === 'pl' ? 'en' : 'pl'}
+          </button>
+        </div>
       </>
     );
   }
