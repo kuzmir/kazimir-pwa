@@ -21,7 +21,7 @@ const MapStreetLines = ({streets, activeId, history}: MapStreetLinesType) =>
       color={street.id === activeId ? ACTIVE_COLOR : INACTIVE_COLOR}
       weight={6}
       opacity={0.85}
-      positions={street.path.coordinates}
+      positions={street.coordinates}
       onClick={() => history.push(`/street/${street.id}/present`)}
     />
   ));

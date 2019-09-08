@@ -34,7 +34,7 @@ const MapContainer = ({street, streets}: MapContainerPropsType) => {
         viewport={{
           center: position,
           zoom: 16,
-          maxZoom: 20
+          maxZoom: 20,
         }}
         className={style.mapWrapper}
       >

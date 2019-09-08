@@ -46,7 +46,10 @@ class Street extends React.Component<PropsType> {
           <ArrowLeftIcon color="white" />
         </Link>
         <h3 className={style.listItemName}>{name}</h3>
-        <Link to={`/street/${slugName}/present`} className={style.listItemNavIcon}>
+        <Link
+          to={`/street/${slugName}/present`}
+          className={style.listItemNavIcon}
+        >
           <ArrowRightIcon color="white" />
         </Link>
       </div>
