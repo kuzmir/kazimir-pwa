@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import withProps from '../../utils/withProps';
+import {slugifyStreetName} from '../../utils/url';
 import classnames from 'classnames';
 import {Link, withRouter} from 'react-router-dom';
 import {withLocale} from '../../utils/locale/withLocale';
@@ -102,8 +103,8 @@ const mapPropsToNewProps = ({
   locale,
   desktopView,
 }: StreetDetailReturnedPropsType) => {
-  const paramId = parseInt(match.params.id, 10);
-  const selectedItem = data.find(item => item.id === paramId);
+  const paramName = match.params.name || '';
+  const selectedItem = data.find(item => slugifyStreetName(item.name) === paramName);
   const timespan = match.params.timespan || 'present';
 
   return {
@@ -112,7 +113,7 @@ const mapPropsToNewProps = ({
     locale,
     navigationState: timespan,
     desktopView,
-    switchPath: `/street/${paramId}/${getOpositeTimespan(timespan)}`,
+    switchPath: `/street/${paramName}/${getOpositeTimespan(timespan)}`,
   };
 };
 

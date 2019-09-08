@@ -166,37 +166,41 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
     return (
       <>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={isWideLayout ? this.renderDesktopView : this.renderStreetList} />
-            <Route
-              exact
-              path="/map/:id"
-              component={isWideLayout ? this.renderDesktopView : this.renderStreetListWithMap}
-            />
-            <Route
-              exact
-              path="/street/:id/:timespan"
-              component={isWideLayout ? this.renderDetailDesktop : this.renderDetail}
-            />
-            <Route
-              exact
-              path="/team"
-              component={this.renderTeam}
-            />
-            <Route
-              exact
-              path="/info"
-              component={this.renderInfo}
-            />
-            <Route
-              exact
-              path="/press"
-              component={this.renderPress}
-            />
-            <Route component={this.renderNotFound} />
-          </Switch>
-        </Router>
+        {!data.length ? (
+          <div>loading here</div>
+        ) : (
+          <Router>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={
+                  isWideLayout ? this.renderDesktopView : this.renderStreetList
+                }
+              />
+              <Route
+                exact
+                path="/map/:name"
+                component={
+                  isWideLayout
+                    ? this.renderDesktopView
+                    : this.renderStreetListWithMap
+                }
+              />
+              <Route
+                exact
+                path="/street/:name/:timespan"
+                component={
+                  isWideLayout ? this.renderDetailDesktop : this.renderDetail
+                }
+              />
+              <Route exact path="/team" component={this.renderTeam} />
+              <Route exact path="/info" component={this.renderInfo} />
+              <Route exact path="/press" component={this.renderPress} />
+              <Route component={this.renderNotFound} />
+            </Switch>
+          </Router>
+        )}
         <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
         <div>current locale {this.props.locale}</div>
         <div>
