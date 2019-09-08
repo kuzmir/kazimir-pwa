@@ -1,8 +1,27 @@
 .content {
   width: 50%;
-  height: 100vh;
+  /* height: 100vh; */
   box-sizing: content-box;
   padding: 24px;
+  right: 0;
+  position: absolute;
+  overflow-y: scroll;
+}
+
+.hero {
+  width: 45%;
+  height: 100vh;
+  box-sizing: content-box;
+  background-color: #1f1815;
+  background-attachment: scroll,	fixed;
+  background-image: url(/images/gradient.png),url(/images/kazimir-bg.jpg);
+  background-repeat: repeat,	no-repeat;
+  background-size: auto,	auto 100%;
+  color: rgba(255,255,255,0.5);
+  left: 0;
+  position: fixed;
+  text-align: right;
+  top: 0;
 }
 
 .image {
@@ -14,4 +33,31 @@
 .headline {
   font-size: 2em;
   margin-bottom: 12px;
+}
+
+.subheadline {
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.description {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+
+.teamFlexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.teamItem {
+  width: 30%;
+  height: 330px;
+  background-color: #eeeeee;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }

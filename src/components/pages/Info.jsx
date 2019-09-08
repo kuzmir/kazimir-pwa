@@ -3,19 +3,30 @@
 import * as React from 'react';
 
 import style from './page.css';
+import data from '../../static_pages_en.json';
 
-const Info = () => (
-  <>
-    <div className={style.content}>
-      <img src="/images/icon.png" className={style.image}/>
-    </div>
-    <div className={style.content}>
-      <h1 className={style.headline}>Info</h1>
+const Info = () => {
+  const infoData = data.find(({name}) => name === 'info').details;
 
-      <p>Cheese on toast airedale the big cheese. Danish fontina cheesy grin airedale danish fontina taleggio the big cheese macaroni cheese port-salut.</p>
-      <p>Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese.</p>
-    </div> 
-  </>
-);  
+  return (
+    <>
+      <div className={style.hero} />
+
+      <div className={style.content}>
+        <h1 className={style.headline}>Info</h1>
+
+        {infoData.map(item => (
+          <>
+            <h4 className={style.subheadline}>{item.title}</h4>
+            <p className={style.description}>{item.content}</p>
+            {item.details ? (
+              <p className={style.description}>{item.details}</p>
+            ) : null}
+          </>
+        ))}
+      </div>
+    </>
+  );
+};
 
 export default Info;

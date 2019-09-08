@@ -32,10 +32,15 @@
 }
 
 .navigationLink {
+  font-size: 18px;
   color: colorNavigationGray;
   padding: 10px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.navigationLink:hover {
+  color: #000000
 }
 
 .navigationLinkDetail {
@@ -48,6 +53,7 @@
   align-items: center;
   max-width: mainLogoMaxWidth;
   height: sizeL;
+  z-index: 1;
 
   img {
     height: 100%;
