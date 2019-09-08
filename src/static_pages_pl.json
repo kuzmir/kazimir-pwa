@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "name": "info",
+        "details": [
+            {
+                "title": "Opowieść o dwóch kulturach na krakowskim Kazimierzu",
+                "content": "Przewodnik Kazimir to aplikacja mobilna, która daje Ci możliwość szczegółowego poznania historycznej żydowskiej dzielnicy Krakowa. Pochłonie cię nieznany świat – pełen legend, zdarzeń i osób – który kształtował tożsamość Krakowian przez wieki oraz ten współczesny, który zaskoczy Cię i zainspiruje. Przed Tobą wyjątkowa podróż w czasie."
+            },
+            {
+                "title": "Idea",
+                "content": "Społeczny cel tego projektu Kazimir to pokazanie korelacji żydowskiej i polskiej kultury na przestrzeni wieków. Zebranie w jednym miejscu informacji z przedwojennego i współczesnego życia dzielnicy ma zachęcać mieszkańców Krakowa, aby zainteresowali się historią, związaną z miejscami odwiedzanymi na co dzień.",
+                "details": "Chcemy, by Polacy poznali żydowską przeszłość Kazimierza, natomiast Żydzi jego współczesne oblicze. W części przedwojennej Kazimira wprowadziliśmy odwrotną nawigację – od prawej do lewej, co nawiązuje do kierunku czytania języka hebrajskiego. Celem jest łączenie ludzi różnych narodowości, wyznań, kultur."
+            },
+            {
+                "title": "Logo",
+                "content": "Logotyp oparty na kształcie dzielnicy, przypominający hebrajską literę BETA, odzwierciedla dwie kultury, religie i narody. Symbol DOMU, który niesie ze sobą BETA nawiązuje do swobodnej, bezpretensjonalnej atmosfery Kazimierza, a także jego niewątpliwej gościnności."
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "team",
+        "details": []
+    },
+    {
+        "id": 1,
+        "name": "press",
+        "details": []
+    }
+]

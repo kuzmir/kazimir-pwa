@@ -6,16 +6,24 @@ import style from './page.css';
 
 const Press = () => (
   <>
-    <div className={style.content}>
-      <img src="/images/icon.png" className={style.image}/>
-    </div>
+    <div className={style.hero} />
+
     <div className={style.content}>
       <h1 className={style.headline}>Press</h1>
 
-      <p>Cheese on toast airedale the big cheese. Danish fontina cheesy grin airedale danish fontina taleggio the big cheese macaroni cheese port-salut.</p>
-      <p>Edam fromage lancashire feta caerphilly everyone loves chalk and cheese brie. Red leicester parmesan cheese and biscuits cheesy feet blue castello cheesecake fromage frais smelly cheese.</p>
-    </div> 
+      <div className={style.teamFlexContainer}>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+        <div className={style.teamItem}>item</div>
+      </div>
+    </div>
   </>
-);  
+);
 
 export default Press;
