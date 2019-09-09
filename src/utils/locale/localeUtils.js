@@ -1,5 +1,13 @@
-// @flow
+// @flow strict
 
-// todo: confirm this is legit (if navigator.language is okay)
-export const getDefaultBrowserLocale = () =>
-  navigator.language === 'pl-PL' ? 'pl' : 'en';
+export const getURLLocale = () => {
+  const assumedUrlLocale = location.pathname.split('/').filter(Boolean)[0];
+
+  if (['en', 'pl'].includes(assumedUrlLocale)) {
+    return assumedUrlLocale;
+  }
+
+  return 'en';
+};
+
+export const getUserLocale = getURLLocale;

@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
@@ -17,6 +17,8 @@ import './components/navigation/main.css';
 import style from './components/list/list.css';
 import data from './streets.json';
 import rafThrottler from './utils/rafThrottler';
+
+import getRouter from './utils/routes/router';
 
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
@@ -163,6 +165,15 @@ class AppContainer extends React.Component<PropsType, StateType> {
     const {data} = this.state;
     const screenType = widthToScreenType(this.state.width);
     const isWideLayout = screenType === SCREEN_DESKTOP;
+    const {getRoute, generateRoute} = getRouter(this.props.locale);
+    console.error('PAGE LOCALE', this.props.locale)
+    console.log(
+      getRoute('MAIN'),
+      getRoute('MAP'),
+      generateRoute('MAP', {name: 'miodowa', timespan: 'obecnie'}),
+      getRoute('STREET'),
+      generateRoute('STREET', {name: 'szczypiorek', timespan: 'hola to nie działa'})
+    )
 
     return (
       <>
@@ -173,14 +184,14 @@ class AppContainer extends React.Component<PropsType, StateType> {
             <Switch>
               <Route
                 exact
-                path="/"
+                path={getRoute('MAIN')}
                 component={
                   isWideLayout ? this.renderDesktopView : this.renderStreetList
                 }
               />
               <Route
                 exact
-                path="/map/:name"
+                path={getRoute('MAP')}
                 component={
                   isWideLayout
                     ? this.renderDesktopView
@@ -189,7 +200,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
               />
               <Route
                 exact
-                path="/street/:name/:timespan"
+                path={getRoute('STREET')}
                 component={
                   isWideLayout ? this.renderDetailDesktop : this.renderDetail
                 }

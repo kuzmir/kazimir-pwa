@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {getDefaultBrowserLocale} from './localeUtils';
+import {getUserLocale} from './localeUtils';
 
 const {Provider, Consumer} = React.createContext<LocaleContextType>({});
 
@@ -24,7 +24,7 @@ export class LocaleContextProvider extends React.Component<
   LocaleStateType
 > {
   state = {
-    locale: getDefaultBrowserLocale()
+    locale: getUserLocale()
   };
 
   handleSetLocale = (locale: string) => this.setState(() => ({locale}));

@@ -1,0 +1,5 @@
+{
+  "MAIN": "/",
+  "STREET": "/street/:name/:timespan",
+  "MAP": "/map/:name"
+}
