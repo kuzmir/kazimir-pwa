@@ -19,12 +19,14 @@ type PropsType = {
   id: number,
   mapView: boolean,
   places: PlacesType,
+  generateRoute: (string, Object | null) => string,
 };
 
 class Street extends React.Component<PropsType> {
   render() {
-    const {name, id, mapView, places, match, history} = this.props;
+    const {name, id, mapView, places, match, history, generateRoute} = this.props;
     const slugName = slugifyStreetName(name);
+    const path = generateRoute('MAP', {name: slugName})
 
     const itemBackgroundStylesList = {
       backgroundImage: `url(${places.present[0].photos[0].small})`,
@@ -40,14 +42,23 @@ class Street extends React.Component<PropsType> {
       >
         <div
           className={style.listItemCover}
-          onClick={mapView ? () => history.push(`/map/${slugName}`) : null}
+          onClick={mapView ? () => history.push(path) : null}
         />
-        <Link to={`/street/${slugName}/past`} className={style.listItemNavIcon}>
+        <Link
+          to={generateRoute('STREET', {
+            name: slugName,
+            timespan: 'past'
+          })}
+          className={style.listItemNavIcon}
+        >
           <ArrowLeftIcon color="white" />
         </Link>
         <h3 className={style.listItemName}>{name}</h3>
         <Link
-          to={`/street/${slugName}/present`}
+          to={generateRoute('STREET', {
+            name: slugName,
+            timespan: 'present'
+          })}
           className={style.listItemNavIcon}
         >
           <ArrowRightIcon color="white" />

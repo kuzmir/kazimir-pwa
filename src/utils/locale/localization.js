@@ -3,8 +3,8 @@
 import {getUserLocale} from './localeUtils';
 import locales from './locales';
 
-function t(key, locale = getUserLocale()) {
+function translate(key: string, locale: 'en' | 'pl' = getUserLocale()) {
   return locales[locale][key];
 }
 
-export default t;
+export default translate;

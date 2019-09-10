@@ -10,11 +10,14 @@ import MapIcon from '../navigationIcons/MapIcon';
 import ArrowRight from '../navigationIcons/ArrowRight';
 import ArrowLeft from '../navigationIcons/ArrowLeft';
 import Logo from '../navigationIcons/Logo';
+import {slugifyStreetName} from '../../utils/url';
+import {withLocale} from '../../utils/locale/withLocale';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
 
 class Navigation extends React.Component<*, *> {
   render() {
+    const {generateRoute} = this.props;
     const isMapVisible = isViewActive(this.props.location.pathname, '/map');
     const detailViewVisible = isViewActive(
       this.props.location.pathname,
@@ -31,7 +34,7 @@ class Navigation extends React.Component<*, *> {
             )}
           >
             <Link
-              to="/"
+              to={generateRoute('MAIN')}
               className={classnames(
                 style.navigationIcon,
                 style.navigationIconSvg,
@@ -52,7 +55,7 @@ class Navigation extends React.Component<*, *> {
           >
             <h3>{this.props.streetName}</h3>
             <Link
-              to="/"
+              to={generateRoute('MAIN')}
               className={classnames(
                 style.navigationIcon,
                 style.navigationIconSvg,
@@ -66,12 +69,12 @@ class Navigation extends React.Component<*, *> {
       </>
     ) : (
       <nav className={style.navContainer}>
-        <Link to="/" className={style.navLogo}>
+        <Link to={generateRoute('MAIN')} className={style.navLogo}>
           <Logo />
         </Link>
         {isMapVisible ? (
           <Link
-            to="/"
+            to={generateRoute('MAIN')}
             className={classnames(
               style.navigationMainMobileSwitchIcon,
               style.navigationIconSvg,
@@ -83,7 +86,7 @@ class Navigation extends React.Component<*, *> {
           </Link>
         ) : (
           <Link
-            to="/map/1"
+            to={generateRoute('MAP', {name: 'miodowa'})}
             className={classnames(
               style.navigationMainMobileSwitchIcon,
               style.navigationIconSvg,
@@ -99,4 +102,4 @@ class Navigation extends React.Component<*, *> {
   }
 }
 
-export default withRouter(Navigation);
+export default withLocale()<*>(withRouter(Navigation));

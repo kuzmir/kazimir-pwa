@@ -2,12 +2,16 @@
 
 import * as React from 'react';
 import {getUserLocale} from './localeUtils';
+import getRouter from '../routes/router';
+import translate from './localization';
 
 const {Provider, Consumer} = React.createContext<LocaleContextType>({});
 
 export type LocaleContextType = {
-  locale: string,
-  setLocale: string => mixed
+  locale: 'en' | 'pl',
+  changeLocale: () => mixed,
+  getRoute: string => string,
+  generateRoute: (string, Object | null) => string,
 };
 export type LocalePropsType = {
   children: React.Node
@@ -15,7 +19,7 @@ export type LocalePropsType = {
 
 // todo: locale as a const ($Values etc)
 type LocaleStateType = {
-  locale: string
+  locale: 'en' | 'pl'
 };
 
 export const LocaleContextConsumer = Consumer;
@@ -27,14 +31,22 @@ export class LocaleContextProvider extends React.Component<
     locale: getUserLocale()
   };
 
-  handleSetLocale = (locale: string) => this.setState(() => ({locale}));
+  handleChangeLocale = () =>
+    this.setState(({locale}) => ({
+      locale: locale === 'pl' ? 'en' : 'pl'
+    }));
 
   render() {
+    const {locale} = this.state;
+    const {getRoute, generateRoute} = getRouter(locale);
 
     return (
       <Provider value={{
-        locale: this.state.locale,
-        setLocale: this.handleSetLocale
+        locale: locale,
+        changeLocale: this.handleChangeLocale,
+        getRoute,
+        generateRoute,
+        translate: (id: string) => translate(id, locale),
       }}>
         {this.props.children}
       </Provider>
