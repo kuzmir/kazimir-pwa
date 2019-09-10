@@ -15,7 +15,7 @@ import Press from './components/pages/Press';
 import NotFound from './components/pages/NotFound';
 import './components/navigation/main.css';
 import style from './components/list/list.css';
-import data from './streets.json';
+import data from './streets_en.json';
 import rafThrottler from './utils/rafThrottler';
 
 const BREAKPOINT = 1024;
