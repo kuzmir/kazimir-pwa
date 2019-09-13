@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
@@ -25,7 +25,9 @@ const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
 type PropsType = {
   initServiceWorker: () => mixed,
   locale: string,
-  setLocale: string => mixed,
+  changeLocale: () => mixed,
+  getRoute: string => string,
+  generateRoute: (string, Object | null) => string,
   online: boolean,
 };
 
@@ -161,11 +163,22 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
   render() {
     const {data} = this.state;
+    const {getRoute} = this.props;
     const screenType = widthToScreenType(this.state.width);
     const isWideLayout = screenType === SCREEN_DESKTOP;
 
     return (
       <>
+        <div style={{
+          position: 'fixed',
+          bottom: 0,
+          background: 'white',
+          zIndex: 100,
+          padding: '12px',
+          border: '5px solid green',
+        }}>
+          <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
+        </div>
         {!data.length ? (
           <div>loading here</div>
         ) : (
@@ -173,14 +186,14 @@ class AppContainer extends React.Component<PropsType, StateType> {
             <Switch>
               <Route
                 exact
-                path="/"
+                path={getRoute('MAIN')}
                 component={
                   isWideLayout ? this.renderDesktopView : this.renderStreetList
                 }
               />
               <Route
                 exact
-                path="/map/:name"
+                path={getRoute('MAP')}
                 component={
                   isWideLayout
                     ? this.renderDesktopView
@@ -189,29 +202,18 @@ class AppContainer extends React.Component<PropsType, StateType> {
               />
               <Route
                 exact
-                path="/street/:name/:timespan"
+                path={getRoute('STREET')}
                 component={
                   isWideLayout ? this.renderDetailDesktop : this.renderDetail
                 }
               />
-              <Route exact path="/team" component={this.renderTeam} />
-              <Route exact path="/info" component={this.renderInfo} />
-              <Route exact path="/press" component={this.renderPress} />
+              <Route exact path={getRoute('TEAM')} component={this.renderTeam} />
+              <Route exact path={getRoute('INFO')} component={this.renderInfo} />
+              <Route exact path={getRoute('PRESS')} component={this.renderPress} />
               <Route component={this.renderNotFound} />
             </Switch>
           </Router>
         )}
-        <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
-        <div>current locale {this.props.locale}</div>
-        <div>
-          <button
-            onClick={() =>
-              this.props.setLocale(this.props.locale === 'pl' ? 'en' : 'pl')
-            }
-          >
-            change to {this.props.locale === 'pl' ? 'en' : 'pl'}
-          </button>
-        </div>
       </>
     );
   }

@@ -1,0 +1,9 @@
+{
+  "CHANGE_LANGUAGE": "/",
+  "MAIN": "/pl",
+  "STREET": "/pl/street/:name/:timespan",
+  "MAP": "/pl/map/:name",
+  "INFO": "/pl/info",
+  "TEAM": "/pl/team",
+  "PRESS": "/pl/press"
+}

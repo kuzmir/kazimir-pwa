@@ -7,11 +7,10 @@ export const withLocale = () => <ReceivedProps: {}>(
 ): React.ComponentType<ReceivedProps> => {
   const WrappedComponent = (wrappedComponentProps: ReceivedProps) => (
     <LocaleContextConsumer>
-      {({locale, setLocale}) => (
+      {props => (
         <Wrapped
           {...wrappedComponentProps}
-          setLocale={setLocale}
-          locale={locale}
+          {...props}
         />
       )}
     </LocaleContextConsumer>

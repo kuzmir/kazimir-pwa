@@ -30,6 +30,7 @@ type StreetDetailReturnedPropsType = {
   match: Match,
   locale: string,
   desktopView: boolean,
+  generateRoute: (string, Object | null) => string,
 };
 
 const StreetDetail = ({
@@ -102,10 +103,15 @@ const mapPropsToNewProps = ({
   data,
   locale,
   desktopView,
+  generateRoute,
 }: StreetDetailReturnedPropsType) => {
   const paramName = match.params.name || '';
   const selectedItem = data.find(item => slugifyStreetName(item.name) === paramName);
   const timespan = match.params.timespan || 'present';
+  const switchPath = generateRoute('STREET', {
+    name: paramName,
+    timespan: getOpositeTimespan(timespan)
+  })
 
   return {
     items: (selectedItem && selectedItem.places[timespan]) || [],
@@ -113,7 +119,7 @@ const mapPropsToNewProps = ({
     locale,
     navigationState: timespan,
     desktopView,
-    switchPath: `/street/${paramName}/${getOpositeTimespan(timespan)}`,
+    switchPath,
   };
 };
 
