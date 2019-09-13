@@ -112,9 +112,20 @@ module.exports = env => {
           to: path.join(DIST_PATH),
         },
         {
-          // todo: remove when retrieving data from server
-          from: path.join(SRC_PATH, 'streets.json'),
-          to: path.join(DIST_PATH, 'streets.json'),
+          from: path.join(SRC_PATH, 'streets_en.json'),
+          to: path.join(DIST_PATH, 'streets_en.json'),
+        },
+        {
+          from: path.join(SRC_PATH, 'streets_pl.json'),
+          to: path.join(DIST_PATH, 'streets_pl.json'),
+        },
+        {
+          from: path.join(SRC_PATH, 'robots.txt'),
+          to: path.join(DIST_PATH, 'robots.txt'),
+        },
+        {
+          from: path.join(SRC_PATH, 'sitemap.xml'),
+          to: path.join(DIST_PATH, 'sitemap.xml'),
         },
       ]),
       new MiniCssExtractPlugin({
