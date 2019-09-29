@@ -17,7 +17,10 @@ import type {Match} from 'react-router-dom';
 import type {StreetType} from '../../AppContainer';
 
 type StreetDetailPropsType = {
-  items: Array<Object>,
+  places: {
+    present: Array<Object>,
+    past: Array<Object>,
+  },
   streetName?: string,
   switchPath: string,
   navigationState: string,
