@@ -1,6 +1,6 @@
 // @flow
 
-import * as React from 'react';
+import React from 'react';
 
 import style from './page.css';
 import data from '../../static_pages_en.json';
