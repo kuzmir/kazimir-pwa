@@ -41,20 +41,16 @@ const StreetDetail = ({
   desktopView,
   switchPath,
 }: StreetDetailPropsType) => {
-  const content = Object.keys(places).map(timespan =>
-    places[timespan].map((item, index) => {
-      const opositeTimespan = getOpositeTimespan(timespan);
-
-      console.log(item, timespan);
-      return (
-        <div
-          key={index}
-          className={classnames(
-            style.flipCardFront,
-            timespan === opositeTimespan ? style.flipCardBack : null
-          )}
-        >
-          <h4 className={style.streetItemHeadline}>{timespan}</h4>
+  const content = Object.keys(places).map((timespan, index) => (
+    <div
+      key={index}
+      className={classnames(
+        timespan === 'present' ? style.flipCardFront : style.flipCardBack
+      )}
+    >
+      {places[timespan].map((item, index) => (
+        <div key={index}>
+          <h4 className={style.streetItemHeadline}>{item.name}</h4>
           <div className={style.imagesContainer}>
             {item.photos.length > 1 ? (
               <Slider items={item.photos} />
@@ -66,17 +62,21 @@ const StreetDetail = ({
             <p className={style.streetItemDescription}>{item.description}</p>
           </div>
         </div>
-      );
-    })
-  );
+      ))}
+    </div>
+  ));
 
   return (
     <>
       {desktopView ? (
         <div className={style.desktopDetial}>
-          <div className={style.flipCard}>
-            <div className={style.flipCardFront}>front</div>
-            <div className={style.flipCardBack}>back</div>
+          <div
+            className={classnames(
+              style.flipCard,
+              navigationState === 'past' ? style.flipCardFlipped : null
+            )}
+          >
+            {content}
           </div>
           <div
             className={classnames(
@@ -95,7 +95,14 @@ const StreetDetail = ({
       ) : (
         <>
           <Navigation streetName={streetName} />
-          {content}
+          <div
+            className={classnames(
+              style.flipCard,
+              navigationState === 'past' ? style.flipCardFlipped : null
+            )}
+          >
+            {content}
+          </div>
           <div
             className={classnames(
               style.flipIconContainer,
