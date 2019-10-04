@@ -17,7 +17,10 @@ import type {Match} from 'react-router-dom';
 import type {StreetType} from '../../AppContainer';
 
 type StreetDetailPropsType = {
-  items: Array<Object>,
+  places: {
+    present: Array<Object>,
+    past: Array<Object>,
+  },
   streetName?: string,
   switchPath: string,
   navigationState: string,
@@ -34,26 +37,35 @@ type StreetDetailReturnedPropsType = {
 };
 
 const StreetDetail = ({
-  items,
+  places,
   streetName,
   locale,
   navigationState,
   desktopView,
   switchPath,
 }: StreetDetailPropsType) => {
-  const content = items.map((item, index) => (
-    <div key={index} className={style.streetDetailContainer}>
-      <h4 className={style.streetItemHeadline}>{item.name}</h4>
-      <div className={style.imagesContainer}>
-        {item.photos.length > 1 ? (
-          <Slider items={item.photos} />
-        ) : (
-          <img src={item.photos[0].small} alt={item.name} />
-        )}
-      </div>
-      <div className={style.itemDescriptionContainer}>
-        <p className={style.streetItemDescription}>{item.description}</p>
-      </div>
+  const content = Object.keys(places).map((timespan, index) => (
+    <div
+      key={index}
+      className={classnames(
+        timespan === 'present' ? style.flipCardFront : style.flipCardBack
+      )}
+    >
+      {places[timespan].map((item, index) => (
+        <div key={index}>
+          <h4 className={style.streetItemHeadline}>{item.name}</h4>
+          <div className={style.imagesContainer}>
+            {item.photos.length > 1 ? (
+              <Slider items={item.photos} />
+            ) : (
+              <img src={item.photos[0].small} alt={item.name} />
+            )}
+          </div>
+          <div className={style.itemDescriptionContainer}>
+            <p className={style.streetItemDescription}>{item.description}</p>
+          </div>
+        </div>
+      ))}
     </div>
   ));
 
@@ -61,7 +73,14 @@ const StreetDetail = ({
     <>
       {desktopView ? (
         <div className={style.desktopDetial}>
-          {content}
+          <div
+            className={classnames(
+              style.flipCard,
+              navigationState === 'past' ? style.flipCardFlipped : null
+            )}
+          >
+            {content}
+          </div>
           <div
             className={classnames(
               style.flipIconContainer,
@@ -79,7 +98,14 @@ const StreetDetail = ({
       ) : (
         <>
           <Navigation streetName={streetName} />
-          {content}
+          <div
+            className={classnames(
+              style.flipCard,
+              navigationState === 'past' ? style.flipCardFlipped : null
+            )}
+          >
+            {content}
+          </div>
           <div
             className={classnames(
               style.flipIconContainer,
@@ -106,15 +132,17 @@ const mapPropsToNewProps = ({
   generateRoute,
 }: StreetDetailReturnedPropsType) => {
   const paramName = match.params.name || '';
-  const selectedItem = data.find(item => slugifyStreetName(item.name) === paramName);
+  const selectedItem = data.find(
+    item => slugifyStreetName(item.name) === paramName
+  );
   const timespan = match.params.timespan || 'present';
   const switchPath = generateRoute('STREET', {
     name: paramName,
-    timespan: getOpositeTimespan(timespan)
-  })
+    timespan: getOpositeTimespan(timespan),
+  });
 
   return {
-    items: (selectedItem && selectedItem.places[timespan]) || [],
+    places: (selectedItem && selectedItem.places) || {},
     streetName: selectedItem && selectedItem.name,
     locale,
     navigationState: timespan,
