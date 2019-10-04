@@ -4,7 +4,6 @@ import * as React from 'react';
 import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
-import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
@@ -219,6 +218,4 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 }
 
-export default withNetworkStatus()<PropsType>(
-  withLocale()<PropsType>(AppContainer)
-);
+export default withLocale()<PropsType>(AppContainer);
