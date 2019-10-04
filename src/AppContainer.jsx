@@ -27,7 +27,6 @@ type PropsType = {
   changeLocale: () => mixed,
   getRoute: string => string,
   generateRoute: (string, Object | null) => string,
-  online: boolean,
 };
 
 export type PhotoType = {
@@ -168,16 +167,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
     return (
       <>
-        <div style={{
-          position: 'fixed',
-          bottom: 0,
-          background: 'white',
-          zIndex: 100,
-          padding: '12px',
-          border: '5px solid green',
-        }}>
-          <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
-        </div>
         {!data.length ? (
           <div>loading here</div>
         ) : (
