@@ -55,9 +55,6 @@
 .flipCard {
   perspective: 1000px;
   position: relative;
-  /* min-height: $cardMaxHeight;
-  max-width: $cardWidth;
-  width: $cardWidth; */
 }
 
 .flipCardFront,
