@@ -1,12 +1,7 @@
 // @flow
 
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  withRouter,
-} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withLocale} from './utils/locale/withLocale';
@@ -134,12 +129,12 @@ class AppContainer extends React.Component<PropsType, StateType> {
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
-        <Info locale={this.state.locale} />
+        <Info locale={this.props.locale} />
       </div>
     </>
   );
 
-  renderTeam = props => (
+  renderTeam = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
@@ -148,7 +143,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </>
   );
 
-  renderPress = props => (
+  renderPress = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
@@ -157,7 +152,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </>
   );
 
-  renderNotFound = props => (
+  renderNotFound = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
