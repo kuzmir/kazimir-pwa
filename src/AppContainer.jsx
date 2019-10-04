@@ -4,7 +4,6 @@ import * as React from 'react';
 import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
-import {withNetworkStatus} from './utils/networkStatus/withNetworkStatus';
 import {withLocale} from './utils/locale/withLocale';
 import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
@@ -28,7 +27,6 @@ type PropsType = {
   changeLocale: () => mixed,
   getRoute: string => string,
   generateRoute: (string, Object | null) => string,
-  online: boolean,
 };
 
 export type PhotoType = {
@@ -169,16 +167,6 @@ class AppContainer extends React.Component<PropsType, StateType> {
 
     return (
       <>
-        <div style={{
-          position: 'fixed',
-          bottom: 0,
-          background: 'white',
-          zIndex: 100,
-          padding: '12px',
-          border: '5px solid green',
-        }}>
-          <h3>network status: {this.props.online ? 'online' : 'offline'}</h3>
-        </div>
         {!data.length ? (
           <div>loading here</div>
         ) : (
@@ -219,6 +207,4 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 }
 
-export default withNetworkStatus()<PropsType>(
-  withLocale()<PropsType>(AppContainer)
-);
+export default withLocale()<PropsType>(AppContainer);
