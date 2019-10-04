@@ -7,7 +7,6 @@ import {Link, withRouter} from 'react-router-dom';
 import style from './navigation.css';
 import ArrowLeft from '../navigationIcons/ArrowLeft';
 import Logo from '../navigationIcons/Logo';
-import {slugifyStreetName} from '../../utils/url';
 import {withLocale} from '../../utils/locale/withLocale';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
@@ -57,22 +56,13 @@ class Navigation extends React.Component<*, *> {
           >
             {locale === 'pl' ? '🇺🇸' : '🇵🇱'}
           </Link>
-          <Link
-            to={generateRoute('INFO')}
-            className={linkClassName}
-          >
+          <Link to={generateRoute('INFO')} className={linkClassName}>
             {translate('INFO')}
           </Link>
-          <Link
-            to={generateRoute('TEAM')}
-            className={linkClassName}
-          >
+          <Link to={generateRoute('TEAM')} className={linkClassName}>
             {translate('TEAM')}
           </Link>
-          <Link
-            to={generateRoute('PRESS')}
-            className={linkClassName}
-          >
+          <Link to={generateRoute('PRESS')} className={linkClassName}>
             {translate('PRESS')}
           </Link>
         </div>

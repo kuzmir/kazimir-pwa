@@ -10,7 +10,6 @@ import MapIcon from '../navigationIcons/MapIcon';
 import ArrowRight from '../navigationIcons/ArrowRight';
 import ArrowLeft from '../navigationIcons/ArrowLeft';
 import Logo from '../navigationIcons/Logo';
-import {slugifyStreetName} from '../../utils/url';
 import {withLocale} from '../../utils/locale/withLocale';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
