@@ -1,7 +1,7 @@
 // @flow
 
-import * as React from 'react';
-import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import {withLocale} from './utils/locale/withLocale';
@@ -15,6 +15,7 @@ import NotFound from './components/pages/NotFound';
 import './components/navigation/main.css';
 import style from './components/list/list.css';
 import data from './streets_en.json';
+import dataPl from './streets_pl.json';
 import rafThrottler from './utils/rafThrottler';
 
 const BREAKPOINT = 1024;
@@ -75,7 +76,8 @@ class AppContainer extends React.Component<PropsType, StateType> {
   }
 
   state = {
-    data,
+    data: this.props.locale === 'pl' ? dataPl : data,
+    locale: this.props.locale,
     width: window.innerWidth,
   };
 
@@ -123,16 +125,16 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </>
   );
 
-  renderInfo = props => (
+  renderInfo = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
-        <Info />
+        <Info locale={this.props.locale} />
       </div>
     </>
   );
 
-  renderTeam = props => (
+  renderTeam = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
@@ -141,7 +143,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </>
   );
 
-  renderPress = props => (
+  renderPress = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
@@ -150,7 +152,7 @@ class AppContainer extends React.Component<PropsType, StateType> {
     </>
   );
 
-  renderNotFound = props => (
+  renderNotFound = () => (
     <>
       <NavigationDesktop />
       <div className={style.desktopViewContainer}>
@@ -195,9 +197,21 @@ class AppContainer extends React.Component<PropsType, StateType> {
                   isWideLayout ? this.renderDetailDesktop : this.renderDetail
                 }
               />
-              <Route exact path={getRoute('TEAM')} component={this.renderTeam} />
-              <Route exact path={getRoute('INFO')} component={this.renderInfo} />
-              <Route exact path={getRoute('PRESS')} component={this.renderPress} />
+              <Route
+                exact
+                path={getRoute('TEAM')}
+                component={this.renderTeam}
+              />
+              <Route
+                exact
+                path={getRoute('INFO')}
+                component={this.renderInfo}
+              />
+              <Route
+                exact
+                path={getRoute('PRESS')}
+                component={this.renderPress}
+              />
               <Route component={this.renderNotFound} />
             </Switch>
           </Router>

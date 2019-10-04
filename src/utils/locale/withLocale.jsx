@@ -1,4 +1,5 @@
 // @flow
+
 import * as React from 'react';
 import {LocaleContextConsumer} from './LocaleContext';
 
@@ -7,12 +8,7 @@ export const withLocale = () => <ReceivedProps: {}>(
 ): React.ComponentType<ReceivedProps> => {
   const WrappedComponent = (wrappedComponentProps: ReceivedProps) => (
     <LocaleContextConsumer>
-      {props => (
-        <Wrapped
-          {...wrappedComponentProps}
-          {...props}
-        />
-      )}
+      {props => <Wrapped {...wrappedComponentProps} {...props} />}
     </LocaleContextConsumer>
   );
 
