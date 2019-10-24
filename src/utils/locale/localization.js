@@ -3,7 +3,10 @@
 import {getUserLocale} from './localeUtils';
 import locales from './locales';
 
-function translate(key: string, locale: 'en' | 'pl' = getUserLocale()) {
+export type LocaleType = 'en' | 'pl';
+export type L20nKeyType = string;
+
+function translate(key: L20nKeyType, locale: LocaleType = getUserLocale()): string {
   return locales[locale][key];
 }
 

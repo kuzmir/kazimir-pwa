@@ -1,7 +1,7 @@
 // @flow strict
 
-export const getURLLocale = (): 'en' | 'pl' => {
-  const assumedUrlLocale = location.pathname.split('/').filter(Boolean)[0];
+export const getUserLocale = (): 'en' | 'pl' => {
+  const assumedUrlLocale = window.location.pathname.split('/').filter(Boolean)[0];
 
   if (assumedUrlLocale === 'pl' || assumedUrlLocale === 'en') {
     return assumedUrlLocale;
@@ -9,5 +9,3 @@ export const getURLLocale = (): 'en' | 'pl' => {
 
   return 'en';
 };
-
-export const getUserLocale = getURLLocale;

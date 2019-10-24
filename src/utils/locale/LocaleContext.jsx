@@ -32,9 +32,9 @@ export class LocaleContextProvider extends React.Component<
   };
 
   handleChangeLocale = () =>
-    this.setState(({locale}) => ({
-      locale: locale === 'pl' ? 'en' : 'pl'
-    }));
+      this.setState(({locale}) => ({
+        locale: locale === 'pl' ? 'en' : 'pl'
+      }));
 
   render() {
     const {locale} = this.state;
