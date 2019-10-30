@@ -50,7 +50,7 @@ export type StreetType = {
 };
 
 type StateType = {
-  width: number,
+  // screenType: typeof SCREEN_MOBILE | typeof SCREEN_DESKTOP,
   data: Array<StreetType>,
 };
 
@@ -64,28 +64,15 @@ function widthToScreenType(width: number) {
 
 function AppContainer() {
   const {getRoute, locale} = useI18n();
-  const [{data, width}, setState] = useState<StateType>({
-    data: locale === 'pl' ? dataPL : dataEN,
-    width: window.innerWidth,
+  const [{data}, setState] = useState<StateType>({
+    data: locale === 'pl' ? dataPL : dataEN
   });
-  const screenType = widthToScreenType(width);
+  const screenType = widthToScreenType(window.innerWidth);
   const isWideLayout = screenType === SCREEN_DESKTOP;
 
   useEffect(() => {
     setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN,}))
   }, [locale]);
-
-  useEffect(() => {
-    const onResize = rafThrottler(() => {
-      setState(state => ({...state, width: window.innerWidth}))
-    });
-
-    window.addEventListener('resize', onResize);
-
-    return () => {
-      window.removeEventListener('resize', onResize);
-    };
-  }, [width])
 
   const renderStreetListWithMap = props => (
     <>
