@@ -1,29 +1,29 @@
-// @flow
+// @flow strict
 
 import React from 'react';
-import withProps from '../../utils/withProps';
 import {slugifyStreetName} from '../../utils/url';
 import classnames from 'classnames';
+// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
 import {Link, useParams} from 'react-router-dom';
 import {getOpositeTimespan} from '../../utils/timespan';
 import Navigation from '../navigation/Navigation';
 import Flip from '../navigationIcons/Flip';
 import Slider from './Slider';
 import style from './detail.css';
-import usei18n from '../../utils/locale/i18n';
+import useI18n from '../../utils/locale/i18n';
 
 import type {StreetType} from '../../AppContainer';
 
 type StreetDetailPropsType = {
   data: Array<StreetType>,
-  desktopView: boolean,
+  desktopView?: boolean,
 };
 
 const StreetDetail = ({
   data,
-  desktopView,
+  desktopView = false,
 }: StreetDetailPropsType) => {
-  const {locale, generateRoute} = usei18n()
+  const {locale, generateRoute} = useI18n();
   const {name = '', timespan = 'present'} = useParams();
 
   const selectedItem = data.find(

@@ -3,18 +3,19 @@
 import React from 'react';
 import classnames from 'classnames';
 import {isTimespan, PRESENT, PAST} from '../../utils/timespan';
+// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
 import {Link, useLocation, useParams} from 'react-router-dom';
 import style from './navigation.css';
 import ArrowLeft from '../navigationIcons/ArrowLeft';
 import Logo from '../navigationIcons/Logo';
-import usei18n from '../../utils/locale/i18n';
+import useI18n from '../../utils/locale/i18n';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
 
 function NavigationDesktop() {
-  const {translate, changeLocale, locale, generateRoute} = usei18n();
   const location = useLocation();
   const params = useParams();
+  const {translate, locale, changeLocaleRoute, generateRoute} = useI18n();
   const detailViewVisible = isViewActive(
     location.pathname,
     '/street'
@@ -52,9 +53,8 @@ function NavigationDesktop() {
 
       <div className={style.navDesktopInfoLinks}>
         <Link
-          to={generateRoute('CHANGE_LANGUAGE')}
+          to={changeLocaleRoute}
           className={linkClassName}
-          onClick={changeLocale}
         >
           {locale === 'pl' ? '🇺🇸' : '🇵🇱'}
         </Link>

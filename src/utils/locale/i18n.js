@@ -1,21 +1,45 @@
 // @flow strict
 
 import {useEffect, useState} from 'react';
+// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
 import {useLocation} from 'react-router-dom';
 import {getUserLocale} from './localeUtils';
-import translate, {type LocaleType} from './localization';
-import getRouter from '../routes/router';
+import translate from './localization';
+import type {LocaleType} from './localization';
+import getRouter, {getRouteFromLocation} from '../routes/router';
 
-export default function usei18n() {
-  const [locale, setLocale] = useState(getUserLocale());
-  // const location = useLocation();
+type I18nType = {
+  changeLocaleRoute: string,
+  getRoute: (id: string) => string,
+  generateRoute: (
+    id: string,
+    params: Object | null,
+    overrideLocale?: LocaleType
+  ) => string,
+  locale: LocaleType,
+  translate: (id: string) => string,
+};
+
+export default function useI18n(): I18nType {
+  const location = useLocation();
+  const locale = getUserLocale();
   const {getRoute, generateRoute} = getRouter(locale);
 
+  const [changeLocaleRoute, setChangeLocaleRoute] = useState<string>(
+    getRouteFromLocation(location.pathname, locale)
+  );
+
+  useEffect(() => {
+    const locale = getUserLocale();
+
+    setChangeLocaleRoute(getRouteFromLocation(location.pathname, locale));
+  }, [location]);
+
   return {
-    locale,
-    changeLocale: (locale: LocaleType) => setLocale(locale),
-    translate: (id: string) => translate(id, locale),
+    changeLocaleRoute,
     getRoute,
-    generateRoute
-  }
+    generateRoute,
+    locale,
+    translate: (id: string) => translate(id, locale),
+  };
 }

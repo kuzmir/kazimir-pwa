@@ -1,12 +1,11 @@
 // @flow
 
 import React from 'react';
-import {withLocale} from '../../utils/locale/withLocale';
 import style from './page.css';
-import usei18n from '../../utils/locale/i18n';
+import useI18n from '../../utils/locale/i18n';
 
 const Info = () => {
-  const {translate} = usei18n();
+  const {translate} = useI18n();
   return (
     <>
       <div className={style.hero} />

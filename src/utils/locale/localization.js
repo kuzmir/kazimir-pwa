@@ -6,7 +6,10 @@ import locales from './locales';
 export type LocaleType = 'en' | 'pl';
 export type L20nKeyType = string;
 
-function translate(key: L20nKeyType, locale: LocaleType = getUserLocale()): string {
+function translate(
+  key: L20nKeyType,
+  locale: LocaleType = getUserLocale()
+): string {
   return locales[locale][key];
 }
 

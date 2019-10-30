@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
 import {useParams, useLocation} from 'react-router-dom';
 import classnames from 'classnames';
 import {isTimespan, PRESENT} from '../../utils/timespan';
@@ -11,15 +12,14 @@ import MapIcon from '../navigationIcons/MapIcon';
 import ArrowRight from '../navigationIcons/ArrowRight';
 import ArrowLeft from '../navigationIcons/ArrowLeft';
 import Logo from '../navigationIcons/Logo';
-import {withLocale} from '../../utils/locale/withLocale';
-import usei18n from '../../utils/locale/i18n';
+import useI18n from '../../utils/locale/i18n';
 
 const isViewActive = (pathname, value) => pathname.includes(value);
 
 function Navigation({streetName}: {streetName: string}) {
   const location = useLocation();
   const {timespan = 'present'} = useParams();
-  const {generateRoute} = usei18n();
+  const {generateRoute} = useI18n();
 
   const isMapVisible = isViewActive(location.pathname, '/map');
   const detailViewVisible = isViewActive(

@@ -3061,6 +3061,7 @@ escope@^3.6.0:
 eslint-config-brainly-react@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/eslint-config-brainly-react/-/eslint-config-brainly-react-2.7.0.tgz#96b6bacf8bfd56c5c78ada97ac9cf46bbfd0cbc9"
+  integrity sha512-vCe5aBRuVTcNzU62uNUmskfdJ+CwG7GRyz8hhmhzMHbqFEEpMwGuk968CRSHCxOP/+U3nwCvfkNRRgMpxVByrg==
   dependencies:
     eslint-config-brainly "^2.4.0"
 

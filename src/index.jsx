@@ -9,9 +9,13 @@ import {initServiceWorker} from './utils/pwaUtils';
 
 initServiceWorker();
 
-ReactDOM.render(
-  <Router>
-    <AppContainer />
-  </Router>,
-  document.querySelector('.js-root')
-);
+const root = document.querySelector('.js-root');
+
+if (root) {
+  ReactDOM.render(
+    <Router>
+      <AppContainer />
+    </Router>,
+    root
+  );  
+}

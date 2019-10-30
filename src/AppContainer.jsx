@@ -16,7 +16,9 @@ import style from './components/list/list.css';
 import dataEN from './streets_en.json';
 import dataPL from './streets_pl.json';
 import rafThrottler from './utils/rafThrottler';
-import usei18n from './utils/locale/i18n';
+import useI18n from './utils/locale/i18n';
+import {getUserLocale} from './utils/locale/localeUtils';
+
 
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
@@ -61,8 +63,8 @@ function widthToScreenType(width: number) {
 }
 
 function AppContainer() {
-  const {getRoute, locale} = usei18n();
-  const [{data, width}: StateType, setState: StateType => StateType] = useState({
+  const {getRoute, locale} = useI18n();
+  const [{data, width}, setState] = useState<StateType>({
     data: locale === 'pl' ? dataPL : dataEN,
     width: window.innerWidth,
   });
@@ -70,9 +72,11 @@ function AppContainer() {
   const isWideLayout = screenType === SCREEN_DESKTOP;
 
   useEffect(() => {
-    console.log('UPDATE')
+    setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN,}))
+  }, [locale]);
+
+  useEffect(() => {
     const onResize = rafThrottler(() => {
-      console.log('THROTTLER')
       setState(state => ({...state, width: window.innerWidth}))
     });
 
@@ -81,7 +85,7 @@ function AppContainer() {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [data, width])
+  }, [width])
 
   const renderStreetListWithMap = props => (
     <>

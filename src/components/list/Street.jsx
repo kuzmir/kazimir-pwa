@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
+// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
 import {Link, useHistory} from 'react-router-dom';
-import {withLocale} from '../../utils/locale/withLocale';
 import ArrowLeftIcon from '../navigationIcons/ArrowLeft';
 import ArrowRightIcon from '../navigationIcons/ArrowRight';
 import {slugifyStreetName} from '../../utils/url';
@@ -11,7 +11,7 @@ import type {RouterHistory} from 'react-router-dom';
 import type {PlacesType} from '../../AppContainer';
 
 import style from './list.css';
-import usei18n from '../../utils/locale/i18n';
+import useI18n from '../../utils/locale/i18n';
 
 type PropsType = {
   name: string,
@@ -22,7 +22,7 @@ type PropsType = {
 
 function Street({name, id, mapView, places}: PropsType) {
   const history = useHistory();
-  const {generateRoute} = usei18n();
+  const {generateRoute} = useI18n();
   const slugName = slugifyStreetName(name);
   const path = generateRoute('MAP', {name: slugName})
 
