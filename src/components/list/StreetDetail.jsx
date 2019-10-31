@@ -1,49 +1,43 @@
-// @flow
+// @flow strict
 
-import * as React from 'react';
-import withProps from '../../utils/withProps';
+import React from 'react';
 import {slugifyStreetName} from '../../utils/url';
 import classnames from 'classnames';
-import {Link, withRouter} from 'react-router-dom';
-import {withLocale} from '../../utils/locale/withLocale';
+// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
+import {Link, useParams} from 'react-router-dom';
 import {getOpositeTimespan} from '../../utils/timespan';
 import Navigation from '../navigation/Navigation';
 import Flip from '../navigationIcons/Flip';
 import Slider from './Slider';
 import style from './detail.css';
-
-import type {Match} from 'react-router-dom';
+import useI18n from '../../utils/locale/i18n';
 
 import type {StreetType} from '../../AppContainer';
 
 type StreetDetailPropsType = {
-  places: {
-    present: Array<Object>,
-    past: Array<Object>,
-  },
-  streetName?: string,
-  switchPath: string,
-  navigationState: string,
-  desktopView: boolean,
-  locale: string,
-};
-
-type StreetDetailReturnedPropsType = {
   data: Array<StreetType>,
-  match: Match,
-  locale: string,
-  desktopView: boolean,
-  generateRoute: (string, Object | null) => string,
+  desktopView?: boolean,
 };
 
 const StreetDetail = ({
-  places,
-  streetName,
-  locale,
-  navigationState,
-  desktopView,
-  switchPath,
+  data,
+  desktopView = false,
 }: StreetDetailPropsType) => {
+  const {locale, generateRoute} = useI18n();
+  const {name = '', timespan = 'present'} = useParams();
+
+  const selectedItem = data.find(
+    item => slugifyStreetName(item.name) === name
+  );
+  
+  const switchPath = generateRoute('STREET', {
+    name,
+    timespan: getOpositeTimespan(timespan),
+  });
+  const places = (selectedItem && selectedItem.places) || {};
+  const streetName = selectedItem && selectedItem.name || '';
+  const navigationState = timespan;
+
   const content = Object.keys(places).map((timespan, index) => (
     <div
       key={index}
@@ -124,38 +118,5 @@ const StreetDetail = ({
   );
 };
 
-const mapPropsToNewProps = ({
-  match,
-  data,
-  locale,
-  desktopView,
-  generateRoute,
-}: StreetDetailReturnedPropsType) => {
-  const paramName = match.params.name || '';
-  const selectedItem = data.find(
-    item => slugifyStreetName(item.name) === paramName
-  );
-  const timespan = match.params.timespan || 'present';
-  const switchPath = generateRoute('STREET', {
-    name: paramName,
-    timespan: getOpositeTimespan(timespan),
-  });
 
-  return {
-    places: (selectedItem && selectedItem.places) || {},
-    streetName: selectedItem && selectedItem.name,
-    locale,
-    navigationState: timespan,
-    desktopView,
-    switchPath,
-  };
-};
-
-export default withLocale()<any>(
-  withRouter(
-    withProps<StreetDetailReturnedPropsType, StreetDetailPropsType>(
-      mapPropsToNewProps,
-      StreetDetail
-    )
-  )
-);
+export default StreetDetail;

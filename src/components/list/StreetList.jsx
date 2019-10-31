@@ -12,7 +12,7 @@ type StreetListPropsType = {
   mapView?: boolean,
 };
 
-const StreetList = ({mapView, desktopView, data}: StreetListPropsType) => {
+const StreetList = ({mapView = false, desktopView, data}: StreetListPropsType) => {
   const navigationVariant = mapView ? 'mapNavigation' : null;
 
   return (
@@ -20,13 +20,13 @@ const StreetList = ({mapView, desktopView, data}: StreetListPropsType) => {
       {desktopView ? (
         <div className={style.listOnDesktop}>
           {data.map((item, index) => (
-            <Street key={index} {...item} mapView={mapView ? mapView : null} />
+            <Street key={index} {...item} mapView={mapView} />
           ))}
         </div>
       ) : (
         <div className={navigationVariant}>
           {data.map((item, index) => (
-            <Street key={index} {...item} mapView={mapView ? mapView : null} />
+            <Street key={index} {...item} mapView={mapView} />
           ))}
         </div>
       )}

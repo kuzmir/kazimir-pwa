@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://edbadge.org/sitemap.xml
+Sitemap: https://kazimir.app/sitemap.xml
