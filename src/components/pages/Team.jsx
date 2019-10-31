@@ -1,7 +1,6 @@
 // @flow
 
 import React, {useState} from 'react';
-import {withLocale} from '../../utils/locale/withLocale';
 import Modal from '../modal/Modal';
 import style from './page.css';
 
@@ -63,4 +62,4 @@ const Team = ({translate}: TeamPropsType) => {
   );
 };
 
-export default withLocale()<*>(Team);
+export default Team;
