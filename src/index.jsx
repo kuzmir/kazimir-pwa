@@ -1,13 +1,21 @@
-import * as React from 'react';
+// @flow strict
+
+import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import AppContainer from './AppContainer';
-import LocaleContext from './utils/locale/LocaleContext';
 
 import {initServiceWorker} from './utils/pwaUtils';
 
-ReactDOM.render(
-  <LocaleContext>
-    <AppContainer initServiceWorker={initServiceWorker} />
-  </LocaleContext>,
-  document.querySelector('.js-root')
-);
+initServiceWorker();
+
+const root = document.querySelector('.js-root');
+
+if (root) {
+  ReactDOM.render(
+    <Router>
+      <AppContainer />
+    </Router>,
+    root
+  );  
+}

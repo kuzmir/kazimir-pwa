@@ -1,14 +1,11 @@
 // @flow
 
 import React from 'react';
-import {withLocale} from '../../utils/locale/withLocale';
 import style from './page.css';
+import useI18n from '../../utils/locale/i18n';
 
-type InfoPropsType = {
-  translate: string => string,
-};
-
-const Info = ({translate}: InfoPropsType) => {
+const Info = () => {
+  const {translate} = useI18n();
   return (
     <>
       <div className={style.hero} />
@@ -44,4 +41,4 @@ const Info = ({translate}: InfoPropsType) => {
   );
 };
 
-export default withLocale()<*>(Info);
+export default Info;

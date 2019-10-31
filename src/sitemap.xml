@@ -7,542 +7,542 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://edbadge.org/</loc>
+    <loc>https://kazimir.app/</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/"
+      href="https://kazimir.app/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl"
+      href="https://kazimir.app/pl"
     />
   </url>
 
   <url>
-    <loc>https://edbadge.org/street/miodowa/present</loc>
+    <loc>https://kazimir.app/street/miodowa/present</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/street/miodowa/present"
+      href="https://kazimir.app/street/miodowa/present"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/street/miodowa/present"
+      href="https://kazimir.app/pl/street/miodowa/present"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/street/miodowa/past</loc>
+    <loc>https://kazimir.app/street/miodowa/past</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/street/miodowa/past"
+      href="https://kazimir.app/street/miodowa/past"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/street/miodowa/past"
-    />
-  </url>
-
-
-  <url>
-    <loc>https://edbadge.org/street/plac-nowy/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/plac-nowy/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/plac-nowy/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/plac-nowy/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/plac-nowy/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/plac-nowy/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/bartosza/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/bartosza/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/bartosza/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/bartosza/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/bartosza/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/bartosza/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/berka-joselewicza/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/berka-joselewicza/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/berka-joselewicza/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/berka-joselewicza/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/berka-joselewicza/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/berka-joselewicza/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/meiselsa/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/meiselsa/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/meiselsa/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/meiselsa/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/meiselsa/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/meiselsa/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/estery/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/estery/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/estery/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/estery/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/estery/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/estery/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/plac-wolnica/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/plac-wolnica/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/plac-wolnica/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/plac-wolnica/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/plac-wolnica/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/plac-wolnica/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/kupa/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/kupa/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/kupa/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/kupa/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/kupa/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/kupa/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/józefa/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/józefa/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/józefa/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/józefa/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/józefa/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/józefa/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/dajwór-św-wawrzyńca/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/dajwór-św-wawrzyńca/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/dajwór-św-wawrzyńca/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/dajwór-św-wawrzyńca/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/dajwór-św-wawrzyńca/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/dajwór-św-wawrzyńca/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/św-stanisława/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/św-stanisława/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/św-stanisława/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/św-stanisława/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/św-stanisława/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/św-stanisława/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/szeroka/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/szeroka/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/szeroka/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/szeroka/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/szeroka/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/szeroka/past"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/bocheńska-mostowa/present</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/bocheńska-mostowa/present"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/bocheńska-mostowa/present"
-    />
-  </url>
-  <url>
-    <loc>https://edbadge.org/street/bocheńska-mostowa/past</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://edbadge.org/street/bocheńska-mostowa/past"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://edbadge.org/pl/street/bocheńska-mostowa/past"
+      href="https://kazimir.app/pl/street/miodowa/past"
     />
   </url>
 
+
   <url>
-    <loc>https://edbadge.org/map/miodowa</loc>
+    <loc>https://kazimir.app/street/plac-nowy/present</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/miodowa"
+      href="https://kazimir.app/street/plac-nowy/present"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/miodowa"
+      href="https://kazimir.app/pl/street/plac-nowy/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/plac-nowy/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/plac-nowy/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/plac-nowy/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/bartosza/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/bartosza/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/bartosza/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/bartosza/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/bartosza/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/bartosza/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/berka-joselewicza/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/berka-joselewicza/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/berka-joselewicza/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/berka-joselewicza/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/berka-joselewicza/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/berka-joselewicza/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/meiselsa/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/meiselsa/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/meiselsa/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/meiselsa/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/meiselsa/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/meiselsa/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/estery/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/estery/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/estery/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/estery/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/estery/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/estery/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/plac-wolnica/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/plac-wolnica/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/plac-wolnica/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/plac-wolnica/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/plac-wolnica/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/plac-wolnica/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/kupa/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/kupa/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/kupa/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/kupa/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/kupa/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/kupa/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/józefa/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/józefa/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/józefa/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/józefa/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/józefa/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/józefa/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/dajwór-św-wawrzyńca/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/dajwór-św-wawrzyńca/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/dajwór-św-wawrzyńca/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/dajwór-św-wawrzyńca/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/dajwór-św-wawrzyńca/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/dajwór-św-wawrzyńca/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/św-stanisława/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/św-stanisława/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/św-stanisława/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/św-stanisława/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/św-stanisława/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/św-stanisława/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/szeroka/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/szeroka/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/szeroka/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/szeroka/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/szeroka/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/szeroka/past"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/bocheńska-mostowa/present</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/bocheńska-mostowa/present"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/bocheńska-mostowa/present"
+    />
+  </url>
+  <url>
+    <loc>https://kazimir.app/street/bocheńska-mostowa/past</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/street/bocheńska-mostowa/past"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/street/bocheńska-mostowa/past"
+    />
+  </url>
+
+  <url>
+    <loc>https://kazimir.app/map/miodowa</loc>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://kazimir.app/map/miodowa"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="pl"
+      href="https://kazimir.app/pl/map/miodowa"
     />
   </url>
   
   <url>
-    <loc>https://edbadge.org/map/plac-nowy</loc>
+    <loc>https://kazimir.app/map/plac-nowy</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/plac-nowy"
+      href="https://kazimir.app/map/plac-nowy"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/plac-nowy"
+      href="https://kazimir.app/pl/map/plac-nowy"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/bartosza</loc>
+    <loc>https://kazimir.app/map/bartosza</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/bartosza"
+      href="https://kazimir.app/map/bartosza"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/bartosza"
+      href="https://kazimir.app/pl/map/bartosza"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/berka-joselewicza</loc>
+    <loc>https://kazimir.app/map/berka-joselewicza</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/berka-joselewicza"
+      href="https://kazimir.app/map/berka-joselewicza"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/berka-joselewicza"
+      href="https://kazimir.app/pl/map/berka-joselewicza"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/meiselsa</loc>
+    <loc>https://kazimir.app/map/meiselsa</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/meiselsa"
+      href="https://kazimir.app/map/meiselsa"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/meiselsa"
+      href="https://kazimir.app/pl/map/meiselsa"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/estery</loc>
+    <loc>https://kazimir.app/map/estery</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/estery"
+      href="https://kazimir.app/map/estery"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/estery"
+      href="https://kazimir.app/pl/map/estery"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/plac-wolnica</loc>
+    <loc>https://kazimir.app/map/plac-wolnica</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/plac-wolnica"
+      href="https://kazimir.app/map/plac-wolnica"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/plac-wolnica"
+      href="https://kazimir.app/pl/map/plac-wolnica"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/kupa</loc>
+    <loc>https://kazimir.app/map/kupa</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/kupa"
+      href="https://kazimir.app/map/kupa"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/kupa"
+      href="https://kazimir.app/pl/map/kupa"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/józefa</loc>
+    <loc>https://kazimir.app/map/józefa</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/józefa"
+      href="https://kazimir.app/map/józefa"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/józefa"
+      href="https://kazimir.app/pl/map/józefa"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/dajwór-św-wawrzyńca</loc>
+    <loc>https://kazimir.app/map/dajwór-św-wawrzyńca</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/dajwór-św-wawrzyńca"
+      href="https://kazimir.app/map/dajwór-św-wawrzyńca"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/dajwór-św-wawrzyńca"
+      href="https://kazimir.app/pl/map/dajwór-św-wawrzyńca"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/św-stanisława</loc>
+    <loc>https://kazimir.app/map/św-stanisława</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/św-stanisława"
+      href="https://kazimir.app/map/św-stanisława"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/św-stanisława"
+      href="https://kazimir.app/pl/map/św-stanisława"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/szeroka</loc>
+    <loc>https://kazimir.app/map/szeroka</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/szeroka"
+      href="https://kazimir.app/map/szeroka"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/szeroka"
+      href="https://kazimir.app/pl/map/szeroka"
     />
   </url>
   <url>
-    <loc>https://edbadge.org/map/bocheńska-mostowa</loc>
+    <loc>https://kazimir.app/map/bocheńska-mostowa</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/bocheńska-mostowa"
+      href="https://kazimir.app/map/bocheńska-mostowa"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/bocheńska-mostowa"
+      href="https://kazimir.app/pl/map/bocheńska-mostowa"
     />
   </url>
 
   <url>
-    <loc>https://edbadge.org/map/</loc>
+    <loc>https://kazimir.app/map/</loc>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://edbadge.org/map/"
+      href="https://kazimir.app/map/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="pl"
-      href="https://edbadge.org/pl/map/"
+      href="https://kazimir.app/pl/map/"
     />
   </url>
 
