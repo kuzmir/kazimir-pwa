@@ -1,0 +1,61 @@
+.modal {
+    display: block;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    -webkit-overflow-scrolling: touch;
+    z-index: 999;
+}
+
+.modalBox {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 3px 32px 0 rgba(2,10,27,0.15);
+    background-color: #fff;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .modalBox {
+        z-index: 1000;
+        margin: 65px 0;
+        width: 800px;
+    }   
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: row;
+  padding: 24px;
+}
+
+.modalContentImage img {
+    flex-grow: 2;
+    max-width: 67%;
+}
+
+.modalContentInfo {
+    padding-left: 16px;
+    flex-grow: 1;
+    max-width: 33%;
+    max-height: 300px;
+}
+
+.modalContentInfoParagraph {
+    max-height: 200px;
+    overflow: scroll;
+}

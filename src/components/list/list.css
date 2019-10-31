@@ -56,8 +56,13 @@
 
 .desktopViewContainer {
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
   .mapContainer {
     width: 50%;
   }
