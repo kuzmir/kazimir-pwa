@@ -76,7 +76,7 @@ function AppContainer() {
 
   const renderStreetListWithMap = props => (
     <>
-      <Navigation />
+      <Navigation streetName="" />
       <MapContainer data={data} {...props} />
       <StreetList mapView data={data} {...props} />
     </>
@@ -84,7 +84,7 @@ function AppContainer() {
 
   const renderStreetList = props => (
     <>
-      <Navigation />
+      <Navigation streetName="" />
       <StreetList data={data} {...props} />
     </>
   );
