@@ -9,58 +9,29 @@ type TeamPropsType = {
   translate: string => string,
 };
 
-const Team = ({translate}: TeamPropsType) => {
-  const [modalVisible, showModal] = useState(false);
-  const [itemShown, setActiveItem] = useState(null);
+const names = [
+  'prada',
+  'emaj',
+  'krzysiek',
+  'jan',
+  'marta',
+  'piotr',
+  'kasia',
+  'wika',
+  'ania',
+  'bartek',
+];
 
-  const openModal = id => {
-    modalVisible ? showModal(false) : showModal(true);
-    itemShown ? setActiveItem(null) : setActiveItem(id);
-    console.log('open modal', id, itemShown);
+const Team = ({translate}: TeamPropsType) => {
+  const [nameSet, setActiveItem] = useState(null);
+
+  const handleClose = () => {
+    setActiveItem(null);
   };
 
-  const array = [
-    {
-      thumb: 'prada_thumb.jpg',
-      large: 'prada_large.jpg',
-    },
-    {
-      thumb: 'emaj_thumb.jpg',
-      large: 'emaj_large.jpg',
-    },
-    {
-      thumb: 'krzysiek_thumb.jpg',
-      large: 'krzysiek_large.jpg',
-    },
-    {
-      thumb: 'jan_thumb.jpg',
-      large: 'jan_large.jpg',
-    },
-    {
-      thumb: 'marta_thumb.jpg',
-      large: 'marta_large.jpg',
-    },
-    {
-      thumb: 'piotr_thumb.jpg',
-      large: 'piotr_large.jpg',
-    },
-    {
-      thumb: 'kasia_thumb.jpg',
-      large: 'kasia_large.jpg',
-    },
-    {
-      thumb: 'wika_thumb.jpg',
-      large: 'wika_large.jpg',
-    },
-    {
-      thumb: 'ania_thumb.jpg',
-      large: 'ania_large.jpg',
-    },
-    {
-      thumb: 'bartek_thumb.jpg',
-      large: 'bartek_large.jpg',
-    },
-  ];
+  const openModal = name => {
+    nameSet ? setActiveItem(null) : setActiveItem(name);
+  };
 
   return (
     <>
@@ -69,23 +40,24 @@ const Team = ({translate}: TeamPropsType) => {
         <h1 className={style.headline}>Team</h1>
 
         <div className={style.teamFlexContainer}>
-          {array.map((item, index) => (
+          {names.map((name, index) => (
             <div
               className={style.teamItem}
-              onClick={() => openModal(index)}
+              onClick={() => openModal(name)}
               key={index}
             >
-              <img src={`../../images/team/${item.thumb}`} />
-              <Modal
-                id={itemShown}
-                modalVisible={modalVisible}
-                name={translate(`TEAM_${index}_NAME`)}
-                info={translate(`TEAM_${index}_CONTENT`)}
-                imagePath={`../../images/team/${item.large}`}
-              />
+              <img src={`../../images/team/${name}_thumb.jpg`} />
             </div>
           ))}
         </div>
+        {nameSet && (
+          <Modal
+            handleClose={handleClose}
+            name={translate(`TEAM_${nameSet.toUpperCase()}_NAME`)}
+            info={translate(`TEAM_${nameSet.toUpperCase()}_CONTENT`)}
+            imagePath={`../../images/team/${nameSet}_large.jpg`}
+          />
+        )}
       </div>
     </>
   );

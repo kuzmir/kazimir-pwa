@@ -6,19 +6,15 @@ import style from './modal.css';
 
 type ModalPropsType = {
   info: string,
-  modalVisible: boolean,
   imagePath: string,
   name: string,
+  handleClose: () => mixed,
 };
 
-const Modal = ({info, modalVisible, imagePath, name}: ModalPropsType) => {
+const Modal = ({handleClose, info, imagePath, name}: ModalPropsType) => {
   return (
-    <div
-      className={cx(style.modal, {
-        [`${style.modalVisible}`]: modalVisible,
-      })}
-    >
-      <div className={style.overlay}>
+    <div className={cx(style.modal, style.modalVisible)}>
+      <div className={style.overlay} onClick={handleClose}>
         <div role="dialog" className={style.modalBox}>
           <div className={style.modalContent}>
             <div className={style.modalContentImage}>

@@ -1,8 +1,4 @@
 .modal {
-    display: none;
-}
-
-.modalVisible {
     display: block;
 }
 
@@ -47,7 +43,7 @@
   padding: 24px;
 }
 
-.modalContentImage {
+.modalContentImage img {
     flex-grow: 2;
     max-width: 67%;
 }
