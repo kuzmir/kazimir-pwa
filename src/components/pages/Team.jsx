@@ -3,10 +3,7 @@
 import React, {useState} from 'react';
 import Modal from '../modal/Modal';
 import style from './page.css';
-
-type TeamPropsType = {
-  translate: string => string,
-};
+import useI18n from '../../utils/locale/i18n';
 
 const names = [
   'prada',
@@ -21,8 +18,9 @@ const names = [
   'bartek',
 ];
 
-const Team = ({translate}: TeamPropsType) => {
+const Team = () => {
   const [nameSet, setActiveItem] = useState(null);
+  const {translate} = useI18n();
 
   const handleClose = () => {
     setActiveItem(null);

@@ -19,7 +19,6 @@ import rafThrottler from './utils/rafThrottler';
 import useI18n from './utils/locale/i18n';
 import {getUserLocale} from './utils/locale/localeUtils';
 
-
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
 const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
@@ -65,13 +64,13 @@ function widthToScreenType(width: number) {
 function AppContainer() {
   const {getRoute, locale} = useI18n();
   const [{data}, setState] = useState<StateType>({
-    data: locale === 'pl' ? dataPL : dataEN
+    data: locale === 'pl' ? dataPL : dataEN,
   });
   const screenType = widthToScreenType(window.innerWidth);
   const isWideLayout = screenType === SCREEN_DESKTOP;
 
   useEffect(() => {
-    setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN,}))
+    setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN}));;
   }, [locale]);
 
   const renderStreetListWithMap = props => (
@@ -152,41 +151,21 @@ function AppContainer() {
       <Route
         exact
         path={getRoute('MAIN')}
-        component={
-          isWideLayout ? renderDesktopView : renderStreetList
-        }
+        component={isWideLayout ? renderDesktopView : renderStreetList}
       />
       <Route
         exact
         path={getRoute('MAP')}
-        component={
-          isWideLayout
-            ? renderDesktopView
-            : renderStreetListWithMap
-        }
+        component={isWideLayout ? renderDesktopView : renderStreetListWithMap}
       />
       <Route
         exact
         path={getRoute('STREET')}
-        component={
-          isWideLayout ? renderDetailDesktop : renderDetail
-        }
+        component={isWideLayout ? renderDetailDesktop : renderDetail}
       />
-      <Route
-        exact
-        path={getRoute('TEAM')}
-        component={renderTeam}
-      />
-      <Route
-        exact
-        path={getRoute('INFO')}
-        component={renderInfo}
-      />
-      <Route
-        exact
-        path={getRoute('PRESS')}
-        component={renderPress}
-      />
+      <Route exact path={getRoute('TEAM')} component={renderTeam} />
+      <Route exact path={getRoute('INFO')} component={renderInfo} />
+      <Route exact path={getRoute('PRESS')} component={renderPress} />
       <Route component={renderNotFound} />
     </Switch>
   );
