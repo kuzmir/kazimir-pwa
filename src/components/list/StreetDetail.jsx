@@ -35,7 +35,7 @@ const StreetDetail = ({
     timespan: getOpositeTimespan(timespan),
   });
   const places = (selectedItem && selectedItem.places) || {};
-  const streetName = selectedItem && selectedItem.name;
+  const streetName = selectedItem && selectedItem.name || '';
   const navigationState = timespan;
 
   const content = Object.keys(places).map((timespan, index) => (
