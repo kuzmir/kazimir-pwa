@@ -15,9 +15,7 @@ import './components/navigation/main.css';
 import style from './components/list/list.css';
 import dataEN from './streets_en.json';
 import dataPL from './streets_pl.json';
-// import rafThrottler from './utils/rafThrottler';
 import useI18n from './utils/locale/i18n';
-// import {getUserLocale} from './utils/locale/localeUtils';
 
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
