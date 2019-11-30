@@ -6,11 +6,12 @@ import useI18n from '../../utils/locale/i18n';
 
 const Info = () => {
   const {translate} = useI18n();
+
   return (
     <>
       <div className={style.hero} />
 
-      <div className={style.content}>
+      <div className={style.pageContent}>
         <h1 className={style.headline}>Info</h1>
 
         <h4 className={style.subheadline}>

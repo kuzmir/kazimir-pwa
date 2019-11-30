@@ -39,23 +39,44 @@
 
 .modalContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 24px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .modalContentImage img {
     flex-grow: 2;
-    max-width: 67%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        max-width: 67%;
+    }
 }
 
 .modalContentInfo {
     padding-left: 16px;
     flex-grow: 1;
-    max-width: 33%;
-    max-height: 300px;
+
+    @media (min-width: 768px) {
+        max-width: 33%;
+        max-height: 300px;
+    }
+    
 }
 
 .modalContentInfoParagraph {
     max-height: 200px;
     overflow: scroll;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: black;
+    border: none;
+    background-color: none;
 }
