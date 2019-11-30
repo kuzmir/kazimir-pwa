@@ -33,7 +33,7 @@ const Team = () => {
   return (
     <>
       <div className={style.hero} />
-      <div className={style.content}>
+      <div className={style.pageContent}>
         <h1 className={style.headline}>Team</h1>
 
         <div className={style.teamFlexContainer}>

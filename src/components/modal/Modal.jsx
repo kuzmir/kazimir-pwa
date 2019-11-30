@@ -16,6 +16,9 @@ const Modal = ({handleClose, info, imagePath, name}: ModalPropsType) => {
     <div className={cx(style.modal, style.modalVisible)}>
       <div className={style.overlay} onClick={handleClose}>
         <div role="dialog" className={style.modalBox}>
+          <button className={style.modalCloseButton} onClick={handleClose}>
+            X
+          </button>
           <div className={style.modalContent}>
             <div className={style.modalContentImage}>
               <img src={imagePath} />
