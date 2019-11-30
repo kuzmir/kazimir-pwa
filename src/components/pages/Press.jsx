@@ -12,7 +12,10 @@ const Press = () => (
       <h1 className={style.headline}>Press</h1>
 
       <div className={style.teamFlexContainer}>
-        <div className={style.teamItem}>item</div>
+        <a className={style.teamItem} href="#" target="_blank">
+          <img src="../../images/press/onet.png" />
+        </a>
+
         <div className={style.teamItem}>item</div>
         <div className={style.teamItem}>item</div>
         <div className={style.teamItem}>item</div>
