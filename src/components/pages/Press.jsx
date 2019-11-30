@@ -8,7 +8,7 @@ const Press = () => (
   <>
     <div className={style.hero} />
 
-    <div className={style.content}>
+    <div className={style.pageContent}>
       <h1 className={style.headline}>Press</h1>
 
       <div className={style.teamFlexContainer}>
