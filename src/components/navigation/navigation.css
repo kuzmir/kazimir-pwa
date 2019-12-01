@@ -1,4 +1,4 @@
-@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL, sizeXl from '../navigation/config.css';
+@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL, sizeXl from '../../utils/basics.css';
 @value mainLogoMaxWidth: 180px;
 
 .navContainer {

@@ -1,4 +1,4 @@
-@value sizeXl from './components/navigation/config.css';
+@value sizeXl from './utils/basics.css';
 
 .container {
   display: flex;
