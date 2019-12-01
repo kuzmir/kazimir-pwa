@@ -1,11 +1,12 @@
+@value textFontSizeM, textLineHeightM, textFontSizeS, textLineHeightS, sizeS, sizeXs,  fontLight from '../../utils/basics.css';
+
 .pageContent {
-  /* width: 100%; */
-  /* height: 100vh; */
   box-sizing: content-box;
   display: flex;
   justify-content: space-between;
   z-index: 1;
   flex-direction: column;
+  margin: sizeS;
 
   @media (min-width: 768px) {
     width: 50%;
@@ -14,6 +15,7 @@
     position: absolute;
     overflow-y: scroll;
     right: 0;
+    margin: 0 0 sizeS;
   }
 }
 
@@ -45,10 +47,6 @@
 }
 
 .teamPageContent {
-  margin-right: 16px;
-  margin-left: 16px;
-  margin-bottom: 16px;
-
   @media (min-width: 768px) {
     width: 50%;
   }
@@ -56,7 +54,7 @@
 
 .headline {
   font-size: 1em;
-  margin-bottom: 12px;
+  margin-bottom: sizeXs;
 
   @media (min-width: 768px) {
     font-size: 2em;
@@ -64,19 +62,20 @@
 }
 
 .subheadline {
-  font-size: 16px;
+  line-height: textLineHeightM;
+  font-size: textFontSizeM;
   font-weight: 400;
-  padding-top: 10px;
+  padding-top: sizeXs;
 }
 
 .description {
-  line-height: 24px;
-  font-size: 16px;
-  font-weight: 300;
+  line-height: textLineHeightS;
+  font-size: textFontSizeS;
+  font-weight: fontLight;
 }
 
 
-.teamFlexContainer {
+.contentContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -90,8 +89,6 @@
 
 .teamItem {
   width: 100%;
-  margin-right: 16px;
-  margin-left: 16px;
   margin-bottom: 16px;
 
   @media (min-width: 768px) {
@@ -107,8 +104,6 @@
 
 .pressItem {
   width: 100%;
-  margin-right: 16px;
-  margin-left: 16px;
   margin-bottom: 16px;
   
   @media (min-width: 768px) {

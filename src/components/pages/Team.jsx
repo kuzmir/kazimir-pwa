@@ -36,7 +36,7 @@ const Team = () => {
       <div className={style.pageContent}>
         <h1 className={style.headline}>Team</h1>
 
-        <div className={style.teamFlexContainer}>
+        <div className={style.contentContainer}>
           {names.map((name, index) => (
             <div
               className={style.teamItem}

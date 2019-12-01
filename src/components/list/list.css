@@ -1,4 +1,4 @@
-@value sizeM, coloLightGray, coloDarkGray, colorWhite, sizeL from '../navigation/config.css';
+@value sizeM, coloLightGray, coloDarkGray, colorWhite, sizeL from '../../utils/basics.css';
 
 .listItem {
   position: relative;

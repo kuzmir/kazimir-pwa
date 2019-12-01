@@ -1,4 +1,4 @@
-@value coloLightGray from '../navigation/config.css';
+@value coloLightGray from '../../utils/basics.css';
 
 .mapContainer {
   width: 100%;

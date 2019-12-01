@@ -11,7 +11,7 @@ const Press = () => (
     <div className={style.pageContent}>
       <h1 className={style.headline}>Press</h1>
 
-      <div className={style.teamFlexContainer}>
+      <div className={style.contentContainer}>
         <div className={style.pressItem}>
           <a
             className={style.pressItem}

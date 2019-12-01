@@ -1,4 +1,4 @@
-@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL from '../navigation/config.css';
+@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL from '../../utils/basics.css';
 @value mainLogoMaxWidth: 180px;
 
 .navContainer {
@@ -33,9 +33,9 @@
 }
 
 .navigationLink {
-  font-size: 18px;
+  font-size: textFontSizeM;
   color: colorNavigationGray;
-  padding: 10px;
+  padding: sizeS;
   text-decoration: none;
   text-transform: uppercase;
 }
