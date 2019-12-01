@@ -13,13 +13,17 @@
     width: 100%;
     overflow-y: auto;
     position: relative;
+    height: calc(100vh - sizeXl);
 
     &--without-scroll {
       overflow-y: hidden;
     }
 
+    &--small, &--large {
+      height: auto;
+    }
+
     @media (min-width: 768px) {
-      height: calc(100vh - sizeXl);
       width: 50%;
 
       &--small {
