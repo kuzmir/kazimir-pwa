@@ -1,36 +1,28 @@
-// @flow
+// @flow strict
 
-import * as React from 'react';
+import React from 'react';
 
+import cx from 'classnames';
 import Street from './Street';
 import type {StreetType} from '../../AppContainer';
 import style from './list.css';
 
 type StreetListPropsType = {
   data: Array<StreetType>,
-  desktopView?: boolean,
+  className?: string,
   mapView?: boolean,
 };
 
-const StreetList = ({mapView = false, desktopView, data}: StreetListPropsType) => {
-  const navigationVariant = mapView ? 'mapNavigation' : null;
+const StreetList = ({data, className, mapView}: StreetListPropsType) => {
 
   return (
-    <>
-      {desktopView ? (
-        <div className={style.listOnDesktop}>
-          {data.map((item, index) => (
-            <Street key={index} {...item} mapView={mapView} />
-          ))}
-        </div>
-      ) : (
-        <div className={navigationVariant}>
-          {data.map((item, index) => (
-            <Street key={index} {...item} mapView={mapView} />
-          ))}
-        </div>
-      )}
-    </>
+    <div className={cx(style.list, className, {
+      [style.listOnMap]: mapView
+    })}>
+      {data.map((item, index) => (
+        <Street key={index} {...item} mapView={mapView}/>
+      ))}
+    </div>
   );
 };
 

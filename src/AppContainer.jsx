@@ -1,21 +1,22 @@
 // @flow strict
 
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
+import type {Node} from 'react';
 import {Route, Switch} from 'react-router-dom';
+import cx from 'classnames';
 import StreetList from './components/list/StreetList';
 import StreetDetail from './components/list/StreetDetail';
 import MapContainer from './components/map/MapContainer';
 import Navigation from './components/navigation/Navigation';
-import NavigationDesktop from './components/navigation/NavigationDesktop';
 import Team from './components/pages/Team';
 import Info from './components/pages/Info';
 import Press from './components/pages/Press';
 import NotFound from './components/pages/NotFound';
 import './components/navigation/main.css';
-import style from './components/list/list.css';
+import style from './layout.css';
 import dataEN from './streets_en.json';
 import dataPL from './streets_pl.json';
-import useI18n from './utils/locale/i18n';
+import {useI18n} from './utils/locale/I18n';
 
 const BREAKPOINT = 1024;
 const SCREEN_MOBILE = 'SCREEN_MOBILE';
@@ -47,7 +48,6 @@ export type StreetType = {
 };
 
 type StateType = {
-  // screenType: typeof SCREEN_MOBILE | typeof SCREEN_DESKTOP,
   data: Array<StreetType>,
 };
 
@@ -71,101 +71,72 @@ function AppContainer() {
     setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN}));
   }, [locale]);
 
-  const renderStreetListWithMap = props => (
+  const renderLayout = (children: Node) => (
     <>
-      <Navigation streetName="" />
-      <MapContainer data={data} {...props} />
-      <StreetList mapView data={data} {...props} />
-    </>
-  );
-
-  const renderStreetList = props => (
-    <>
-      <Navigation streetName="" />
-      <StreetList data={data} {...props} />
-    </>
-  );
-
-  const renderDetail = () => <StreetDetail data={data} />;
-
-  const renderDesktopView = props => (
-    <>
-      <NavigationDesktop />
-      <div className={style.desktopViewContainer}>
-        <StreetList desktopView data={data} {...props} />
-        <MapContainer data={data} {...props} />
+      <Navigation data={data} />
+      <div className={style.container}>
+        {children}
       </div>
     </>
   );
 
-  const renderDetailDesktop = props => (
-    <>
-      <NavigationDesktop />
-      <div className={style.desktopViewContainer}>
-        <StreetDetail desktopView data={data} />
-        <MapContainer data={data} {...props} />
-      </div>
-    </>
+  // todo: pass selected item to props, this should prevent rendering whole component tree
+  const renderMain = () => (
+    renderLayout(
+      <>
+        <StreetList data={data} className={style.box} />
+        <MapContainer data={data} className={cx(style.box, style.hiddenOnMobile)} />
+      </>
+    )
   );
 
-  const renderInfo = () => (
-    <>
-      <NavigationDesktop />
-      <div className={style.desktopViewContainer}>
-        <Info locale={locale} />
-      </div>
-    </>
+  const renderMainWithMap = () => (
+    renderLayout(
+      <>
+        <StreetList data={data} className={style.box} mapView />
+        <MapContainer data={data} className={cx(style.box)} mapView />
+      </>
+    )
   );
 
-  const renderTeam = () => (
-    <>
-      <NavigationDesktop />
-      <div className={style.desktopViewContainer}>
-        <Team />
-      </div>
-    </>
+  const renderDetail = () => (
+    renderLayout(
+      <>
+        <StreetDetail data={data} className={cx(style.box, style.boxWithoutScroll)} />
+        <MapContainer data={data} className={cx(style.box, style.hiddenOnMobile)} />
+      </>
+    )
   );
 
-  const renderPress = () => (
-    <>
-      <NavigationDesktop />
-      <div className={style.desktopViewContainer}>
-        <Press />
-      </div>
-    </>
-  );
-
-  const renderNotFound = () => (
-    <>
-      <NavigationDesktop />
-      <div className={style.desktopViewContainer}>
-        <NotFound />
-      </div>
-    </>
-  );
+  const renderInfo = () => renderLayout(<Info />);
+  const renderTeam = () => renderLayout(<Team />);
+  const renderPress = () => renderLayout(<Press />);
+  const renderNotFound = () => renderLayout(<NotFound />);
 
   return (
-    <Switch>
-      <Route
-        exact
-        path={getRoute('MAIN')}
-        component={isWideLayout ? renderDesktopView : renderStreetList}
-      />
-      <Route
-        exact
-        path={getRoute('MAP')}
-        component={isWideLayout ? renderDesktopView : renderStreetListWithMap}
-      />
-      <Route
-        exact
-        path={getRoute('STREET')}
-        component={isWideLayout ? renderDetailDesktop : renderDetail}
-      />
-      <Route exact path={getRoute('TEAM')} component={renderTeam} />
-      <Route exact path={getRoute('INFO')} component={renderInfo} />
-      <Route exact path={getRoute('PRESS')} component={renderPress} />
-      <Route component={renderNotFound} />
-    </Switch>
+    <>
+      <Switch>
+        <Route
+          exact
+          path={getRoute('MAIN')}
+          component={renderMain}
+        />
+        <Route
+          exact
+          path={getRoute('MAP')}
+          component={renderMainWithMap}
+        />
+        <Route
+          exact
+          path={getRoute('STREET')}
+          component={renderDetail}
+        />
+        <Route exact path={getRoute('TEAM')} component={renderTeam} />
+        <Route exact path={getRoute('INFO')} component={renderInfo} />
+        <Route exact path={getRoute('PRESS')} component={renderPress} />
+        <Route component={renderNotFound} />
+      </Switch>
+    </>
   );
 }
 

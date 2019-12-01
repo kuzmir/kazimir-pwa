@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import Modal from '../modal/Modal';
 import style from './page.css';
-import useI18n from '../../utils/locale/i18n';
+import {useI18n} from '../../utils/locale/I18n';
 
 const names = [
   'prada',

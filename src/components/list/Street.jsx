@@ -1,8 +1,9 @@
-// @flow
+// @flow strict
 
 import React from 'react';
 // $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
-import {Link, useHistory} from 'react-router-dom';
+import {Link, useHistory, useRouteMatch} from 'react-router-dom';
+import cx from 'classnames';
 import ArrowLeftIcon from '../navigationIcons/ArrowLeft';
 import ArrowRightIcon from '../navigationIcons/ArrowRight';
 import {slugifyStreetName} from '../../utils/url';
@@ -11,7 +12,7 @@ import type {RouterHistory} from 'react-router-dom';
 import type {PlacesType} from '../../AppContainer';
 
 import style from './list.css';
-import useI18n from '../../utils/locale/i18n';
+import {useI18n} from '../../utils/locale/I18n';
 
 type PropsType = {
   name: string,
@@ -24,24 +25,24 @@ function Street({name, id, mapView, places}: PropsType) {
   const history = useHistory();
   const {generateRoute} = useI18n();
   const slugName = slugifyStreetName(name);
-  const path = generateRoute('MAP', {name: slugName})
-
-  const itemBackgroundStylesList = {
-    backgroundImage: `url(${places.present[0].photos[0].small})`,
-    backgroundSize: '100%',
-    backgroundPosition: 'center center',
-    minHeight: '100px',
-  };
+  const path = generateRoute('MAP', {name: slugName});
+  const isActive = useRouteMatch(path);
 
   return (
     <div
-      className={style.listItem}
-      style={!mapView ? itemBackgroundStylesList : null}
+      className={cx(style.listItem, `${style.listItem}-${id}`, {
+        [`${style.listItemActive}`]: isActive
+      })}
     >
+      <style>
+        {`.${style.list} .${style.listItem}-${id} {
+            background-image: url(${places.present[0].photos[0].small});
+        }`}
+      </style>
       <div
         className={style.listItemCover}
-        onClick={mapView ? () => history.push(path) : null}
-      />
+        onClick={() => history.push(path)}
+      ></div>
       <Link
         to={generateRoute('STREET', {
           name: slugName,

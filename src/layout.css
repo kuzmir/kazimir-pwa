@@ -1,0 +1,33 @@
+@value sizeXl from './components/navigation/config.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .box {
+    width: 100%;
+    height: calc(100vh - sizeXl);
+    overflow-y: scroll;
+
+    &--without-scroll {
+      overflow-y: hidden;
+    }
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+  }
+}
+
+.hiddenOnMobile {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}

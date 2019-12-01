@@ -2,7 +2,7 @@
 
 import React from 'react';
 import style from './page.css';
-import useI18n from '../../utils/locale/i18n';
+import {useI18n} from '../../utils/locale/I18n';
 
 const Info = () => {
   const {translate} = useI18n();

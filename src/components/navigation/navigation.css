@@ -1,4 +1,4 @@
-@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL from '../../utils/basics.css';
+@value colorMustard, colorBlue, colorWhite, colorNavigationGray, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXs, sizeS, sizeL, sizeXl from '../navigation/config.css';
 @value mainLogoMaxWidth: 180px;
 
 .navContainer {
@@ -6,30 +6,34 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: sizeXs sizeS;
-  min-height: 55px;
+  padding: 0 sizeS;
+  height: sizeXl;
+  box-sizing: border-box;
+  width: 100vw;
 
-  &--detail {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    color: colorWhite;
+  &--present {
+    background: colorBlue;
+  }
 
-    &--present {
-      background: colorBlue;
-    }
-
-    &--past {
-      background: colorMustard;
-    }
+  &--past {
+    background: colorMustard;
   }
 }
 
-.navDesktopInfoLinks {
-  display: flex;
+.navLinksContainer {
   justify-content: center;
   align-items: center;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.navLinksMobileOnlyContainer {
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .navigationLink {
@@ -86,7 +90,6 @@
 }
 
 .navigationIcon {
-  position: absolute;
   top: sizeXs;
 
   svg {
