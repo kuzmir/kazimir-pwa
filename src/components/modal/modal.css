@@ -1,3 +1,5 @@
+@value sizeS, sizeXs, sizeM, coloDarkGray, textFontSizeM from '../../utils/basics.css';
+
 .modal {
     display: block;
 }
@@ -22,7 +24,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: sizeXs;
     width: 100%;
     box-shadow: 0 3px 32px 0 rgba(2,10,27,0.15);
     background-color: #fff;
@@ -40,7 +42,7 @@
 .modalContent {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: sizeM;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -50,14 +52,10 @@
 .modalContentImage img {
     flex-grow: 2;
     width: 100%;
-
-    @media (min-width: 768px) {
-        max-width: 67%;
-    }
 }
 
 .modalContentInfo {
-    padding-left: 16px;
+    padding-left: sizeS;
     flex-grow: 1;
 
     @media (min-width: 768px) {
@@ -74,9 +72,12 @@
 
 .modalCloseButton {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    color: black;
+    top: sizeS;
+    right: sizeS;
+    color: coloDarkGray;
     border: none;
     background-color: none;
+    font-size: textFontSizeM;
+    cursor: pointer;
+    border-radius: 8px;
 }

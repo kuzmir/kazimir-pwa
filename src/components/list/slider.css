@@ -1,4 +1,4 @@
-@value sizeM, sizeL from '../navigation/config.css';
+@value sizeM, sizeL from '../../utils/basics.css';
 
 .slider {
     position: relative;

@@ -1,4 +1,4 @@
-@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeS, sizeL from '../navigation/config.css';
+@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXxs, sizeS, sizeL from '../../utils/basics.css';
 
 .flipIconContainer {
   width: sizeL;
@@ -7,7 +7,7 @@
   position: fixed;
   bottom: sizeL;
   left: calc(50% - 20px);
-  padding: 4px;
+  padding: sizeXxs;
 
   &--Desktop {
     left: calc(25% - 20px);

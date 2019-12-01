@@ -5,6 +5,7 @@
 @value coloDarkGray: #222222;
 @value colorNavigationGray: #77787a;
 
+@value sizeXxs: 4px;
 @value sizeXs: 8px;
 @value sizeS: 16px;
 @value sizeM: 24px;
@@ -22,3 +23,5 @@
 @value textLineHeightM: 24px;
 @value textLineHeightL: 32px;
 @value textLineHeightXl: 44px;
+
+@value fontLight: 300;
