@@ -9,7 +9,7 @@
   padding: 0 sizeS;
   height: sizeXl;
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
 
   &--present {
     background: colorBlue;

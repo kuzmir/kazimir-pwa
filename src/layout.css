@@ -11,15 +11,24 @@
 
   .box {
     width: 100%;
-    height: calc(100vh - sizeXl);
-    overflow-y: scroll;
+    overflow-y: auto;
+    position: relative;
 
     &--without-scroll {
       overflow-y: hidden;
     }
 
     @media (min-width: 768px) {
+      height: calc(100vh - sizeXl);
       width: 50%;
+
+      &--small {
+        width: 45%;
+      }
+  
+      &--large {
+        width: 55%;
+      }
     }
   }
 }

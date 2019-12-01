@@ -9,11 +9,11 @@
   margin: sizeS;
 
   @media (min-width: 768px) {
-    width: 50%;
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
     padding: 24px;
     position: absolute;
-    overflow-y: scroll;
     right: 0;
     margin: 0 0 sizeS;
   }
@@ -24,7 +24,7 @@
   height: 40vh;
   box-sizing: content-box;
   background-color: #1f1815;
-  background-attachment: scroll,	fixed;
+  background-attachment: scroll, fixed;
   background-image: url(/images/gradient.png),url(/images/kazimir-bg.jpg);
   background-repeat: repeat,	no-repeat;
   background-size: auto,	auto 100%;
