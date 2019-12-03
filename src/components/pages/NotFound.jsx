@@ -1,20 +1,30 @@
-// @flow
+// @flow strict
 
-import * as React from 'react';
-
+import React from 'react';
+import cx from 'classnames';
+import layoutStyle from '../../layout.css';
 import style from './page.css';
+import {useI18n} from '../../utils/locale/I18n';
 
-const Info = () => (
-  <>
-    <div className={style.content}>
-      <img src="/images/icon.png" className={style.image}/>
-    </div>
-    <div className={style.content}>
-      <h1 className={style.headline}>404 not found</h1>
+const Info = () => {
+  const {translate} = useI18n();
 
-      <p>Unfortunately, the page you are looking for is not here.</p>
-    </div> 
-  </>
-);  
+  return (
+    <>
+      <div className={style.hero} />
+      <div className={cx(layoutStyle.box, layoutStyle.boxSmall, layoutStyle.boxWithoutScroll)}></div>
+
+      <div className={cx(layoutStyle.box, layoutStyle.boxLarge)}>
+        <div className={style.pageContent}>
+          <h1 className={style.headline}>404 Not Found</h1>
+
+          <h4 className={style.subheadline}>
+            {translate('NOT_FOUND')}
+          </h4>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Info;

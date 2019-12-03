@@ -1,6 +1,8 @@
 // @flow strict
 
-export const getUserLocale = (): 'en' | 'pl' => {
+import type {LocaleType} from './localization';
+
+export const getUserLocale = (): LocaleType => {
   const assumedUrlLocale = window.location.pathname
     .split('/')
     .filter(Boolean)[0];

@@ -1,12 +1,13 @@
 // @flow strict
 
 import routes from './routes';
+import type {LocaleType} from '../locale/localization';
 
-function getRoute(id: string, locale: 'en' | 'pl') {
+function getRoute(id: string, locale: LocaleType) {
   return routes[locale][id];
 }
 
-function generateRoute(id, params: Object | null, locale: 'en' | 'pl') {
+function generateRoute(id, params: Object | null, locale: LocaleType) {
   const route = getRoute(id, locale);
 
   if (params) {
@@ -23,10 +24,7 @@ function generateRoute(id, params: Object | null, locale: 'en' | 'pl') {
   return route;
 }
 
-export function getRouteFromLocation(
-  locationPath: string,
-  locale: 'en' | 'pl'
-) {
+export function getRouteFromLocation(locationPath: string, locale: LocaleType) {
   // MP: this is really primitive, and will not work in advanced cases (when there is more routes with similar keys)
   // Todo: investigate alternative options to find route based on location
   switch (locale) {
@@ -38,14 +36,19 @@ export function getRouteFromLocation(
   }
 }
 
-function getRouter(locale: 'en' | 'pl') {
+function pickLocale(locale: LocaleType, overrideLocale?: LocaleType) {
+  return overrideLocale ? overrideLocale : locale;
+}
+
+function getRouter(locale: LocaleType) {
   return {
-    getRoute: (id: string) => getRoute(id, locale),
+    getRoute: (id: string, overrideLocale?: LocaleType) =>
+      getRoute(id, pickLocale(locale, overrideLocale)),
     generateRoute: (
       id: string,
       params: Object | null,
-      overrideLocale?: 'en' | 'pl'
-    ) => generateRoute(id, params, overrideLocale ? overrideLocale : locale),
+      overrideLocale?: LocaleType
+    ) => generateRoute(id, params, pickLocale(locale, overrideLocale)),
   };
 }
 

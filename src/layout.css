@@ -1,0 +1,46 @@
+@value sizeXl from './utils/basics.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .box {
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    height: calc(100vh - sizeXl);
+
+    &--without-scroll {
+      overflow-y: hidden;
+    }
+
+    &--small, &--large {
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      width: 50%;
+
+      &--small {
+        width: 45%;
+      }
+  
+      &--large {
+        width: 55%;
+      }
+    }
+  }
+}
+
+.hiddenOnMobile {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}

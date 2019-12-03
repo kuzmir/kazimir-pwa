@@ -5,28 +5,30 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import MapStreetLines from './MapStreetLines';
 import {Map, TileLayer} from 'react-leaflet';
+import cx from 'classnames';
 import {slugifyStreetName} from '../../utils/url';
 
 import type {StreetType} from '../../AppContainer';
 
 import 'leaflet/dist/leaflet.css';
 import style from './map.css';
-import useI18n from '../../utils/locale/i18n';
+import {useI18n} from '../../utils/locale/I18n';
 
 export type MapContainerPropsType = {
   data: Array<StreetType>,
+  className?: string,
 };
 
 const KAZIMIERZ_CENTER_POSITION = [50.053632572808255, 19.948285818099976];
 
-const MapContainer = ({data}: MapContainerPropsType) => {
+const MapContainer = ({data, className}: MapContainerPropsType) => {
   const {locale} = useI18n();
   const {name} = useParams();
   const street = data.find(item => slugifyStreetName(item.name) === name);
   const position = street ? street.coordinates[1] : KAZIMIERZ_CENTER_POSITION;
 
   return (
-    <div className={style.mapContainer}>
+    <div className={cx(style.mapContainer, className)}>
       <Map
         viewport={{
           center: position,

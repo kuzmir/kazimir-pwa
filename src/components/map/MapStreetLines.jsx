@@ -6,7 +6,7 @@ import {Polyline} from 'react-leaflet';
 import {useHistory} from 'react-router-dom';
 import type {RouterHistory} from 'react-router-dom';
 import {slugifyStreetName} from '../../utils/url';
-import useI18n from '../../utils/locale/i18n';
+import {useI18n} from '../../utils/locale/I18n';
 
 type MapStreetLinesType = {
   streets: Object,

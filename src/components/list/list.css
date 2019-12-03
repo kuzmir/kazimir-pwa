@@ -1,69 +1,74 @@
 @value sizeM, coloLightGray, coloDarkGray, colorWhite, sizeL from '../../utils/basics.css';
 
-.listItem {
-  position: relative;
-  padding: sizeM 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid coloLightGray;
-
-  &--cover {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: coloDarkGray;
-    opacity: 0.7;
-    z-index: 1;
-  }
-
-  &--navIcon {
-    position: inherit;
-    width: sizeL;
-    height: sizeL;
-    z-index: 1;
-  }
-
-  &--name {
-    color: colorWhite;
-    position: inherit;
-    z-index: 1;
-    pointer-events: none;
-  }
-}
-
-.mapNavigation {
-  position: fixed;
-  bottom: 0;
+.list {
   width: 100%;
-  max-height: 30vh;
-  min-height: 30vh;
+  height: 100%;
   overflow-y: scroll;
 
+  &--on-map {
+    position: fixed;
+    bottom: 0;
+    max-height: 30vh;
+    min-height: 30vh;
+    z-index: 10;
+
+    /* due to issues with overriding styles I had to proceed with max-width media query */
+    .listItem[class*='listItem-'] {
+      @media (max-width: 767px) {
+        background-image: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      position: relative;
+      bottom: auto;
+      max-height: initial;
+      min-height: initial;
+    }
+  }
+
   .listItem {
-    cursor: pointer;
-  }
-}
-
-.listOnDesktop {
-  width: 50%;
-  height: 100vh;
-  overflow: scroll;
-}
-
-.desktopViewContainer {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  
-  @media (min-width: 768px) {
+    position: relative;
+    padding: sizeM 0;
+    display: flex;
     flex-direction: row;
-  }
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid coloLightGray;
+    background-size: 100%;
+    background-position: center center;
 
-  .mapContainer {
-    width: 50%;
+    &--active {
+      .listItem__cover {
+        opacity: 0.8;
+
+        @media (min-width: 768px) {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    &__navIcon {
+      width: sizeL;
+      height: sizeL;
+      z-index: 1;
+    }
+  
+    &__name {
+      color: colorWhite;
+      z-index: 1;
+      text-decoration: none;
+    }
+
+    &__cover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: coloDarkGray;
+      opacity: 0.7;
+      z-index: 1;
+    }
   }
 }

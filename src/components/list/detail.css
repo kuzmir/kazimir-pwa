@@ -1,17 +1,13 @@
-@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXxs, sizeS, sizeL from '../../utils/basics.css';
+@value colorMustard, colorBlue, textFontSizeM, textLineHeightM, textFontSizeL, textLineHeightL, sizeXxs, sizeS, sizeL, sizeXl from '../../utils/basics.css';
 
 .flipIconContainer {
   width: sizeL;
   height: sizeL;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   bottom: sizeL;
   left: calc(50% - 20px);
   padding: sizeXxs;
-
-  &--Desktop {
-    left: calc(25% - 20px);
-  }
 
   &--toPast {
     background-color: colorMustard;
@@ -46,15 +42,13 @@
     height: auto;
 }
 
-.desktopDetial {
-  width: 50%;
-  height: 100vh;
-  overflow: scroll;
-}
-
 .flipCard {
   perspective: 1000px;
   position: relative;
+  width: 100%;
+  height: calc(100vh - sizeXl);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .flipCardFront,
