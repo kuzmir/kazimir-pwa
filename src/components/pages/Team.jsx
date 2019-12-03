@@ -35,7 +35,13 @@ const Team = () => {
   return (
     <>
       <div className={style.hero} />
-      <div className={cx(layoutStyle.box, layoutStyle.boxSmall, layoutStyle.boxWithoutScroll)}></div>
+      <div
+        className={cx(
+          layoutStyle.box,
+          layoutStyle.boxSmall,
+          layoutStyle.boxWithoutScroll
+        )}
+      ></div>
 
       <div className={cx(layoutStyle.box, layoutStyle.boxLarge)}>
         <div className={style.pageContent}>

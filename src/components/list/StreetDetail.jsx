@@ -17,48 +17,41 @@ import {useI18n} from '../../utils/locale/I18n';
 
 import type {StreetType} from '../../AppContainer';
 
-
 type StreetDetailPropsType = {
   data: Array<StreetType>,
   className?: string,
 };
 
 const StreetDetail = (props: StreetDetailPropsType) => {
-  const {
-    data,
-    className,
-  } = props;
+  const {data, className} = props;
   const {locale, generateRoute} = useI18n();
   const {name = '', timespan = 'present'} = useParams();
 
-  const selectedItem = data.find(
-    item => slugifyStreetName(item.name) === name
-  );
+  const selectedItem = data.find(item => slugifyStreetName(item.name) === name);
 
   const switchPath = generateRoute('STREET', {
     name,
     timespan: getOpositeTimespan(timespan),
   });
   const places = (selectedItem && selectedItem.places) || {};
-  const streetName = selectedItem && selectedItem.name || '';
+  const streetName = (selectedItem && selectedItem.name) || '';
   const navigationState = timespan;
 
   return (
     <div className={cx(className)}>
       <div style={{position: 'relative'}}>
         <div
-          className={cx(
-            style.flipCard,
-            {
-              [`${style.flipCardFlipped}`]: navigationState === 'past'
-            }
-          )}
+          className={cx(style.flipCard, {
+            [`${style.flipCardFlipped}`]: navigationState === 'past',
+          })}
         >
           {Object.keys(places).map((timespan, index) => (
             <div
               key={index}
               className={cx(
-                timespan === 'present' ? style.flipCardFront : style.flipCardBack
+                timespan === 'present'
+                  ? style.flipCardFront
+                  : style.flipCardBack
               )}
             >
               {places[timespan].map((item, index) => (
@@ -72,7 +65,9 @@ const StreetDetail = (props: StreetDetailPropsType) => {
                     )}
                   </div>
                   <div className={style.itemDescriptionContainer}>
-                    <p className={style.streetItemDescription}>{item.description}</p>
+                    <p className={style.streetItemDescription}>
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -95,6 +90,5 @@ const StreetDetail = (props: StreetDetailPropsType) => {
     </div>
   );
 };
-
 
 export default StreetDetail;

@@ -1,13 +1,11 @@
 // @flow strict
 
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import type {Node} from 'react';
-// $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
-import {useLocation, useHistory} from 'react-router-dom';
 import {getUserLocale} from './localeUtils';
 import translate from './localization';
 import type {LocaleType} from './localization';
-import getRouter, {getRouteFromLocation} from '../routes/router';
+import getRouter from '../routes/router';
 
 export type I18nType = {
   getRoute: (id: string, overrideLocale?: LocaleType) => string,
@@ -36,13 +34,15 @@ export function I18n({children}: {children: Node}) {
   }
 
   return (
-    <LocalizationContext.Provider value={{
-      getRoute,
-      generateRoute,
-      locale,
-      changeLocale: (locale) => setLocale(locale),
-      translate: (id: string) => translate(id, locale),
-    }}>
+    <LocalizationContext.Provider
+      value={{
+        getRoute,
+        generateRoute,
+        locale,
+        changeLocale: locale => setLocale(locale),
+        translate: (id: string) => translate(id, locale),
+      }}
+    >
       {children}
     </LocalizationContext.Provider>
   );

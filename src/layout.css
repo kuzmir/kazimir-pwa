@@ -19,7 +19,7 @@
       overflow-y: hidden;
     }
 
-    &--small, &--large {
+    &--small {
       height: auto;
     }
 
