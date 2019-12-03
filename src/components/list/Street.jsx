@@ -31,7 +31,7 @@ function Street({name, id, mapView, places}: PropsType) {
   return (
     <div
       className={cx(style.listItem, `${style.listItem}-${id}`, {
-        [`${style.listItemActive}`]: isActive
+        [`${style.listItemActive}`]: isActive,
       })}
     >
       <style>
@@ -46,7 +46,7 @@ function Street({name, id, mapView, places}: PropsType) {
       <Link
         to={generateRoute('STREET', {
           name: slugName,
-          timespan: 'past'
+          timespan: 'past',
         })}
         className={style.listItemNavIcon}
       >
@@ -56,7 +56,7 @@ function Street({name, id, mapView, places}: PropsType) {
       <Link
         to={generateRoute('STREET', {
           name: slugName,
-          timespan: 'present'
+          timespan: 'present',
         })}
         className={style.listItemNavIcon}
       >

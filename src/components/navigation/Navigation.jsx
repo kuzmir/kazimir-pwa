@@ -3,13 +3,15 @@
 import React, {useState} from 'react';
 // $FlowFixMe https://github.com/ReactTraining/react-router/issues/6944
 import {
+  // $FlowFixMe
   useParams,
-  useLocation,
+  // $FlowFixMe
   useHistory,
+  // $FlowFixMe
   useRouteMatch,
+  Link,
 } from 'react-router-dom';
 import cx from 'classnames';
-import {Link} from 'react-router-dom';
 import {getRouteFromLocation} from '../../utils/routes/router';
 import style from './navigation.css';
 import ListIcon from '../navigationIcons/ListIcon';
