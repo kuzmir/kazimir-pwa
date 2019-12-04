@@ -115,9 +115,9 @@ function Navigation({data}: {data: Array<StreetType>}) {
             }
           >
             {isMapVisible ? (
-              <ListIcon color="#424242" />
+              <ListIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
             ) : (
-              <MapIcon color="#424242" />
+              <MapIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
             )}
           </Link>
           <div
@@ -125,7 +125,7 @@ function Navigation({data}: {data: Array<StreetType>}) {
             onClick={handleToggleInfoMenu}
             className={className}
           >
-            <Info color="#424242" />
+            <Info color={isDetailVisible ? '#ffffff' : '#424242'} />
           </div>
         </div>
       </nav>

@@ -1,4 +1,4 @@
-@value sizeS, sizeXs, sizeM, coloDarkGray, textFontSizeM from '../../utils/basics.css';
+@value sizeS, sizeXs, sizeM, sizeL, coloDarkGray, colorWhite, textFontSizeM from '../../utils/basics.css';
 
 .modal {
     display: block;
@@ -24,28 +24,29 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: sizeXs;
     width: 100%;
+    height: 100vh;
     box-shadow: 0 3px 32px 0 rgba(2,10,27,0.15);
     background-color: #fff;
     position: relative;
-}
 
-@media (min-width: 768px) {
-    .modalBox {
+    @media (min-width: 768px) {
+        border-radius: sizeXs;
+        height: auto;
         z-index: 1000;
         margin: 65px 0;
         width: 800px;
-    }   
+    }
 }
 
 .modalContent {
   display: flex;
   flex-direction: column;
-  padding: sizeM;
+  padding-top: sizeL;
 
   @media (min-width: 768px) {
     flex-direction: row;
+    padding: sizeM;
   }
 }
 
@@ -55,12 +56,13 @@
 }
 
 .modalContentInfo {
-    padding-left: sizeS;
     flex-grow: 1;
+    padding: 0 sizeM;
 
     @media (min-width: 768px) {
         max-width: 33%;
         max-height: 300px;
+        padding-left: sizeS;
     }
     
 }
@@ -72,12 +74,15 @@
 
 .modalCloseButton {
     position: absolute;
-    top: sizeS;
-    right: sizeS;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
     color: coloDarkGray;
     border: none;
-    background-color: none;
     font-size: textFontSizeM;
     cursor: pointer;
     border-radius: sizeXs;
+    padding: 0;
+    background-color: white;
 }
