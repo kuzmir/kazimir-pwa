@@ -29,6 +29,8 @@
     height: sizeL;
     position: absolute;
     top: 50%;
+    background: none;
+    border: none;
 }
 
 .sliderItemNavIconRight {
