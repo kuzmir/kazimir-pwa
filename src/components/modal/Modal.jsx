@@ -3,6 +3,7 @@
 import React from 'react';
 import cx from 'classnames';
 import style from './modal.css';
+import CloseIcon from '../navigationIcons/CloseIcon';
 
 type ModalPropsType = {
   info: string,
@@ -17,7 +18,7 @@ const Modal = ({handleClose, info, imagePath, name}: ModalPropsType) => {
       <div className={style.overlay} onClick={handleClose}>
         <div role="dialog" className={style.modalBox}>
           <button className={style.modalCloseButton} onClick={handleClose}>
-            X
+            <CloseIcon color="#000000" />
           </button>
           <div className={style.modalContent}>
             <div className={style.modalContentImage}>
