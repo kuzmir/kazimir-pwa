@@ -7,7 +7,7 @@ const loginData = require('./deploy.json');
 const config = {
   user: loginData.user,
   password: loginData.password,
-  host: "ftp.cluster029.hosting.ovh.net",
+  host: "ftp.cluster028.hosting.ovh.net",
   port: 21,
   localRoot: path.join(__dirname, '../dist'),
   remoteRoot: '/www',
