@@ -6,7 +6,7 @@
   overflow-y: scroll;
 
   &--on-map {
-    position: fixed;
+    position: fixed !important; /* TODO change this somehow */
     bottom: 0;
     max-height: 30vh;
     min-height: 30vh;
@@ -20,7 +20,7 @@
     }
 
     @media (min-width: 768px) {
-      position: relative;
+      position: relative !important; /* TODO change this somehow */
       bottom: auto;
       max-height: initial;
       min-height: initial;
@@ -37,6 +37,11 @@
     border-bottom: 1px solid coloLightGray;
     background-size: 100%;
     background-position: center center;
+
+    @media (min-width: 768px) {
+      min-height: 120px;
+      cursor: pointer;
+    }
 
     &--active {
       .listItem__cover {

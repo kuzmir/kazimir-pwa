@@ -27,13 +27,14 @@
   background-attachment: scroll, fixed;
   background-image: url(/images/gradient.png),url(/images/kazimir-bg.jpg);
   background-repeat: repeat,	no-repeat;
-  background-size: auto,	auto 100%;
+  background-size: auto,	auto 70%;
   color: rgba(255,255,255,0.5);
   left: 0;
   text-align: right;
   top: 0;
 
   @media (min-width: 768px) {
+    background-size: auto,	auto 100%;
     position: fixed;
     width: 45%;
     height: 100vh;

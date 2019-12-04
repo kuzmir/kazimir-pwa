@@ -6,10 +6,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 sizeS;
+  padding: 0 0 0 sizeS;
   height: sizeXl;
   box-sizing: border-box;
   width: 100%;
+
+  @media (min-width: 768px) {
+    padding: 0 sizeS;
+  }
 
   &--present {
     background: colorBlue;
@@ -31,8 +35,26 @@
 }
 
 .navLinksMobileOnlyContainer {
+  display: flex;
+
   @media (min-width: 768px) {
     display: none;
+  }
+}
+
+.navInfoLinksMobileOnly {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &--active {
+    display: flex;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 }
 
