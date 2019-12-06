@@ -19,7 +19,7 @@ const Slider = ({items}: SliderPropsType) => {
   const goToPrevSlide = () => goToSlide(currentIndex - 1);
 
   const additionalStyles = {
-    left: `-${currentIndex * 100}vw`,
+    left: `-${currentIndex * 100}%`,
   };
 
   return (
@@ -38,7 +38,7 @@ const Slider = ({items}: SliderPropsType) => {
             style.sliderItemNavIconLeft
           )}
         >
-          <ArrowLeftIcon color="white" />
+          <ArrowLeftIcon color="black" />
         </button>
       )}
       {currentIndex < items.length - 1 && (
@@ -49,7 +49,7 @@ const Slider = ({items}: SliderPropsType) => {
             style.sliderItemNavIconRight
           )}
         >
-          <ArrowRightIcon color="white" />
+          <ArrowRightIcon color="black" />
         </button>
       )}
     </div>
