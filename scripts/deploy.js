@@ -7,10 +7,10 @@ const loginData = require('./deploy.json');
 const config = {
   user: loginData.user,
   password: loginData.password,
-  host: "ftp.arteverest.nazwa.pl",
+  host: "ftp.cluster028.hosting.ovh.net",
   port: 21,
   localRoot: path.join(__dirname, '../dist'),
-  remoteRoot: '/',
+  remoteRoot: '/www',
   include: ['**/*', '.htaccess'],
   deleteRemote: true
 };
