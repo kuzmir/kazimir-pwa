@@ -6,11 +6,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 0 sizeS;
+  padding: 0 sizeS;
   height: sizeXl;
   box-sizing: border-box;
   width: 100%;
-
+  
   @media (min-width: 768px) {
     padding: 0 sizeS;
   }
@@ -51,6 +51,11 @@
 
   &--active {
     display: flex;
+    margin-left: 8px;
+
+    .navigationLinkDetail {
+      color: colorNavigationGray; 
+    }
 
     @media (min-width: 768px) {
       display: none;
@@ -82,9 +87,15 @@
   height: sizeL;
   z-index: 1;
 
-  img {
+  svg {
     height: 100%;
     width: auto;
+    max-width: 160px;
+    margin-left: 8px;
+
+    @media (min-width: 768px) {
+      max-width: auto;
+    }
   }
 }
 
@@ -128,4 +139,8 @@
   &--onLeft {
     left: sizeXs;
   }
+}
+
+.infoButton {
+  margin-left: 8px;
 }
