@@ -48,6 +48,31 @@ function Navigation({data}: {data: Array<StreetType>}) {
     [`${style.navigationLinkDetail}`]: isDetailVisible,
   });
 
+  const infoLinks = (
+    <>
+      <Link to={generateRoute('INFO')} className={linkClassName}>
+        {translate('INFO')}
+      </Link>
+      <Link to={generateRoute('TEAM')} className={linkClassName}>
+        {translate('TEAM')}
+      </Link>
+      <Link to={generateRoute('PRESS')} className={linkClassName}>
+        {translate('PRESS')}
+      </Link>
+      <a
+        href="javascript:void(0)"
+        onClick={() => {
+          changeLocale(locale === 'pl' ? 'en' : 'pl');
+          // todo: change this to redirect route in react-router
+          history.push(changeLocaleRoute);
+        }}
+        className={linkClassName}
+      >
+        {locale === 'pl' ? '🇺🇸' : '🇵🇱'}
+      </a>
+    </>
+  );
+
   return (
     <>
       <nav
@@ -114,16 +139,17 @@ function Navigation({data}: {data: Array<StreetType>}) {
               isMapVisible ? 'Switch to list view' : 'Switch to map view'
             }
           >
-            {isMapVisible ? (
-              <ListIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
-            ) : (
-              <MapIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
-            )}
+            {!isDetailVisible &&
+              (isMapVisible ? (
+                <ListIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
+              ) : (
+                <MapIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
+              ))}
           </Link>
           <div
             aria-label="info-button"
             onClick={handleToggleInfoMenu}
-            className={className}
+            className={cx(className, style.infoButton)}
           >
             <Info color={isDetailVisible ? '#ffffff' : '#424242'} />
           </div>
@@ -134,15 +160,7 @@ function Navigation({data}: {data: Array<StreetType>}) {
           [`${style.navInfoLinksMobileOnlyActive}`]: opened,
         })}
       >
-        <Link to={generateRoute('INFO')} className={linkClassName}>
-          {translate('INFO')}
-        </Link>
-        <Link to={generateRoute('TEAM')} className={linkClassName}>
-          {translate('TEAM')}
-        </Link>
-        <Link to={generateRoute('PRESS')} className={linkClassName}>
-          {translate('PRESS')}
-        </Link>
+        {infoLinks}
       </div>
     </>
   );
