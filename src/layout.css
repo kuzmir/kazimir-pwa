@@ -3,36 +3,50 @@
 .container {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  margin-top: sizeXl;
+
+  /* by default we keep full page occupied with header + content (to nicely display static pages + bg image) */
+  min-height: calc(100vh - sizeXl);
   
   @media (min-width: 768px) {
     flex-direction: row;
+  }
+
+  &--with-background {
+    background-position: center;
+    background-attachment: scroll, fixed;
+    background-image: url(/images/gradient.png), url(/images/kazimir-bg.jpg);
+    background-repeat: repeat, no-repeat;
+    background-size: cover;
+
+    @media (min-width: 768px) {
+      /* by default we align to right when there is single box component (static pages) */
+      justify-content: flex-end;
+    }
   }
 
   .box {
     width: 100%;
     overflow-y: auto;
     position: relative;
-    height: calc(100vh - sizeXl);
 
-    &--without-scroll {
-      overflow-y: hidden;
+    &--fixed {
+      position: fixed;
+      right: 0;
     }
 
-    &--small {
-      height: auto;
+    /* this class to be used with container with background */
+    &--static {
+      background-color: #ffffff;
+      margin: 256px 0 128px;
+
+      @media (min-width: 768px) {
+        margin: 0;
+      }
     }
 
     @media (min-width: 768px) {
       width: 50%;
-
-      &--small {
-        width: 45%;
-      }
-  
-      &--large {
-        width: 55%;
-      }
     }
   }
 }

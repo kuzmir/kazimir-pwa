@@ -2,23 +2,18 @@
 
 import React from 'react';
 import cx from 'classnames';
+import {useI18n} from '../../utils/locale/I18n';
+
 import layoutStyle from '../../layout.css';
 import style from './page.css';
 
-const Press = () => (
-  <>
-    <div className={style.hero} />
-    <div
-      className={cx(
-        layoutStyle.box,
-        layoutStyle.boxSmall,
-        layoutStyle.boxWithoutScroll
-      )}
-    ></div>
+const Press = () => {
+  const {translate} = useI18n();
 
-    <div className={cx(layoutStyle.box, layoutStyle.boxLarge)}>
+  return (
+    <div className={cx(layoutStyle.box, layoutStyle.boxStatic)}>
       <div className={style.pageContent}>
-        <h1 className={style.headline}>Press</h1>
+        <h1 className={style.headline}>{translate('PRESS')}</h1>
 
         <div className={style.contentContainer}>
           <div className={style.pressItem}>
@@ -90,7 +85,7 @@ const Press = () => (
         </div>
       </div>
     </div>
-  </>
-);
+  );
+}
 
 export default Press;
