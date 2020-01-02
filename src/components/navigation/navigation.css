@@ -2,6 +2,11 @@
 @value mainLogoMaxWidth: 180px;
 
 .navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 15;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

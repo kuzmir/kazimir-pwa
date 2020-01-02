@@ -33,42 +33,31 @@ const Team = () => {
   };
 
   return (
-    <>
-      <div className={style.hero} />
-      <div
-        className={cx(
-          layoutStyle.box,
-          layoutStyle.boxSmall,
-          layoutStyle.boxWithoutScroll
-        )}
-      ></div>
+    <div className={cx(layoutStyle.box, layoutStyle.boxStatic)}>
+      <div className={style.pageContent}>
+        <h1 className={style.headline}>{translate('TEAM')}</h1>
 
-      <div className={cx(layoutStyle.box, layoutStyle.boxLarge)}>
-        <div className={style.pageContent}>
-          <h1 className={style.headline}>Team</h1>
-
-          <div className={style.contentContainer}>
-            {names.map((name, index) => (
-              <div
-                className={style.teamItem}
-                onClick={() => openModal(name)}
-                key={index}
-              >
-                <img src={`../../images/team/${name}_thumb.jpg`} />
-              </div>
-            ))}
-          </div>
-          {nameSet && (
-            <Modal
-              handleClose={handleClose}
-              name={translate(`TEAM_${nameSet.toUpperCase()}_NAME`)}
-              info={translate(`TEAM_${nameSet.toUpperCase()}_CONTENT`)}
-              imagePath={`../../images/team/${nameSet}_large.jpg`}
-            />
-          )}
+        <div className={style.contentContainer}>
+          {names.map((name, index) => (
+            <div
+              className={style.teamItem}
+              onClick={() => openModal(name)}
+              key={index}
+            >
+              <img src={`../../images/team/${name}_thumb.jpg`} />
+            </div>
+          ))}
         </div>
+        {nameSet && (
+          <Modal
+            handleClose={handleClose}
+            name={translate(`TEAM_${nameSet.toUpperCase()}_NAME`)}
+            info={translate(`TEAM_${nameSet.toUpperCase()}_CONTENT`)}
+            imagePath={`../../images/team/${nameSet}_large.jpg`}
+          />
+        )}
       </div>
-    </>
+    </div>
   );
 };
 
