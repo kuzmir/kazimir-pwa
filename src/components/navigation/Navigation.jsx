@@ -18,6 +18,7 @@ import ListIcon from '../navigationIcons/ListIcon';
 import MapIcon from '../navigationIcons/MapIcon';
 import Info from '../navigationIcons/Info';
 import ArrowLeft from '../navigationIcons/ArrowLeft';
+import ArrowRight from '../navigationIcons/ArrowRight';
 import Logo from '../navigationIcons/Logo';
 import {useI18n} from '../../utils/locale/I18n';
 import {slugifyStreetName} from '../../utils/url';
@@ -50,15 +51,6 @@ function Navigation({data}: {data: Array<StreetType>}) {
 
   const infoLinks = (
     <>
-      <Link to={generateRoute('INFO')} className={linkClassName}>
-        {translate('INFO')}
-      </Link>
-      <Link to={generateRoute('TEAM')} className={linkClassName}>
-        {translate('TEAM')}
-      </Link>
-      <Link to={generateRoute('PRESS')} className={linkClassName}>
-        {translate('PRESS')}
-      </Link>
       <a
         href="javascript:void(0)"
         onClick={() => {
@@ -70,6 +62,15 @@ function Navigation({data}: {data: Array<StreetType>}) {
       >
         {locale === 'pl' ? '🇺🇸' : '🇵🇱'}
       </a>
+      <Link to={generateRoute('INFO')} className={linkClassName}>
+        {translate('INFO')}
+      </Link>
+      <Link to={generateRoute('TEAM')} className={linkClassName}>
+        {translate('TEAM')}
+      </Link>
+      <Link to={generateRoute('PRESS')} className={linkClassName}>
+        {translate('PRESS')}
+      </Link>
     </>
   );
 
@@ -82,51 +83,50 @@ function Navigation({data}: {data: Array<StreetType>}) {
           [`${style.navContainerPast}`]: isDetailVisible && timespan === 'past',
         })}
       >
-        {!isDetailVisible && (
-          <Link to={generateRoute('MAIN')} className={style.navLogo}>
-            <Logo />
-          </Link>
-        )}
-
-        {isDetailVisible && selectedItem && (
-          <>
-            <Link
-              to={generateRoute('MAIN')}
-              className={cx(
-                style.navigationIcon,
-                style.navigationIconSvg,
-                style.navigationIconOnLeft
-              )}
-            >
-              <ArrowLeft color="#fff" />
+        {!isDetailVisible ? (
+          <div className={style.logoContainer}>
+            <Link to={generateRoute('MAIN')} className={style.navLogo}>
+              <Logo />
             </Link>
-            <h3 className={style.navigationLinkDetail}>{selectedItem.name}</h3>
-          </>
+            <div
+              aria-label="info-button"
+              onClick={handleToggleInfoMenu}
+              className={cx(className, style.infoButton)}
+            >
+              <Info color="#424242" />
+            </div>
+          </div>
+        ) : (
+          selectedItem && (
+            <div className={style.navigationLinksOnlyMobile}>
+              <Link
+                to={generateRoute('MAIN')}
+                className={cx(style.navigationIcon, style.navigationIconSvg, {
+                  [`${style.navigationIconOnLeft}`]:
+                    isDetailVisible && timespan === 'present',
+                  [`${style.navigationIconOnRight}`]:
+                    isDetailVisible && timespan === 'past',
+                })}
+              >
+                {isDetailVisible && timespan === 'present' ? (
+                  <ArrowLeft color="#fff" />
+                ) : (
+                  <ArrowRight color="#fff" />
+                )}
+              </Link>
+              <h3
+                className={cx(
+                  style.navigationLinkDetail,
+                  style.streetNameHeadline
+                )}
+              >
+                {selectedItem.name}
+              </h3>
+            </div>
+          )
         )}
 
-        <div className={style.navLinksContainer}>
-          <a
-            href="javascript:void(0)"
-            onClick={() => {
-              changeLocale(locale === 'pl' ? 'en' : 'pl');
-              // todo: change this to redirect route in react-router
-              history.push(changeLocaleRoute);
-            }}
-            className={linkClassName}
-          >
-            {locale === 'pl' ? '🇺🇸' : '🇵🇱'}
-          </a>
-          <Link to={generateRoute('INFO')} className={linkClassName}>
-            {translate('INFO')}
-          </Link>
-          <Link to={generateRoute('TEAM')} className={linkClassName}>
-            {translate('TEAM')}
-          </Link>
-          <Link to={generateRoute('PRESS')} className={linkClassName}>
-            {translate('PRESS')}
-          </Link>
-        </div>
-
+        {/* MOBILE */}
         <div className={style.navLinksMobileOnlyContainer}>
           <Link
             to={
@@ -146,14 +146,33 @@ function Navigation({data}: {data: Array<StreetType>}) {
                 <MapIcon color={isDetailVisible ? '#ffffff' : '#424242'} />
               ))}
           </Link>
-          <div
-            aria-label="info-button"
-            onClick={handleToggleInfoMenu}
-            className={cx(className, style.infoButton)}
-          >
-            <Info color={isDetailVisible ? '#ffffff' : '#424242'} />
-          </div>
         </div>
+
+        {/* DESKTOP */}
+        {isDetailVisible && selectedItem && (
+          <div className={style.navigationLinksDesktop}>
+            <Link
+              to={generateRoute('MAIN')}
+              className={cx(
+                style.navigationIcon,
+                style.navigationIconSvg,
+                style.navigationIconOnLeft
+              )}
+            >
+              <ArrowLeft color="#fff" />
+            </Link>
+            <h3
+              className={cx(
+                style.navigationLinkDetail,
+                style.streetNameHeadline
+              )}
+            >
+              {selectedItem.name}
+            </h3>
+          </div>
+        )}
+
+        <div className={style.navLinksContainer}>{infoLinks}</div>
       </nav>
       <div
         className={cx(style.navInfoLinksMobileOnly, {

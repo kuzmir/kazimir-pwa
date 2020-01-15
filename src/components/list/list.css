@@ -64,6 +64,7 @@
       color: colorWhite;
       z-index: 1;
       text-decoration: none;
+      text-align: center;
     }
 
     &__cover {
