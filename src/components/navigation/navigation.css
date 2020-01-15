@@ -113,16 +113,21 @@
 
   @media (min-width: 768px) {
     display: block;
-
-    .navigationIcon {
-      top: 12px;
-    }
   }
 }
 
 .navigationLinksOnlyMobile {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navigationLinksOnlyMobile,
+.navigationLinksDesktop {
   .navigationIcon {
-    top: 12px;
+    top: calc(sizeXs + 4px);
   }
 }
 
