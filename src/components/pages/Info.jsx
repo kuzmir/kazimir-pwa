@@ -37,6 +37,17 @@ const Info = () => {
         <p className={style.description}>
           {translate('INFO_PARAGRAPH_3_CONTENT')}
         </p>
+        <div>
+          <a
+            rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+          >
+            <img
+              alt="Licencja Creative Commons"
+              src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
