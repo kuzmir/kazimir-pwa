@@ -23,4 +23,4 @@ client.on('log', data => console.log(data));
 client
   .deploy(config)
   .then(response => console.log('finished:', response))
-  .catch(error => console.log(error.message));;
+  .catch(error => console.log(error.message));
