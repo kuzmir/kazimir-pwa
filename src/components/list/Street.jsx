@@ -10,6 +10,7 @@ import {slugifyStreetName} from '../../utils/url';
 
 import type {RouterHistory} from 'react-router-dom';
 import type {PlacesType} from '../../AppContainer';
+import {getScreenType, SCREEN_MOBILE} from '../../utils/screenType';
 
 import style from './list.css';
 import {useI18n} from '../../utils/locale/I18n';
@@ -27,6 +28,7 @@ function Street({name, id, mapView, places}: PropsType) {
   const slugName = slugifyStreetName(name);
   const path = generateRoute('MAP', {name: slugName});
   const isActive = useRouteMatch(path);
+  const canBeClicked = !(!mapView && getScreenType() === SCREEN_MOBILE);
 
   return (
     <div
@@ -41,7 +43,7 @@ function Street({name, id, mapView, places}: PropsType) {
       </style>
       <div
         className={style.listItemCover}
-        onClick={() => history.push(path)}
+        onClick={() => canBeClicked ? history.push(path) : undefined}
       ></div>
       <Link
         to={generateRoute('STREET', {

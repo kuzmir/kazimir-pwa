@@ -18,10 +18,6 @@ import dataEN from './streets_en.json';
 import dataPL from './streets_pl.json';
 import {useI18n} from './utils/locale/I18n';
 
-const BREAKPOINT = 1024;
-const SCREEN_MOBILE = 'SCREEN_MOBILE';
-const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
-
 export type PhotoType = {
   title: string,
   small: string,
@@ -51,21 +47,11 @@ type StateType = {
   data: Array<StreetType>,
 };
 
-function widthToScreenType(width: number) {
-  if (width <= BREAKPOINT) {
-    return SCREEN_MOBILE;
-  }
-
-  return SCREEN_DESKTOP;
-}
-
 function AppContainer() {
   const {getRoute, locale} = useI18n();
   const [{data}, setState] = useState<StateType>({
     data: locale === 'pl' ? dataPL : dataEN,
   });
-  const screenType = widthToScreenType(window.innerWidth);
-  const isWideLayout = screenType === SCREEN_DESKTOP;
 
   useEffect(() => {
     setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN}));
