@@ -8,7 +8,10 @@ const Logo = () => (
     width="221px"
     height="35px"
     viewBox="82.5 93.5 221 35"
+    aria-labelledby="logotype"
+    role="img"
   >
+    <title id="logotype">kazimir logo</title>
     <path
       fill="#424242"
       d="M179.365,101.697c-0.003,0.062-25.03,26.29-25.03,26.29s-4.532-3.636-2.932-8.885

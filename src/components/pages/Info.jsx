@@ -37,15 +37,30 @@ const Info = () => {
         <p className={style.description}>
           {translate('INFO_PARAGRAPH_3_CONTENT')}
         </p>
-        <div>
+
+        <h4 className={style.subheadline}>
+          {translate('INFO_PARAGRAPH_4_TITLE')}
+        </h4>
+        <div className={style.gifImage}>
+          <img src="../../images/kazimir-ios.gif" />
+        </div>
+        <h4 className={style.subheadline}>We ❤️ open source!</h4>
+        <div className={style.openLinks}>
           <a
             rel="license"
             href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            className={style.openLinksElements}
           >
             <img
               alt="Licencja Creative Commons"
               src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
             />
+          </a>
+          <a
+            href="https://github.com/burakukula/kazimir-pwa"
+            className={style.openLinksElements}
+          >
+            <img src="../../images/GitHub_Logo.png" />
           </a>
         </div>
       </div>

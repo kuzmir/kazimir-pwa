@@ -89,3 +89,38 @@
   font-size: 14px;
   font-weight: 300;
 }
+
+.gifImage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 70%;
+    height: auto;
+    border-radius: 30px;
+  }
+
+  @media (min-width: 768px) {
+    width: 40%;
+
+    img {
+      width: 100%;
+    }
+  }  
+}
+
+.openLinks {
+  display: flex;
+  flex-direction: row;
+}
+
+.openLinksElements {
+  max-width: 80px;
+  margin-right: sizeS;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
