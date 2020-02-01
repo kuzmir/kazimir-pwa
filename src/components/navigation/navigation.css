@@ -2,6 +2,11 @@
 @value mainLogoMaxWidth: 180px;
 
 .navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 15;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -16,11 +21,21 @@
   }
 
   &--present {
+    justify-content: center;
     background: colorBlue;
+
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+    }
   }
 
   &--past {
+    justify-content: center;
     background: colorMustard;
+
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+    }
   }
 }
 
@@ -42,6 +57,10 @@
   }
 }
 
+.logoContainer {
+  display: flex;
+}
+
 .navInfoLinksMobileOnly {
   display: none;
 
@@ -52,6 +71,8 @@
   &--active {
     display: flex;
     margin-left: 8px;
+    position: relative;
+    top: sizeXl;
 
     .navigationLinkDetail {
       color: colorNavigationGray; 
@@ -75,8 +96,39 @@
   color: #000000
 }
 
+.streetNameHeadline {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
 .navigationLinkDetail {
   color: colorWhite;
+}
+
+.navigationLinksDesktop {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.navigationLinksOnlyMobile {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navigationLinksOnlyMobile,
+.navigationLinksDesktop {
+  .navigationIcon {
+    top: calc(sizeXs + 4px);
+  }
 }
 
 .navLogo {
@@ -90,8 +142,8 @@
   svg {
     height: 100%;
     width: auto;
-    max-width: 160px;
-    margin-left: 8px;
+    max-width: 140px;
+    margin-left: sizeXs;
 
     @media (min-width: 768px) {
       max-width: auto;
@@ -122,8 +174,20 @@
   }
 }
 
+.navigationDetailIconOnLeft {
+  position: absolute;
+  left: sizeXs;
+  /* top: auto; */
+}
+
+.navigationDetailIconOnRight {
+  position: absolute;
+  right: sizeXs;
+  /* top: auto; */
+}
+
 .navigationIcon {
-  top: sizeXs;
+  position: absolute;
 
   svg {
     max-width: sizeL;
@@ -141,6 +205,13 @@
   }
 }
 
+
+
 .infoButton {
-  margin-left: 8px;
+  margin-left: sizeS;
+  display: flex;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

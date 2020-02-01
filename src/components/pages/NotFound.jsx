@@ -10,24 +10,13 @@ const Info = () => {
   const {translate} = useI18n();
 
   return (
-    <>
-      <div className={style.hero} />
-      <div
-        className={cx(
-          layoutStyle.box,
-          layoutStyle.boxSmall,
-          layoutStyle.boxWithoutScroll
-        )}
-      ></div>
+    <div className={cx(layoutStyle.box, layoutStyle.boxStatic)}>
+      <div className={style.pageContent}>
+        <h1 className={style.headline}>404 Not Found</h1>
 
-      <div className={cx(layoutStyle.box, layoutStyle.boxLarge)}>
-        <div className={style.pageContent}>
-          <h1 className={style.headline}>404 Not Found</h1>
-
-          <h4 className={style.subheadline}>{translate('NOT_FOUND')}</h4>
-        </div>
+        <h4 className={style.subheadline}>{translate('NOT_FOUND')}</h4>
       </div>
-    </>
+    </div>
   );
 };
 

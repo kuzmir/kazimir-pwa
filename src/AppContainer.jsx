@@ -18,10 +18,6 @@ import dataEN from './streets_en.json';
 import dataPL from './streets_pl.json';
 import {useI18n} from './utils/locale/I18n';
 
-const BREAKPOINT = 1024;
-const SCREEN_MOBILE = 'SCREEN_MOBILE';
-const SCREEN_DESKTOP = 'SCREEN_DESKTOP';
-
 export type PhotoType = {
   title: string,
   small: string,
@@ -51,30 +47,22 @@ type StateType = {
   data: Array<StreetType>,
 };
 
-function widthToScreenType(width: number) {
-  if (width <= BREAKPOINT) {
-    return SCREEN_MOBILE;
-  }
-
-  return SCREEN_DESKTOP;
-}
-
 function AppContainer() {
   const {getRoute, locale} = useI18n();
   const [{data}, setState] = useState<StateType>({
     data: locale === 'pl' ? dataPL : dataEN,
   });
-  const screenType = widthToScreenType(window.innerWidth);
-  const isWideLayout = screenType === SCREEN_DESKTOP;
 
   useEffect(() => {
     setState(state => ({...state, data: locale === 'pl' ? dataPL : dataEN}));
   }, [locale]);
 
-  const renderLayout = (children: Node) => (
+  const renderLayout = (children: Node, withBackground: boolean = false) => (
     <>
       <Navigation data={data} />
-      <div className={style.container}>
+      <div className={cx(style.container, {
+        [style.containerWithBackground]: withBackground
+      })}>
         {children}
       </div>
     </>
@@ -85,7 +73,7 @@ function AppContainer() {
     renderLayout(
       <>
         <StreetList data={data} className={style.box} />
-        <MapContainer data={data} className={cx(style.box, style.hiddenOnMobile)} />
+        <MapContainer data={data} className={cx(style.box, style.boxFixed, style.hiddenOnMobile)} />
       </>
     )
   );
@@ -94,7 +82,7 @@ function AppContainer() {
     renderLayout(
       <>
         <StreetList data={data} className={style.box} mapView />
-        <MapContainer data={data} className={cx(style.box)} mapView />
+        <MapContainer data={data} className={cx(style.box, style.boxFixed)} mapView />
       </>
     )
   );
@@ -102,16 +90,16 @@ function AppContainer() {
   const renderDetail = () => (
     renderLayout(
       <>
-        <StreetDetail data={data} className={cx(style.box, style.boxWithoutScroll)} />
-        <MapContainer data={data} className={cx(style.box, style.hiddenOnMobile)} />
+        <StreetDetail data={data} className={cx(style.box)} />
+        <MapContainer data={data} className={cx(style.box, style.boxFixed, style.hiddenOnMobile)} />
       </>
     )
   );
 
-  const renderInfo = () => renderLayout(<Info />);
-  const renderTeam = () => renderLayout(<Team />);
-  const renderPress = () => renderLayout(<Press />);
-  const renderNotFound = () => renderLayout(<NotFound />);
+  const renderInfo = () => renderLayout(<Info />, true);
+  const renderTeam = () => renderLayout(<Team />, true);
+  const renderPress = () => renderLayout(<Press />, true);
+  const renderNotFound = () => renderLayout(<NotFound />, true);
 
   return (
     <>

@@ -1,6 +1,6 @@
 {
-  "name": "KazimirApp",
-  "short_name": "KazimirApp",
+  "name": "Kazimir",
+  "short_name": "Kazimir",
   "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "orientation": "any",
