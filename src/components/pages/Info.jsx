@@ -44,7 +44,7 @@ const Info = () => {
         <div className={style.gifImage}>
           <img src="../../images/kazimir-ios.gif" />
         </div>
-        <h4 className={style.subheadline}>We ❤️ open source!</h4>
+        <h4 className={style.subheadline}>We <span role="img" aria-label="heart">♥️</span> open source!</h4>
         <div className={style.openLinks}>
           <a
             rel="license"
