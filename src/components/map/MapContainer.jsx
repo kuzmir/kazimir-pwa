@@ -38,8 +38,8 @@ const MapContainer = ({data, className}: MapContainerPropsType) => {
         className={style.mapWrapper}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png"
-          attribution='Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='Tiles courtesy of <a href="http://openstreetmap.org/" target="_blank">OpenStreetMap</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
 
         {street && <MapStreetLines streets={data} activeId={street.id} />}
