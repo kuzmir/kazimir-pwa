@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {HashRouter as Router} from 'react-router-dom';
 import I18n from './utils/locale/I18n';
 import AppContainer from './AppContainer';
 
@@ -14,7 +14,7 @@ const root = document.querySelector('.js-root');
 
 if (root) {
   ReactDOM.render(
-    <Router>
+    <Router basename="/">
       <I18n>
         <AppContainer />
       </I18n>
