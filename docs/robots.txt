@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://kazimir.app/sitemap.xml

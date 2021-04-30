@@ -1,42 +1,32 @@
-const DEFAULT_CACHE = 'cache-kazimir-v1';
-const baseCacheList = [
-  '.',
-  'index.html'
-];
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-self.addEventListener('install', event => {
-  console.log('installed', event)
-  // add assets to cache
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-  event.waitUntil(
-    caches.open(DEFAULT_CACHE)
-      .then(cache => cache.addAll(baseCacheList))
-  );
-});
+importScripts(
+  "/precache-manifest.e993ad959c4596cf8ad2c7963f7b7782.js"
+);
 
-self.addEventListener('activate', event => {
-  console.log('activated', event)
-  // invalidate cache
-});
+workbox.core.skipWaiting();
 
-const fetchAndCache = resourceURL =>
-  fetch(resourceURL)
-    .then(response => {
-      if (!response.ok) {
-        throw Error(response.statusText)
-      }
+workbox.core.clientsClaim();
 
-      return caches
-        .open(DEFAULT_CACHE)
-        .then(cache => cache.put(resourceURL, response.clone()) && response)
-    })
-    .catch(console.error);
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches
-      .match(event.request)
-      .then(response => response || fetchAndCache(event.request))
-      .catch(console.error)
-  );
-});
+workbox.googleAnalytics.initialize({});

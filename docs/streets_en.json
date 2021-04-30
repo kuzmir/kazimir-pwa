@@ -1,0 +1,650 @@
+[{
+        "id": 1,
+        "name": "Miodowa",
+        "coordinates": [
+            [50.053632572808255, 19.948285818099976],
+            [50.05261992813816, 19.94397282600403],
+            [50.05217559771107, 19.943286180496216],
+            [50.05169681845985, 19.942599534988403],
+            [50.05153148350814, 19.94217038154602]
+        ],
+        "places": {
+            "present": [{
+                "id": 1,
+                "name": "Tempel Synagogue",
+                "description": "The Tempel synagogue is unique in Kazimierz in both the style of its architecture and the worship taking place there. Built in the 1860s to serve the followers of Reform Judaism with its distinctive services involving choral and organ music, something unheard of in  Orthodox worship. \r\nThis musical tradition continues with regular concerts attracting guest musicians who also perform regularly at the Festival of Jewish Culture. The broad range of musical styles includes Israeli stars (Shlomo Bar, A-WA), Polish groups performing new Jewish music (Shofar, Ircha Quartet), traditional choral conductors (Benzion Miller) and world-famous performers such as Matisyahu. Other cultural events hosted by Tempel include concerts on 'Synagogue Night' - \"7 @ Nite\", lectures and scientific conferences (including 'Krakow's Jews 1795-1918') and performances by Polish and Israeli choirs. \r\nOf course the synagogue is also used for religious events hosting weddings and bar mitzvahs for members of the Jewish community (the last took place in August 2014).",
+                "photos": [{
+                    "title": "Tempel Synagogue",
+                    "small": "/images/places/optimized/miodowa_present_small.jpg"
+                }]
+            }, {
+                "id": 21,
+                "name": "Jewish Comunity Center of Cracow (JCC) Miodowa 24",
+                "description": "There are so many institutions working under the JCC umbrella worldwide it would be difficult to name half of them. In Europe however there are only a handful. Whilst the American Jewish community numbers in the millions, the Polish community, including in Cracow, is tiny, meaning Cracow's JCC plays a slightly different role to other branches. The thinking behind the creation of Cracow's JCC was to create a space not only for the minority of practicing Jews, but also for those who identify themselves with Jewish culture and tradition. Prince Charles of Wales noticed the need for such a facility while visiting Cracow in 2002 and was pivotal in raising funds to have the centre built. The grand opening took place in 2008 with Jonathan Ornstein instated as the centre's director.\r\nThe JCC has since become a place joining informational, cultural and educational roles. The centre plays host to language courses - including Hebrew and Yiddish, calligraphy courses, culinary courses, exhibitions and meetings with authors. In addition to all this the JCC hosts tours from Israel, organizes weekly Sabbaths and integration events and provides information for tourists wanting to learn more about the life of the Jewish community in Cracow. There is also a senior club and Jewish library within the building. \r\nReligion has aways been important to the centre. The first rabbi to be involved with the JCC was the head rabbi of Cracow, Boaz Pash. Poland's current head rabbi, the Modern Orthodox Avi Baumol, hosts regular talks aimed at giving people an introduction to Judaism.",
+                "photos": [{
+                    "title": "Jewish Comunity Center of Cracow (JCC) Miodowa 24",
+                    "small": "/images/places/optimized/miodowa_present_1_large.jpg"
+                }]
+            }],
+            "past": [{
+                "id": 9,
+                "name": "Tempel Synagogue",
+                "description": "It took as long as 17 years to build the Tempel Synagogue. When it finally opened, in the early 1860s its aesthetic created a small sensation - it stood out from other Moorish and neo-renessaince temples in Kazimierz with its striking architectural magnificence. The Tempel's progressive practices were controversial among Orthodox Jews. Organ and choral music which included women (unthinkable during orthodox services) caused the largest outcry, along with sermons which were given alternately in Polish and German (as opposed to strictly Hebrew orthodox services). The most charismatic of the preachers were Ozjasz Thon (a friend of Teodor Herzl) and Simon Dankowicz.  After the remains of Kazimeirz the Great were found in Wawel Castle, Dankowicz conducted a patriotic sermon. He called a gathering of Christian preachers, Galicjan representatives and a large crowd of Jews and Christians in the synagogue who interrupted the sermon with applause. During World War Two the north nave of the synagogue was used as stables by the Germans but after 1945 it was restored to its sacral function. Sermons were given regularly between 1947 and 1968, until the death of the last choirmaster, Abraham Lesman in 1985. The back of the synagogue housed a ritual bath. After the condition of the building deteriorated badly the American World Monuments Fund initiated restoration during the late 1990s donating a million dollars to the cause.",
+                "photos": [{
+                    "title": "Tempel Synagogue",
+                    "small": "/images/places/optimized/midowa_past_large.jpg"
+                }]
+            }]
+        }
+    },
+    {
+        "id": 2,
+        "name": "Plac Nowy",
+        "coordinates": [
+            [
+                50.05214115332007,
+                19.945088624954224
+            ],
+            [
+                50.05193965313749,
+                19.944735914468765
+            ],
+            [
+                50.051849236113924,
+                19.944564923644066
+            ],
+            [
+                50.05175881891993,
+                19.944469034671783
+            ],
+            [
+                50.05167184602977,
+                19.944467023015022
+            ],
+            [
+                50.05155042816695,
+                19.94452938437462
+            ],
+            [
+                50.05134892550391,
+                19.94465410709381
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 2,
+                "name": "Plac Nowy",
+                "description": "\r\nThe distinctive rotunda, or 'Okrąglak', is the place to get zapiekanki, a kind of pizza on half a baguette. Plac Nowy is always teeming with life day and night. In the evenings it is crowded with drinkers attracted by cheap shots, by day it is the venue for excursions, a place to meet and to trade. In summer you may be lucky enough to find a spot at one of the open air bars and cafes. \r\nOn Sunday mornings the square is filled with bloggers and hipsters rummaging through the second hand clothes, shoes and accessories which are for sale at stalls with prices ranging from a dozen to several hundred zloty. During the weekends you will find vinyl, porcelain, vintage postcards and antiques. There are also flowers and fresh fruit and vegetable sellers here all week. \r\nPlac Nowy is a focal point for young designers, activists and musicians and is host to live jazz, experimental music and  art exhibitions. If you are really lucky you could get to hear live music played from the roof of the Okrąglak.",
+                "photos": [{
+                        "title": "Plac Nowy",
+                        "small": "/images/places/optimized/plac_nowy_present_large.jpg"
+                    },
+                    {
+                        "title": "Plac Nowy 2",
+                        "small": "/images/places/optimized/plac_nowy_present_1_large.jpg"
+                    }
+                ]
+            }],
+            "past": [{
+                "id": 3,
+                "name": "Plac Nowy",
+                "description": "You will notice this 'square' has an irregular shape, hemmed in by the medieval walls. Libuszhof is the new Jewish alley leading to Plac Nowy. In front of you, there is a market with the highest quality products where housewives came to supply Cracow's best houses. At the end of the nineteenth century the city council replaced the wooden stalls with a brick market hall. At the eastern entrance (from the street Estery) there is a ritual poultry slaughterhouse which provided meat to the standards dictated by religious purity rules regarding intake of food. Maintenance of the institution rested on the shoulders of Jewish municipalities.\r\nLook at the buildings surrounding the square, two of them are houses of worship: Bene Emuna (Children of Faith) and Chaim Halberstam, which is dedicated to the tzaddik, the founder of the Sanz Hasidic dynasty. On the Bene Emuna you can find the image of Vincent Capraro - \"The Jews of Vught\", dedicated to the events at the concentration camp in the south of the Netherlands.",
+                "photos": [{
+                        "title": "Plac Nowy old 1",
+                        "small": "/images/places/optimized/plac_nowy_past_large.jpg"
+                    },
+                    {
+                        "title": "Plac Nowy old 2",
+                        "small": "/images/places/optimized/plac_nowy_past_1_large.jpg"
+                    }
+                ]
+            }]
+        }
+    },
+    {
+        "id": 3,
+        "name": "Bartosza",
+        "coordinates": [
+            [
+                50.051796708050496,
+                19.94816780090332
+            ],
+            [
+                50.05136270349074,
+                19.948300570249557
+            ],
+            [
+                50.05119736738792,
+                19.948433339595795
+            ],
+            [
+                50.05076335740782,
+                19.948613047599792
+            ],
+            [
+                50.050301786931676,
+                19.948790073394775
+            ]
+        ],
+        "places": {
+            "present": [{
+                    "id": 4,
+                    "name": "Broken Fingaz Mural",
+                    "description": "On the side of the Bosak apartment house there is a creation by the Israeli street art collective Broken Fingaz. The mural was completed during the 2014 festival of Jewish culture. The Yiddish text reads \"Cebrochn Finger\" (Broken Fingaz) and relates to the pre-war citizens of Kazimierz, who mostly spoke Yiddish.\r\nIn the lower lefthand corner you will find writing in three languages: \"to the memory of the Bosak family, citizens of Kazimierz, 1633-1941\". The mural relates to the works of Maurycy Lilien, an alumni of the Cracow Academy of Fine Arts and member of the art nouveau scene. It it his portrait that you see on the left side.",
+                    "photos": [{
+                        "title": "Broken Figaz",
+                        "small": "/images/places/optimized/bartosza_present_large.jpg"
+                    }]
+                },
+                {
+                    "id": 32,
+                    "name": "ŻyWa workshop (Bartosza 1)",
+                    "description": "The ŻyWa workshop is an organising force for Cracow's craftsman, artists, graphic designers, interior and landscape designers , musicians and those willing to share their knowledge and experience in similar fields. It does ecological, artistic and regional education. It promotes traditional craftsmanship, organizes events and introduces art into the urban space. It assists in the organisation of various events (ETNOmania festival, Rozstaje festival, the night of the museums, XV Małopolskie Dni Dziedzictwa Kultury, Osadzanie Chochoła, Wianki na Dębnikach…). Activities are aimed at both adults and children. \r\nA social garden for the city is being planned by the workshop, with design including live architecture elements from willow branches, etno-design and art-recycling workshops or basket weaving by eight hands. These are just a few examples of events organised by the curators of the workshop. If that's not enough, you can practice plaiting, pottery, toy-making,  lace-weaving, and other ornamentation.",
+                    "photos": [{
+                        "title": "Pracownia",
+                        "small": "/images/places/optimized/bartosza_present_1_large.jpg"
+                    }]
+                }
+            ],
+            "past": [{
+                "id": 3,
+                "name": "Bosak family apartment house",
+                "description": "Three hundred years ago the apartment house at number 3 was built by the Bosak family who were Polish Jews. This was a time when Kazimierz had its own city rights and was mostly inhabited by Jews from Cracow and other cities which they could not settle in anymore. Christians were a minority. In the 17th century, Kazimierz's splendour was fading after Swedish (and later Austrian) invasions and life became increasingly difficult. The Second World War tore the house from the Bosak family but only a couple of years ago the house was given back to the family of the original owners.",
+                "photos": [{
+                    "title": "Bosak family apartment house",
+                    "small": "/images/places/optimized/bartosza_past_large.jpg"
+                }]
+            }]
+        }
+    },
+    {
+        "id": 4,
+        "name": "Berka Joselewicza",
+        "coordinates": [
+            [
+                50.05381305561696,
+                19.945024251937866
+            ],
+            [
+                50.05531475578174,
+                19.948307275772095
+            ]
+        ],
+        "places": {
+            "present": [{
+                    "id": 6,
+                    "name": "Apartment house of Gebirtig",
+                    "description": "The small house in front was the home of Mordechaj Gebirtig, a Kazimierz poet and bard who lived between 1877 and 1942 in Cracow's ghetto. His works were performed all over the world, but no one knew the name of this home-grown poet and author of the Yiddish lyrics; Awrejmł der marwicher ('Abram the thie'), Kinderjorn ('Childhood'), Huljet, huljet kinderłech ('Radujcie się, dzieci'). The simple and melodic songs of Gebirtiga are enduringly popular and have been played by several generations of musicians - in the USA it was performed by Molly Picon, the Yiddish movie star who first heard them at a concert in Cracow and included them in her repertoire.",
+                    "photos": [{
+                        "title": "Apartment house of Gebirtig",
+                        "small": "/images/places/optimized/joselewicza_present_large.jpg"
+                    }]
+                },
+                {
+                    "id": 8,
+                    "name": "Records Dillaz",
+                    "description": "In the apartment building at  number 11 you will find a record store selling vinyl - Records Dillaz. The music is obviously played on turntables and the small place contains a huge number of records. The owners are passionate so if you love vinyl you are sure to find some common ground.\r\n",
+                    "photos": [{
+                        "title": "Records Dillaz",
+                        "small": "/images/places/optimized/joselewicza_present_1_large.jpg"
+                    }]
+                }
+            ],
+            "past": [{
+                "id": 7,
+                "name": "Apartment house of Gebirtig",
+                "description": "On the facade of the apartment building at number 5, in which Mordechaj Geirtig used to live, you will find a plaque erected on the 50th anniversary of his death. Look through the windows of the basement into the carpenter's workshop -styled interiors, in which the melodies composed by Gebirtig are continuously played. You can take the printouts of the lyrics of his songs as well.",
+                "photos": [{
+                    "title": "Apartment house of Gebirtig",
+                    "small": "/images/places/optimized/joselewicza_past_large.jpg"
+                }]
+            }]
+        }
+    },
+    {
+        "id": 5,
+        "name": "Meiselsa",
+        "coordinates": [
+            [
+                50.0503231433176,
+                19.94122087955475
+            ],
+            [
+                50.050908716785116,
+                19.942840933799744
+            ],
+            [
+                50.051452949248585,
+                19.944546818733215
+            ],
+            [
+                50.05092249489827,
+                19.94247615337372
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 11,
+                "name": "House of Prayer at Meisels 18",
+                "description": "Right after the war the building was inhabited by the Jewish Socialist Party then In 1951 was taken over by the music and dance ensemble \"Krakowiacy \", who occupied it until 2006.\r\nToday the site of the former house of prayer is is inhabited by the club Mezcal. Its creation provoked a media storm - many criticized the municipality which had decided to rent the former religious premises out for an entertainment business. Happened just after renovation and the decision was taken without public consultation.\r\nThe building not only attracts attention from the outside - have a look inside when the club is open and you'll find a unique polychrome wall-mounted mural depicting holy places and animals. This is a remnant of the old design of the house of prayer, discovered during the renovation in 2008.\r\n",
+                "photos": [{
+                    "title": "House of Prayer at Meisels 18",
+                    "small": "/images/places/optimized/meiselsa_present_large.jpg"
+                }]
+            }],
+            "past": [{
+                    "id": 10,
+                    "name": "House of Prayer at Meisels 18",
+                    "description": "Built in the late nineteenth century, before the war, it served as a house of prayer for the Psalm Brotherhood (Chevra T'hilim) . Architecturally, the building references the Neo-Romanesque style. The prayer hall was located on the ground floor. Going further, note the passage connecting the streets Meiselsa and Jozefa. \r\nThe distinctive building evokes the atmosphere of pre-war Krakow. Located in the passage garden of the club Mleczarnia, which during summer has a unique atmosphere.",
+                    "photos": [{
+                        "title": "House of Prayer at Meisels 18",
+                        "small": "/images/places/optimized/meiselsa_past_large.jpg"
+                    }]
+                },
+                {
+                    "id": 13,
+                    "name": "Meiselsa 2 - building where Karol Kot used to live",
+                    "description": "After crossing the street Krakowska you are in the second part of Meiselsa street . In the building at number 2 lived Karol Kot, the killer, prowling the mid-60s in Kazimierz. His murders triggered psychosis among Cracovians. Kot killed children and old women and at the hearing spoke with delight about his deeds. He was executed in 1968 at twenty two years old. The event was widely reported in the press and a few decades later his deeds have become the subject of a poem/song by Marcin Świetlicki \"Karol cat\".",
+                    "photos": [{
+                        "title": "House of Prayer at Meisels 18",
+                        "small": "/images/places/optimized/meiselsa_past_1_large.jpg"
+                    }]
+                }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "name": "Estery",
+        "coordinates": [
+            [
+                50.052754948704234,
+                19.944782853126526
+            ],
+            [
+                50.05090871678509,
+                19.945866465568542
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 12,
+                "name": "The Alchemy club",
+                "description": "Alchemia is an iconic place which was present during the genesis of cultural and social life in the district as we know it. Considered rather dingy, neglected and dangerous beforehand, the founders of Alchemia, and the nearby Singer which paved the way for other bars and clubs, chose a risky place for their business. They had a hunch, as well as a lot of imagination. Crowds of locals and foreigners are drawn here not only by the vast alcohol and food choice (Alchemia od Kuchni), but mostly by the atmosphere, dozens of concerts, DJ gigs and openings. It is here that the renowned Cracow Jazz Autumn was born, it is also here that all-night jam sessions accompanying the Jewish Culture Festival take place, bands gain recognition and the biggest stars give shows two nights in a row because tickets sell out immediately.\r\nIt is always worth dropping in for a coffee, sit in out on the street in front of the bar, enjoy the sun and watch the tours, hucksters, Hassids, musicians, tramps and other inhabitants of Plac Nowy.",
+                "photos": [{
+                    "title": "klub Alchemia",
+                    "small": "/images/places/optimized/estery_present_large.jpg"
+                }]
+            }],
+            "past": [{
+                "id": 25,
+                "name": "The Legend of Esther",
+                "description": "Esther is probably the most famous Jewish girl in the Polish imagination. According to legend, she was rescued from slaughter by king Kazimierz the Great and met him years later while hunting. The fact that she was the king's lover is known from Jan Długosz' chronicles. She was supposed to give birth to two of the king's sons and a daughter, who - and this was an exception - was allowed to stay Jewish. Word of mouth has it that the king brought her from the Opoczno  family to his residence in Łobzów (not being part of the city back then) or to the house on Krakowska 46. Stories of the ending of the unusual romance vary: it is unknown whether Esther died and was mourned by the king, was abandoned by him or committed suicide from despair after his death. An Israeli writer and Nobel price winner - Shmuel Yosef Agnon present this ending: the other lovers and wives of King Kazimierz were madly jealous of Esther, because she was the King's favourite, so they crept up to her door one night and scratched spells on it, because of which the poor girl died. The distraught King gave the order to keep her heart and eyes and put them in his chamber because he had no other effigy of his lover. Because Jewish law states bodies must be buried in their entirety, every night the ghost of the sightless girl arises from the grave and wanders around looking for her eyes and heart.\r\n",
+
+
+                "photos": [{
+                    "title": "kura",
+                    "small": "/images/places/optimized/estery_past_large.jpg"
+                }]
+            }]
+        }
+    },
+    {
+        "id": 7,
+        "name": "Plac Wolnica",
+        "coordinates": [
+            [
+                50.048300448663966,
+                19.943377375602722
+            ],
+            [
+                50.048514020580804,
+                19.944739937782288
+            ],
+            [
+                50.04912717338372,
+                19.944482445716858
+            ],
+            [
+                50.048982497585754,
+                19.943549036979675
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 15,
+                "name": "Ethnographic Museum of Seweryn Udziela (Wolnic Square 1) ",
+                "description": "Even though plans to found an ethnographic museum in Cracow emerged at the beginning of the 20th century, it only happened in Kazimierz on Wolnica Square after World War Two. In addition to precious folk art and culture the Museum also hosts Jewish cultural events - among others, two unforgettable exhibitions relating to the Jewish Culture Festival. The first, \"Souvenir, Toy, Talisman\" from 2013 displayed for visitors over 200 Jewish figurines which can be found in souvenir stalls. The purpose of the exhibit was to reflect upon the question: why are Jews perceived as the ones bringing happiness, money and well-being? Does putting a coin-holding Jewish magnet on your fridge bring success in life?\r\nThe second exhibit - \"Jews on vinyl\" is a work by Americans from The Idelsohn Society, named after a certain musicologist/collector. Its members have spent several months travelling the USA and digging up old records from attics, garages and garage sales. The record document the Jewish-American musical history. The collections contains various genres of music, from cantoral, through to patriotic songs of Erec Israel, known Jewish melodies, disco (\"Hassidisco\") or latin (\"Havana Nagila\"), to the biggest hits by Neil Diamond or Barbara Streisand. You could see the covers of the vinyl jewels and listen to the music while sinking into armchairs from the 50s.",
+                "photos": [{
+                    "title": "plac Wolnica",
+                    "small": "/images/places/optimized/wolnica_present_large.jpg"
+                }]
+            }],
+            "past": [{
+                "id": 14,
+                "name": "Kazimierz Town Hall",
+                "description": "Even though Kazimierz gained city rights in 1335 it had to wait a while longer for a proper town hall. At first the town government was situated in a shabby, wooden building in Plac Wolnica, which was a marketplace then, surrounded by shambles and stalls. A brick building was not erected until 1414. Remains are still visible in the basement and ground floor of the building. Several rebuilds, fires and renovations lead to the final shape in the second half of the 19th century. Gloomy and derelict - at the break of 18th and 19th century when Kazimierz was incorporated as part of Cracow, the building lost its administrative role. In 1806 it was even auctioned off. A Jewish public school which was inside saved it. In 1906 a plaque commemorating the arrival of Jews in Poland was put on the wall of the building (taken down by the Germans during occupation then  replaced by a new one in 1996).",
+                "photos": [{
+                        "title": "plac Wolnica old",
+                        "small": "/images/places/optimized/wolnica_past_large.jpg"
+                    },
+                    {
+                        "title": "ratusz",
+                        "small": "/images/places/optimized/wolnica_past_1_large.jpg"
+                    },
+                    {
+                        "title": "ratusz1",
+                        "small": "/images/places/optimized/wolnica_past_2_large.jpg"
+                    }
+                ]
+            }]
+        }
+    },
+    {
+        "id": 8,
+        "name": "Kupa",
+        "coordinates": [
+            [
+                50.0524201521761,
+                19.945780634880066
+            ],
+            [
+                50.05106303138492,
+                19.946475327014923
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 17,
+                "name": "Synagoga Izaaka (Kupa 18)",
+                "description": "During World War Two it shared the fate of a lot of Jewish buildings in Kazimierz. Destroyed by the Nazis, without the Tora or any internal decoration, for several decades it played no religious role. In it 1946 almost became a temple of the Polish National Catholic Church. Protests by the Jewish community put those plans to an end. In the 50s it was given to the Union of Polish Artists and became a sculpture workshop between 1959 - 1968. It was then given back to the Jewish parish in 1989 in very bad shape. During the 70s it was left empty and went to ruin and a fire in 1981 destroyed the interior completely. In the 80s through to the mid 90s it was renovated, during which parts of old polychrome paintings (which you are probably looking at) were uncovered.\r\nSince 2007 the Synagogue has been home of the Hassidic group Chabad-Lubavitz, there is a daily service.\r\nOn the back of the Synagogue there is a shop with Kosher food and an Israeli style take away (entry from Jakub street) - a joint serving falafel and other oriental food to go.",
+
+                "photos": [{
+                        "title": "Synagoga Izaaka",
+                        "small": "/images/places/optimized/kupa_present_large.jpg"
+                    },
+                    {
+                        "title": "Synagoga Izaaka drzwi",
+                        "small": "/images/places/optimized/kupa_present_1_large.jpg"
+                    }
+                ]
+            }],
+            "past": [{
+                "id": 16,
+                "name": "The Isaac Synagogue (Kupa 18)",
+                "description": "Icchak reb Jekeles (Isaac the son of Jacob), the founder of the synagogue is the hero of a legend passed on from generation to generation. Have you heard it? Listen up: Icchack, a poor but god-fearing inhabitant of Kazimierz had a peculiar dream – it was of treasure that was destined for him, buried under a bridge in Prague. Without much thought, Icchak embarked upon a long and exhausting hike to find the treasure. When he got to the city walls he saw a bridge - exactly like the one from his dream - guarded by troops. Too scared to get closer he stood there for a long time wandering what to do. He was finally approached by one of the officers and decided to tell the truth, dig the treasure up and share it with him. But the officer ridiculed Icchak - only stupid Polish Jews believe in dreams. He told Icchak he also had a dream about treasure hidden under the furnace of a poor man living in Kazimierz, Isaac son of Jacob. This did not mean he should pursue this treasure, after all in a Jewish town every other person is named Isaac, and every third Jacob. Isaac thanked the officer, made the long hike back and found the treasure under the furnace in his own house. With part of the money he founded the synagogue, and gave the rest to the poor. When the neighbours asked him where his sudden wealth came from he responded that treasure is often found in one's own home, but you need to take a long journey to realise it.",
+                "photos": [{
+                        "title": "kupa1",
+                        "small": "/images/places/optimized/kupa_past_large.jpg"
+                    },
+                    {
+                        "title": "kupa2",
+                        "small": "/images/places/optimized/kupa_past_1_large.jpg"
+                    }
+                ]
+            }]
+        }
+    },
+    {
+        "id": 9,
+        "name": "Józefa",
+        "coordinates": [
+            [
+                50.050232895435116,
+                19.942682683467865
+            ],
+            [
+                50.051255923989494,
+                19.947408735752106
+            ]
+        ],
+        "places": {
+            "present": [{
+                    "id": 19,
+                    "name": "Cheder Care (Józefa 36)",
+                    "description": "In a two story building that is adjacent to the Tall Synagogue is Cheder Cafe - a place that is inseparably connected to the history of the Jewish Culture Festival of Cracow. During the festival it is transformed into the festival club and in other months hosts countless cultural events, social and artistic initiatives. In 2009 - 2011 Cheder was the initiator and host of the MuLaKuŻ cycle (Musical Laboratory of Jewish Culture) which presented contemporary Polish musicians who - regardless of genre - are inspired by the Jewish musical tradition and interpret it in various ways.\r\nJewish culture meet-ups, calligraphy and creative writing courses, workshops on brewing traditional Middle-Eastern coffee, meetings with writers (Etgar Keret, Paweł Smoleński), culinary workshops (baking traditional challahs) and classes for children.\r\nSipping mint tea, Israeli wine or coffee you can also use Cheder's sizeable library, the directory of which is available online. An energetic volunteering group \"The Machers\" which supports the Jewish Culture Festival in the summer, and throughout the rest of the year takes part in training, educational trips and co-organizes open meetings and workshops related to social and artistic activities of the cafe. Just before Christmas they decorate one of the trees near Brzozowa street with both traditional Christmas decorations and Jewish symbols.\r\n\r\n",
+                    "photos": [{
+                            "title": "Cheder Cafe",
+                            "small": "/images/places/optimized/jozefa_present_large.jpg"
+                        },
+                        {
+                            "title": "Synagoga wysoka",
+                            "small": "/images/places/optimized/jozefa_present_1_large.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 24,
+                    "name": "The Institue of Jewish studies of Jagiellonian Univervisty",
+                    "description": "The history of Jewish Studies courses at The Jagiellonian University goes back to 1986 when the Inter-disciplinary Institute of Jewish History and Culture was created. Along the way, as the number of students increased, the number of professors has increased and the curriculum has become richer. The Institute has evolved into the Jewish Studies Cathedral (2000) and Jewish Studies Institute (2012). A the only one in Poland, the Institute offers two-level Judaic studies. Students can learn Hebrew and Yiddish, the history of Jewish literature, the history of Cracow's Jews, Karaite Judaism, Jewish history, the history of the Holocaust or of modern Israel. Doctorate and postdoctorate studies are also available. A big magnet - not only for the students - is the huge collection in the Institute's library which has over 7000 items, a lot of which are hard to come by in other libraries. Texts are in several languages and include dictionaries, comic books and works by modern Israeli writers. Cracow's Institute of Jewish Studies has been active on several occasions during the Jewish Culture Festival, offering open lectures on Galicjan Jews or the position of Jewish woman in society. An important part of the Institute's activity is student exchanges with Israeli, French or German institutions.",
+                    "photos": [{
+                        "title": "Instytut Judaistyki UJ",
+                        "small": "/images/places/optimized/jozefa_present_2_large.jpg"
+                    }]
+                }
+            ],
+            "past": [{
+                "id": 18,
+                "name": "The Great Synagogue (Józefa 38)",
+                "description": "There are two theories on who built this renaissance synagogue. The first is that the initiators were a group of Sephardic Jews, who came to Kazimierz in the 16th century. The shape of the building supposedly attests to this - it bears resemblance to Venetian ghetto temples. Sephardic Jews running from persecution wanted to build a synagogue resembling home.\r\nThe second hypothesis points to a Jew named Israel, who was supposed to ask King Zygmunt II August for permission to build a new synagogue. The term \"new\" shows up in documents from the period. In later ones it is called \"tall\" because of the atypical architecture. The prayer hall is on the second floor, not the ground floor like Cracow's synagogues. On the ground floor there were shops.\r\nThe synagogue has undergone numerous renovations since - it was burnt down 3 times and the Swedish invasion destroyed it completely. Not until the 19th century did it get a thorough restoration. In the 1880s a two story building was built next to the synagogue, which also served religious purposes. It was a prayer hall with a women's gallery and Ner Tamid Congregation temple.",
+                "photos": [{
+                    "title": "Synagoga wysoka old",
+                    "small": "/images/places/optimized/jozefa_past_large.jpg"
+                }]
+            }]
+        }
+    },
+    {
+        "id": 10,
+        "name": "Dajwór/Św. Wawrzyńca",
+        "coordinates": [
+            [
+                50.05319858485204,
+                19.94867205619812
+            ],
+            [
+                50.052578595248725,
+                19.949036836624146
+            ],
+            [
+                50.05044990331454,
+                19.94966983795166
+            ],
+            [
+                50.049299405907874,
+                19.944573640823364
+            ],
+            [
+                50.050821914538936,
+                19.951316714286804
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 22,
+                "name": "Jewish Museum Galicja (Dajwór 18)",
+                "description": "The Galicja Museum is a mandatory stop for most tours from Israel, and also one of the most culturally important  places in Kazimierz. It was born in 2004, a product of the cooperation between Chris Schwartza, a British documentary photographer and Oxford professor Jonathan Webber. Their fascination for the remains of Jewish life present in the towns and villages of old Galicja has resulted in tens of photographs collected by Schwartz into the \"Traces of memory\" exhibit. It was shown in an old furniture warehouse in Kazimierz, which was turned into a museum by Schwartz and friends within 7 weeks.\r\nPresently, 8 years after the photographer's death, Galicja still exhibits his works along with numerous historical exhibitions (the Jewish resistance in Cracow, Poles saving Jews from the Holocaust, the Joint organization etc.). It has a library, coffee house and numerous cultural and scientific initiatives. Books on Jewish history and culture are promoted, klezmer groups and contemporary Israeli musicians play concerts and discussion panels are held. Galicja has become the main focus of Cracow's reformed Jewish community over the past few years, including rabbi Tanya Segal and the Beit association. Because of this you can take part in Shabbath services that are organized weekly, Jewish holidays and artistic initiatives like Midrash theatre or MidrashLab - a project merging visual arts and canonical Jewish texts.",
+                "photos": [{
+                    "title": "Muzeum Galicja",
+                    "small": "/images/places/optimized/wawrzynca_present_large.jpg"
+                }]
+            }],
+            "past": [{
+                "id": 23,
+                "name": "Former tram  depot (św. Wawrzyńca 15)",
+                "description": "It spans both sides of Wawrzyńca street and comprises 11 building, the oldest of which are from the end of 19th century and served the old Cracow horse railway.\r\nModern times brought electrification of the tram network and the need for a new infrastructure. After rebuilding, this space served as tram depot until 1965 (when the depot was relocated to Nowa Huta), from then until 1992 the buildings were used by bus services. \r\nThe history of this place and exhibits relating to the tram network are located in hall D of the City Engineering Museum. For anyone interested in the history of automotive and city public transport it's a must!",
+                "photos": [{
+                    "title": "zajezdnia",
+                    "small": "/images/places/optimized/wawrzynca_past_large.jpg"
+                }]
+            }]
+        }
+    },
+    {
+        "id": 11,
+        "name": "Św. Stanisława",
+        "coordinates": [
+            [
+                50.04991668223912,
+                19.93641436100006
+            ],
+            [
+                50.04886262306483,
+                19.937315583229065
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 27,
+                "name": "Vistula Boulevards, the Forum hotel",
+                "description": "Looking from where the Bejs Jakow school is located, the Grunwald bridge and Vistula Boulevards on the left and right bank of Vistula are visible. There is a cycle path and you can see runners and rollerbladers all day long.\r\nThe boulevards, after being developed, have become a popular spot for meetings and leisure in recent years. The old Forum hotel is on the other side of the river. In its time, the most modern hotel in Cracow, built between 1978 and 1988,  only functioned for 14 years, even though its construction required a complete transformation of the Ludwinów district. Closed due to its poor technical condition (usage of the hotel was posing a thread of collapse), for several years it was just used for advertising space. In 2013, on the ground floor Club Forum opened and quickly became famous.",
+                "photos": [{
+                        "title": "bulwary",
+                        "small": "/images/places/optimized/stanislawa_present_large.jpg"
+                    },
+                    {
+                        "title": "forum",
+                        "small": "/images/places/optimized/stanislawa_present_1_large.jpg"
+                    }
+                ]
+            }],
+            "past": [{
+                "id": 26,
+                "name": "Bejs Jakow school",
+                "description": "Bejs Jakow is a chain of religious girl's schools. The first school was founded by Sara Szenirer - a pioneer of orthodox girls schooling. At the time when she began her work, there was no formalized education for girls. Her initiative gave them rights comparable to the male section of society. At the school on Stanisław street they are taught both professional as well as secular and religious subjects (Polish, German, literature, education and psychology). Further schools opened in Cracow and other cities in Poland and were operating in cooperation with the orthodox party Agudas Jisroel which was at that time represented in the Polish parliament and was the only official representation of the Jewish community.\r\n Bejs Jakow schools are now all over the world and continue the project started by Sara Szenier.",
+                "photos": [{
+                        "title": "bejs1",
+                        "small": "/images/places/optimized/stanislawa_past_large.jpg"
+                    },
+                    {
+                        "title": "bejs2",
+                        "small": "/images/places/optimized/stanislawa_past_1_large.jpg"
+                    }
+                ]
+            }]
+        }
+    },
+    {
+        "id": 12,
+        "name": "Szeroka",
+        "coordinates": [
+            [
+                50.05326471664566,
+                19.947003722190857
+            ],
+            [
+                50.05299605583795,
+                19.947572350502014
+            ],
+            [
+                50.05267917192628,
+                19.94790494441986
+            ],
+            [
+                50.0527342823221,
+                19.94817316532135
+            ],
+            [
+                50.053092498352235,
+                19.948055148124695
+            ],
+            [
+                50.0529891670795,
+                19.947583079338074
+            ],
+            [
+                50.05269467173153,
+                19.94791030883789
+            ],
+            [
+                50.05241395226119,
+                19.948022961616516
+            ],
+            [
+                50.05179050805503,
+                19.948269724845886
+            ]
+        ],
+        "places": {
+            "present": [{
+                "id": 31,
+                "name": "Jewish and Israeli kitchen on Szeroka",
+                "description": "The Jewish kitchen has more than one face. It is crucial to distinguish the cuisine of the Ashkenazi Jews which is familiar in Poland from modern Isareli cuisine for the two have little in common. The former consists of meals made from ingredients that we know: gefilte fish (various fish chops), czulent (long boiled stew with beans, onions and groats), cymes (a carrot-fruit dessert) or broth with azyme balls. On Szeroka street you can try these in a couple of restaurants. Modern Israeli cuisine has been difficult to come by in Kazimierz, but a lot has changed in the last 2 years. The cuisine, though influenced by diasporas from all over the world, is dominated by Middle Eastern hummus, baba ghanoush (baked or grilled aubergine with tahini, olive and lemon), shakshuka (fried eggs with tomatoes and peppers, best straight from the frying pan), dishes smelling of zatar, sumach, cumin, coriander... You should try coffee from the fincan, the best wines from Negwu or Golan hills or sweet orange juice.\r\nAll of these goodies are available on Szeroka street!\r\n",
+                "photos": [{
+                        "title": "szeroka_new",
+                        "small": "/images/places/optimized/szeroka_present_large.jpg"
+                    },
+                    {
+                        "title": "szeroka_syn",
+                        "small": "/images/places/optimized/szeroka_present_1_large.jpg"
+                    }
+                ]
+            }],
+            "past": [{
+                "id": 28,
+                "name": "Szeroka Square/ Remu Cemetery ",
+                "description": "In the beginning of the 16th century there was a synagogue on Szeroka square, by which there was a Jewish Remu cemetery. Its name comes from first letters of the title, name and surname of rabbi Moses Isserles. The cemetery is the one of the oldest European Jewish cemeteries. It was closed in the 19th century when a new one was open on Miodowa street. The gravestones stand out with their renaissance and baroque style. The matzevas shape relates to the gate being a passage between the worlds of the living and the dead. The inscriptions contain information about the positions held by the deceased, their achievements or virtues. Each inscription ends with תנצבה, which relates to the first book of Samuel. The abbreviation is translated into \"may his soul be included in the circle of eternal life\". The ornaments on the matzevas play an important role, too - sometimes they reveal more than the inscription itself. And so for instance of we see hands together in a sign of a blessing we know that a rabbi or a Hassidic leader is buried there. Candles or chandeliers are seen on the graves of women.\r\nAfter a period of destruction and devastation, some of the matzevas were renovated between the 19th & 20th centuries. \r\nThere is a legend relating to the place - the Remu cemetery was founded because of Yahwe's anger with a certain newly wed couple and their guests that were so immersed in joy that they did not notice that sabbath has started. Yahwe punished them with death and the wedding place became their eternal grave.",
+                "photos": [{
+                        "title": "cmentarz Remu",
+                        "small": "/images/places/optimized/szeroka_past_large.jpg"
+                    },
+                    {
+                        "title": "szeroka",
+                        "small": "/images/places/optimized/szeroka_past_1_large.jpg"
+                    },
+                    {
+                        "title": "szeroka1",
+                        "small": "/images/places/optimized/szeroka_past_2_large.jpg"
+                    },
+                    {
+                        "title": "szeroka2",
+                        "small": "/images/places/optimized/szeroka_past_3_large.jpg"
+                    }
+                ]
+            }]
+        }
+    },
+    {
+        "id": 13,
+        "name": "Bocheńska/Mostowa",
+        "coordinates": [
+            [
+                50.04883782135168,
+                19.94669258594513
+            ],
+            [
+                50.048534688780386,
+                19.944793581962585
+            ],
+            [
+                50.047804406996484,
+                19.94620442390442
+            ],
+            [
+                50.04714989972927,
+                19.946864247322083
+            ]
+        ],
+        "places": {
+            "present": [{
+                    "id": 29,
+                    "name": "Lokator (the Tennant, Mostowa 1)",
+                    "description": "Lokator used to be on Krakowska street where it was very popular with students and serious literature connoisseurs. It  often hosted meetings with authors, promising poets, discussions and concerts. Then it moved and the atmosphere changed a little. The change was widely talked about. Cracow's press announced \"instead of vodka and rock - coffee, books and kids\". What did not change was the quality of the culture on offer, the range was extended with niche publications for kids and adults, books hard to come by in other bookstores selected and displayed with proper care. A place definitely friendly for youngest, lovers of good coffee and dog owners.",
+                    "photos": [{
+                            "title": "mostowa",
+                            "small": "/images/places/optimized/bohenska_present_large.jpg"
+                    }
+                ]
+            }
+        ],
+        "past": [{
+            "id": 30,
+            "name": "Jewish theater (Bocheńska 7)",
+            "description": "The building on Bocheńska street was designed by Cracow architects Ferdinand Liebing and Jozue Ignacy Oberlender.\r\nThe Jewish Theatre in Kazimierz founded before World War 1 has developed significantly however only in the inter-war period. Between 1919 and 1939 the the Bocheńska stage hosted artists from Warsaw, Vilnius, Łódź and other cities. An important event was the play by Szyman Anski \"Dybuk\" and was already becoming legendary. All shows were in Yiddish.\r\nJonasz Turkow who was the director of the theatre from 1926 played an exceptional role. At that time that Mordechaj Gebirtig cooperated with the theatre. The most popular works by Jewish artists were shown, among others, works by Tewje Mleczarz, Szolem Ajechem but also Polish works translated to Yiddish, e.g. Daniel and \"the Judges\" by Stanisław Wyspiański.\r\n",
+            "photos": [{
+                "title": "mostowa",
+                "small": "/images/places/optimized/bohenska_past_large.jpg"
+            }]
+        }]
+    }
+}]
