@@ -8,7 +8,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const postcss = require('postcss');
 const postcssPluginsPost = require('./config/postcssPluginsPost');
 
-const DIST_PATH = path.resolve(__dirname, 'dist');
+const DIST_PATH = path.resolve(__dirname, 'docs');
 const SRC_PATH = path.resolve(__dirname, 'src');
 const NODE_MODULES_PATH = path.resolve(__dirname, 'node_modules');
 
